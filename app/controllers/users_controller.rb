@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   @user = User.new
   end
   def create
-    @user = User.new(params[:users])
+    @user = User.new(user_params)
     if @user.save
       flash[:notice] = "You signed up successfully"
       flash[:color]= "valid"

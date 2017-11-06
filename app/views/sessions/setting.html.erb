@@ -1,2 +1,7 @@
 <h1>Sessions#setting</h1>
-<p>Find me in app/views/sessions/setting.html.erb</p>
+<% if @current_user.admin %>
+  <h2 class='User_Header'> <%=@current_user.email%>'s Admin Setting <h2>
+  <p> Coming Soon ~~ </p>
+<% else %>
+  <p> Admin only Page !!! Please Click Home button  </p> 
+<% end %>
