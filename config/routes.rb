@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
 
   resources :users
-  root :to => "sessions#login_attempt"
+ 
+  #root :to => "sessions#login_attempt"
+  root :to => "sessions#login"
+  get 'login' => 'sessions#login' 
+  post 'create' => "sessions#create" 
+  get 'logout' => 'sessions#logout'
   match "signup", :via => [:get], :to => "users#new"
-  match "login", :via => [:get], :to => "sessions#login"
-  match "logout", :via => [:get], :to => "sessions#logout"
-  match "home", :via => [:get], :to => "sessions#home"
+  match "home", :via => [:get], :to => "sessions#home"  
   match "profile", :via => [:get], :to => "sessions#profile"
   match "setting", :via => [:get], :to => "sessions#setting"
+ 
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

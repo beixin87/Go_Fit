@@ -7,19 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
 	<div class="Main_Header">
 		<h1>Ruby Source</h1>
 		<%unless session[:user_id]%>
 			<ul class="nav">
-				<li><%= link_to :Signup , :signup, class: "nav_links"%> </li>|
-				<li><%= link_to :Login , :login, class: "nav_links"%></li>
+				<l1><%= link_to :Signup , :signup, {style: "color: red", class: "nav_links"}%></l1>|
+				<li><%= link_to :Login , :login, {style: "color: red", class: "nav_links"}%> </li>
 			</ul>
 		<%else%>
 			<ul class="nav">
-				<li><%= link_to :Home , :home, class: "nav_links" %> |</li>
-				<li><%= link_to :Profile , :profile, class: "nav_links" %> |</li>
-				<li><%= link_to :Setting , :setting, class: "nav_links" %> |</li>
-				<li><%= link_to :Logout , :logout, class: "nav_links" %></li>
+				<l1><%= link_to :Home , :home, {style: "color: red", class: "nav_links"} %> | </l1>
+				<li><%= link_to :Profile , :profile, {style: "color: red", class: "nav_links"} %> |</li>
+				<li><%= link_to :Setting , :setting, {style: "color: red", class: "nav_links"} %> |</li>
+				<li><%= link_to :Logout , :logout, {style: "color: red", class: "nav_links"} %></li>
 			</ul>
 		<%end%>
 	</div>
