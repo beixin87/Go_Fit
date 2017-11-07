@@ -8,6 +8,10 @@ gem 'rails', '4.2.8'
 # Password Encryption
 gem 'bcrypt', '3.1.11'
 
+gem 'faker',          '1.7.3'
+gem 'will_paginate',           '3.1.5'
+gem 'bootstrap-will_paginate', '1.0.0'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'rails_12factor', group: :production
