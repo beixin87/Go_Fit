@@ -1,21 +1,30 @@
 class UsersController < ApplicationController
 
-  before_filter :save_login_state, :only => [:new, :create]
+  def show
+    @user = User.find(params[:id])
+    # debugger  << uncomment to see debug in terminal
+  end
+
   def new
-  @user = User.new
+    @user = User.new
   end
+
   def create
-    @user = User.new(params[:users])
+    @user = User.new(user_params)    # Not the final implementation!
     if @user.save
-      flash[:notice] = "You signed up successfully"
-      flash[:color]= "valid"
+      # Handle a successful save.
+      log_in @user
+      flash[:success] = "Welcome to the Sample App!"
+      redirect_to @user
     else
-      flash[:notice] = "Form is invalid"
-      flash[:color]= "invalid"
+      render 'new'
     end
-    render "new"
   end
-  def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
-  end
+
+  private
+
+      def user_params
+        params.require(:user).permit(:name, :email, :password,
+                                     :password_confirmation)
+      end
 end

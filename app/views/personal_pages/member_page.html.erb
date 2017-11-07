@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+<h2><= @member.name%></h2>
+<div class="row">
+  <div class="column left">
+    <h2>Information</h2>
+    <table>
+      <tr>
+        <td>Birthday:</td>
+        <td><= @member.bday%></td>
+      </tr>
+      <tr>
+        <td>Gender:</td>
+        <td><= @member.gender%></td>
+      </tr>
+      <tr>
+        <td>Height:</td>
+        <td><= @member.height%></td>
+      </tr>
+      <tr>
+        <td>Weight:</td>
+        <td><= @member.weight%></td>
+      </tr>
+    </table>
+  </div>
+  <div class="column right">
+    <h2>Introduction</h2>
+    <h3><= @member.description%></h3>
+  </div>
+</div>
+
+</body>
+</html>

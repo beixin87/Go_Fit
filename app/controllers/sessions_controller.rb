@@ -1,37 +1,23 @@
 class SessionsController < ApplicationController
-  before_filter :authenticate_user, :except => [:index, :login, :login_attempt, :logout]
-	before_filter :save_login_state, :only => [:index, :login, :login_attempt]
-  def home
-    #Home Page
+
+  def new
   end
 
-  def profile
-    #Profile Page
+  def create
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
+      # Log the user in and redirect to the user's show page.
+      log_in user
+      redirect_to user
+    else
+      # Create an error message.
+      flash.now[:danger] = 'Invalid email/password combination' # Not quite right!
+      render 'new'
+    end
   end
 
-  def setting
-    #Setting Page
-  end
-
-  def login
-    #Login Form
-  end
-
-  def login_attempt
-  authorized_user = User.authenticate(params[:email],params[:login_password])
-  if authorized_user
-    session[:user_id] = authorized_user.id
-    flash[:notice] = "Wow Welcome again, you logged in as #{authorized_user.email}"
-    redirect_to(:action => 'home')
-  else
-    flash[:notice] = "Invalid Username or Password"
-    flash[:color]= "invalid"
-    render "login"
-  end
-  end
-
-  def logout
-    session[:user_id] = nil
-    redirect_to :action => 'login'
+  def destroy
+    log_out
+    redirect_to root_url
   end
 end

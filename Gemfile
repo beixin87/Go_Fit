@@ -1,8 +1,13 @@
 source 'https://rubygems.org'
-ruby '2.4.1'
+
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
+
+# Password Encryption
+gem 'bcrypt', '3.1.11'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'rails_12factor', group: :production
@@ -29,11 +34,13 @@ gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
 gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'byebug', group: [:development, :test]
+
+# For custom stylesheet
+gem 'bootstrap-sass', '3.3.6'
