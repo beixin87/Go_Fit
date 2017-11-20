@@ -218,9 +218,14 @@
             google.maps.event.addListener(marker, 'click', function() {
               infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
               'Place ID: ' + place.place_id + '<br>' +
-              place.formatted_address + '</div>');
+              place.formatted_address + '<br>' + 'Please click on the building for more imformation :)'+'</div>');
               infowindow.open(map, this);
+              if(map.zoom==16){
+              map.setZoom(13);
+            }
+            else {
               map.setZoom(16);
+            }
               map.setCenter(marker.getPosition());
             });
           }
