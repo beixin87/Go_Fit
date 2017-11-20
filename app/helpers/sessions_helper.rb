@@ -1,5 +1,4 @@
 module SessionsHelper
-<<<<<<< HEAD
 
   # Logs in the given user.
   def log_in(user)
@@ -42,17 +41,4 @@ module SessionsHelper
     @current_user = nil
   end
 
-=======
-	def log_in(user)
-		session[:user_id] = user.id
-	end	
-
-	def current_user
-		@current_user ||= User.find_by(id: session[:user_id])
-	end	
-
-	def user_signed_in?
-		!current_user.nil?
-	end
->>>>>>> 6d5f3bd2247e195cc76b838f4bdeb7cee53ef8cc
 end
