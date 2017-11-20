@@ -18,7 +18,11 @@ class UsersController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
     @user = User.new(user_params)    # Not the final implementation!
+=======
+    @user = User.new(user_params)
+>>>>>>> 6d5f3bd2247e195cc76b838f4bdeb7cee53ef8cc
     if @user.save
       # Handle a successful save.
       log_in @user

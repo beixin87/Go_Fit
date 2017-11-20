@@ -11,9 +11,23 @@ Rails.application.routes.draw do
   delete  '/logout',  to: 'sessions#destroy'
   
   resources :users
+<<<<<<< HEAD
   resources :guides
   resources :images, only: [:create, :destroy]
 
+=======
+ 
+  #root :to => "sessions#login_attempt"
+  root :to => "sessions#login"
+  get 'login' => 'sessions#login' 
+  post 'create' => "sessions#create" 
+  get 'logout' => 'sessions#logout'
+  match "signup", :via => [:get], :to => "users#new"
+  match "home", :via => [:get], :to => "sessions#home"  
+  match "profile", :via => [:get], :to => "sessions#profile"
+  match "setting", :via => [:get], :to => "sessions#setting"
+ 
+>>>>>>> 6d5f3bd2247e195cc76b838f4bdeb7cee53ef8cc
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

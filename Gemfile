@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6d5f3bd2247e195cc76b838f4bdeb7cee53ef8cc
 ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -37,7 +40,12 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
+<<<<<<< HEAD
 # gem 'bcrypt', '~> 3.1.7'
+=======
+gem 'bcrypt', '~> 3.1.7'
+
+>>>>>>> 6d5f3bd2247e195cc76b838f4bdeb7cee53ef8cc
 gem 'puma'
 
 # Use Capistrano for deployment
