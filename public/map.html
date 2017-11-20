@@ -56,6 +56,8 @@
         }
         infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
+        var transitLayer = new google.maps.TransitLayer();
+        transitLayer.setMap(map);
 
       }
 
