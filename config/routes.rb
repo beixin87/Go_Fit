@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :meetings
   root 'sessions#new'
 
   get     '/help',    to: 'static_pages#help'
