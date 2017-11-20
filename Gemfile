@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
@@ -11,6 +11,7 @@ gem 'bcrypt', '3.1.11'
 gem 'faker',          '1.7.3'
 gem 'will_paginate',           '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem "simple_calendar", "~> 2.0"
 
 # Use postgresql as the database for Active Record
 gem 'pg'
