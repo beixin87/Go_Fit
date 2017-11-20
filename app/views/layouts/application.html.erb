@@ -9,7 +9,6 @@
 
 </head>
 <body>
-<<<<<<< HEAD
     <%= render 'layouts/header' %>
     <div class="container">
     <% flash.each do |message_type, message| %>
@@ -20,39 +19,6 @@
     <%= render 'layouts/footer' %>
     <!--<%= debug(params) if Rails.env.development? %> -->
 
-=======
-	
-	<div class="Main_Header">
-		<h1>Ruby Source</h1>
-		<%unless session[:user_id]%>
-			<ul class="nav">
-				<l1><%= link_to :Signup , :signup, {style: "color: red", class: "nav_links"}%></l1>|
-				<li><%= link_to :Login , :login, {style: "color: red", class: "nav_links"}%> </li>
-			</ul>
-		<%else%>
-			<ul class="nav">
-				<l1><%= link_to :Home , :home, {style: "color: red", class: "nav_links"} %> | </l1>
-				<li><%= link_to :Profile , :profile, {style: "color: red", class: "nav_links"} %> |</li>
-				<li><%= link_to :Setting , :setting, {style: "color: red", class: "nav_links"} %> |</li>
-				<li><%= link_to :Logout , :logout, {style: "color: red", class: "nav_links"} %></li>
-			</ul>
-		<%end%>
-	</div>
-	<% if flash[:color]== "valid" %>
-		<div class="valid_notice">
-			<p><%= flash[:notice]%></p>
-		</div>
-	<% elsif flash[:color]== "invalid"%>
-		<div class="invalid_notice">
-			<p><%=flash[:notice]%></p>
-		</div>
-	<%else%>
-		<div class="notice">
-			<p><%=flash[:notice]%></p>
-		</div>
-	<%end%>
-<%= yield %>
->>>>>>> 6d5f3bd2247e195cc76b838f4bdeb7cee53ef8cc
 
 </body>
 </html>

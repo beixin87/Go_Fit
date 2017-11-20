@@ -36,7 +36,6 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.4)
-<<<<<<< HEAD
     autoprefixer-rails (7.1.6)
       execjs
     bcrypt (3.1.11)
@@ -45,9 +44,6 @@ GEM
       sass (>= 3.3.4)
     bootstrap-will_paginate (1.0.0)
       will_paginate
-=======
-    bcrypt (3.1.11)
->>>>>>> 6d5f3bd2247e195cc76b838f4bdeb7cee53ef8cc
     builder (3.2.3)
     byebug (5.0.0)
       columnize (= 0.9.0)
@@ -178,14 +174,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
   bcrypt (= 3.1.11)
   bootstrap-sass (= 3.3.6)
   bootstrap-will_paginate (= 1.0.0)
   byebug
-=======
-  bcrypt (~> 3.1.7)
->>>>>>> 6d5f3bd2247e195cc76b838f4bdeb7cee53ef8cc
   coffee-rails (~> 4.0.0)
   faker (= 1.7.3)
   font-awesome-rails
