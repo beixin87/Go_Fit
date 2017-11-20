@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20171119131853) do
+=======
+ActiveRecord::Schema.define(version: 20171106120734) do
+>>>>>>> 6d5f3bd2247e195cc76b838f4bdeb7cee53ef8cc
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "guides", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
@@ -47,6 +52,18 @@ ActiveRecord::Schema.define(version: 20171119131853) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+=======
+  create_table "users", force: :cascade do |t|
+    t.string   "email"
+    t.string   "password"
+    t.string   "encrypted_password"
+    t.string   "salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "admin"
+  end
+
+>>>>>>> 6d5f3bd2247e195cc76b838f4bdeb7cee53ef8cc
   create_table "widgets", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
