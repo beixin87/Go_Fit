@@ -1,0 +1,15 @@
+<% provide(:title, @guide) %>
+<div class="container">  
+
+  <p><strong>Title : </strong>
+    <%= @guide.title %></p>        
+  <p><strong>Content : </strong>
+    <%=raw @guide.content %></p>    
+ 
+</div>
+
+<% if  @guide.user_id == session[:user_id] %>
+  <%= link_to ' Edit ', edit_guide_path(@guide), class: "btn btn-success" %>
+  <%= link_to 'Delete', guide_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> 
+<% end %>  
+<%= link_to 'Back', guides_path, class: "btn btn-primary" %>
