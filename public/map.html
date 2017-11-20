@@ -79,6 +79,13 @@
           infowindow.open(map, this);
         });
       }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh8Dk8RH7pFNXd98RGLeXnylM5D8GOhYY&libraries=places&callback=initMap" async defer></script>
