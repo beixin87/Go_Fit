@@ -25,8 +25,11 @@ before_filter :redirect_if_logged_in
 
 
   def redirect_if_logged_in
-    user = current_user if logged_in?
-    redirect_by_user_type
+    if logged_in?
+      redirect_by_user_type
+    else
+
+    end
 
   end
 
@@ -34,7 +37,7 @@ before_filter :redirect_if_logged_in
     if current_user.admin?
         redirect_to :controller => "users", :action => "index"
     else
-      redirect_to user
+      redirect_to current_user
     end
   end
 
