@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @course.name %>
+</p>
+
+<p>
+  <strong>Instructor:</strong>
+  <%= @course.instructor_id %>
+</p>
+
+<p>
+  <strong>Limit:</strong>
+  <%= @course.limit %>
+</p>
+
+<p>
+  <strong>Fee:</strong>
+  <%= @course.fee %>
+</p>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>
+
+<div >
+  <%= week_calendar number_of_weeks: 2 do |date| %>
+    <%= date %>
+  <% end %>
+</div>
