@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   
   resources :users
   resources :guides
+  resources :calculator
   resources :images, only: [:create, :destroy]
 
 end
