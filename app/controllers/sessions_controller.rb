@@ -23,6 +23,7 @@ before_filter :redirect_if_logged_in, :except=>[:destroy]
     redirect_to root_url
   end
 
+private
 
   def redirect_if_logged_in
     if logged_in?
