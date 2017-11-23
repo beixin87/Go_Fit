@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
   def index
       @users = User.all
-      # @users = User.paginate(page: params[:page])
   end
 
 
@@ -78,5 +77,4 @@ class UsersController < ApplicationController
       def admin_user
         redirect_to(root_url) unless current_user.admin?
       end
-
 end

@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
+  #attr_accessor :name, :email (causes nil attributes)
   attr_accessor :remember_token
+
+  has_many :guides
 
   before_save { self.email = email.downcase }
   validates :name, presence: true, length: { maximum: 50}  #Used to check empty
@@ -8,7 +11,6 @@ class User < ActiveRecord::Base
   validates :email, presence:true, length: { maximum:255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-
   def initialize(attributes = {}) #Call when we execute User.new
     super
     @name  = attributes[:name]
@@ -17,6 +19,7 @@ class User < ActiveRecord::Base
     @weight = attributes[:weight]
     @date_of_birth = attributes[:date_of_birth]
     @description = attributes[:description]
+    @type = attributes[:type]
   end
 
   def formatted_email

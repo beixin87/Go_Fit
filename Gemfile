@@ -23,6 +23,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
+
+# For datepicker
 gem 'jquery-ui-rails', '5.0.5'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -37,8 +39,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
-#gem 'bcrypt', '~> 3.1.7'
-
+# gem 'bcrypt', '~> 3.1.7'
 gem 'puma'
 
 # Use Capistrano for deployment
@@ -49,3 +50,10 @@ gem 'byebug', group: [:development, :test]
 
 # For custom stylesheet
 gem 'bootstrap-sass', '3.3.6'
+
+# For wysiwyg
+gem 'simple_form'
+gem 'font-awesome-rails'
+gem 'summernote-rails'
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"

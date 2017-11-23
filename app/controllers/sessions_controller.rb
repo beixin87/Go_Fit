@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-before_filter :redirect_if_logged_in
+before_filter :redirect_if_logged_in, :except=>[:destroy]
 
   def new
   end
@@ -25,9 +25,9 @@ before_filter :redirect_if_logged_in
 
 
   def redirect_if_logged_in
-    user = current_user if logged_in?
-    redirect_by_user_type
-
+    if logged_in?
+      redirect_by_user_type
+    end
   end
 
   def redirect_by_user_type

@@ -14,12 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
-//= require bootstrap
+//= require summernote
 //= require_tree .
 //= require jquery-ui
 
 $(function() {
-  $("#user_date_of_birth").datepicker({ 
+  $("#user_date_of_birth").datepicker({
   		dateFormat: 'yy-mm-dd',
   		changeMonth: true,
   		changeYear: true,
