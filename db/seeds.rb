@@ -9,6 +9,10 @@ User.create!(name:  "Admin",
              email: "admin@example.com",
              password:              "admin1",
              password_confirmation: "admin1",
+             height: "99",
+             weight: "99",
+             age: "18",
+             description: "I am Admin.",
              admin: true)
 
 99.times do |n|
@@ -18,5 +22,9 @@ User.create!(name:  "Admin",
   User.create!(name:  name,
                email: email,
                password:              password,
-               password_confirmation: password)
+               password_confirmation: password,
+               height: "99",
+               weight: "99",
+               description: "I am a fake user."
+              )
 end
