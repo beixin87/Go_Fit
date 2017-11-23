@@ -1,4 +1,4 @@
-<html>
+<% provide(:title, "Calories Calculator") %>
 <h1>Calories Calculator</h1>
 
 <table>
@@ -31,6 +31,10 @@
       </tr>
       <tr>
         <th><input type="text" id="age" ></th>
+
+
+        <th><%= @user.age %></th>
+
       </tr>
 
       <tr>
@@ -38,6 +42,10 @@
       </tr>
       <tr>
         <th><input type="text" id="height" ></th>
+
+
+        <th><%= @user.height %></th>
+
       </tr>
 
       <tr>
@@ -45,6 +53,9 @@
       </tr>
       <tr>
         <th><input type="text" id="weight" ></th>
+
+
+        <th><%= @user.weight %></th>
       </tr>
 
       <tr>
@@ -74,4 +85,3 @@
 
   </tbody>
 </table>
-</html>

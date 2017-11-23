@@ -16,3 +16,15 @@
 //= require bootstrap-sprockets
 //= require summernote
 //= require_tree .
+//= require jquery-ui
+
+$(function() {
+  $("#user_date_of_birth").datepicker({
+  		dateFormat: 'yy-mm-dd',
+  		changeMonth: true,
+  		changeYear: true,
+  		yearRange: '1960:',
+  		maxDate: '+0',
+  		minDate: '-100Y'
+  	});
+});
