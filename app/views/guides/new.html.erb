@@ -5,16 +5,15 @@
 <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
 <h1>Guide</h1>
 
-<div class="container">  
-  <%= simple_form_for(@guide) do |f| %>     
+<div class="container">
+  <%= simple_form_for(@guide) do |f| %>
     <div class="form-inputs">
       <%= f.input :title %></br>
       <%= f.input :content, as: :summernote %></br>
-    </div> 
-      
+    </div>
+
     <div class-"form-actions">
       <%= f.button :submit,'Create my guide', class: "btn btn-primary" %>
-    </div>  
+    </div>
   <% end %>
 </div>
-  
