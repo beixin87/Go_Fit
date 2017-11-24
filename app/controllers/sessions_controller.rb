@@ -23,10 +23,12 @@ before_filter :redirect_if_logged_in, :except=>[:destroy]
     redirect_to root_url
   end
 
+private
 
   def redirect_if_logged_in
     if logged_in?
       redirect_by_user_type
+    else
     end
   end
 
@@ -34,7 +36,7 @@ before_filter :redirect_if_logged_in, :except=>[:destroy]
     if current_user.admin?
         redirect_to :controller => "users", :action => "index"
     else
-      redirect_to user
+      redirect_to current_user
     end
   end
 
