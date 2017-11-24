@@ -1,4 +1,4 @@
-<html>
+<% provide(:title, "Calories Calculator") %>
 <h1>Calories Calculator</h1>
 
 <table>
@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Exercise Level</th>
-
       <th rowspan="1"></th>
     </tr>
   </thead>
@@ -21,9 +20,23 @@
             <option  value="2">1-3 times per Week</option>
             <option  value="3">3-5 times per Week</option>
             <option  value="4">6-7 times per Week</option>
-            <option  value="5">athlete</option>
+            <option  value="5">Athlete</option>
           </select>
         </td>
+      </tr>
+
+      <tr>
+        <th>Gender</th>
+      </tr>
+
+      <tr>
+        <td>
+          <select id = "gender">
+            <option  value="1">Male</option>
+            <option  value="0">Female</option>
+          </select>
+        </td>
+
       </tr>
 
       <tr>
@@ -31,6 +44,9 @@
       </tr>
       <tr>
         <th><input type="text" id="age" ></th>
+
+
+
       </tr>
 
       <tr>
@@ -38,6 +54,10 @@
       </tr>
       <tr>
         <th><input type="text" id="height" ></th>
+
+
+        <th><%= @user.height %></th>
+
       </tr>
 
       <tr>
@@ -45,6 +65,9 @@
       </tr>
       <tr>
         <th><input type="text" id="weight" ></th>
+
+
+        <th><%= @user.weight %></th>
       </tr>
 
       <tr>
@@ -61,12 +84,12 @@
         <th><span id="fat_loss_result"></span></th>
       </tr>
 
-      <tr>
+      <!-- <tr>
         <th><br>Extrem Fat Loss(Calories/day)</br></th>
       </tr>
       <tr>
         <th><span id="ex_fat_loss_result"></span></th>
-      </tr>
+      </tr> -->
 
       <tr>
         <th><br><button type="button" onclick="cal()">Start</button></span></br></th>
@@ -74,4 +97,3 @@
 
   </tbody>
 </table>
-</html>
