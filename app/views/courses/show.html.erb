@@ -20,6 +20,17 @@
   <%= @course.fee %>
 </p>
 
+<p>
+  <strong>start_time:</strong>
+  <%= @course.start_time %>
+</p>
+
+<p>
+  <strong>end_time:</strong>
+  <%= @course.end_time %>
+</p>
+
+
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
 

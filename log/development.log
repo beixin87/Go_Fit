@@ -1,0 +1,1819 @@
+
+
+Started GET "/signup" for ::1 at 2017-11-23 14:09:28 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.8) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.8) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+  puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+  puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+  puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+  puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.6ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMeetings (20171120062152)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (17.4ms)[0m  [1mCREATE TABLE "meetings" ("id" serial primary key, "name" character varying, "start_time" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171120062152"]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCourses (20171121070724)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (3.8ms)[0m  [1mCREATE TABLE "courses" ("id" serial primary key, "name" character varying, "instructor_id" integer, "limit" integer, "fee" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171121070724"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'courses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'meetings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'widgets'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/signup" for ::1 at 2017-11-23 14:11:06 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (2.4ms)
+  Rendered users/new.html.erb within layouts/application (389.4ms)
+  Rendered layouts/_header.html.erb (5.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 4552ms (Views: 4529.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/courses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-11-23 14:11:11 -0800
+
+
+Started GET "/assets/meetings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-11-23 14:11:11 -0800
+
+
+Started GET "/assets/meetings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-11-23 14:11:11 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/assets/courses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-11-23 14:11:11 -0800
+
+
+Started GET "/signup" for ::1 at 2017-11-23 14:11:30 -0800
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (3.9ms)
+  Rendered users/new.html.erb within layouts/application (413.8ms)
+  Rendered layouts/_header.html.erb (6.4ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 612ms (Views: 591.2ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2017-11-23 14:11:31 -0800
+
+
+Started GET "/signup" for ::1 at 2017-11-23 14:11:31 -0800
+Processing by SessionsController#new as HTML
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 111ms (Views: 110.1ms | ActiveRecord: 0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 126ms (Views: 125.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses" for ::1 at 2017-11-23 14:11:33 -0800
+Processing by CoursesController#index as HTML
+  [1m[35mCourse Load (0.9ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered courses/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 110ms (Views: 105.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/courses/new" for ::1 at 2017-11-23 14:11:47 -0800
+Processing by CoursesController#new as HTML
+  Rendered courses/_form.html.erb (5.1ms)
+  Rendered courses/new.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 99ms (Views: 94.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/courses" for ::1 at 2017-11-23 14:12:10 -0800
+Processing by CoursesController#index as HTML
+  [1m[35mCourse Load (0.5ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered courses/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 83ms (Views: 79.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/courses/new" for ::1 at 2017-11-23 14:12:39 -0800
+Processing by CoursesController#new as HTML
+  Rendered courses/_form.html.erb (8.2ms)
+  Rendered courses/new.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 85ms (Views: 81.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/courses" for ::1 at 2017-11-23 14:13:08 -0800
+Processing by CoursesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5AEVyhQCAxwMHbG3F4gAb/0Se10eE9CREZkZScys8mMnZXMz/HIZ3ZnRvenKKEubSjevBbVMjl9U8MElqA0dMA==", "course"=>{"name"=>"yoga", "instructor_id"=>"1", "limit"=>"5", "fee"=>"100"}, "commit"=>"Create Course"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "courses" ("name", "instructor_id", "limit", "fee", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "yoga"], ["instructor_id", 1], ["limit", 5], ["fee", 100], ["created_at", "2017-11-23 22:13:08.796064"], ["updated_at", "2017-11-23 22:13:08.796064"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 6ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-11-23 14:13:08 -0800
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.7ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/simple_calendar-2.2.7/app/views/simple_calendar/_week_calendar.html.erb (11.5ms)
+  Rendered courses/show.html.erb within layouts/application (16.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 121ms (Views: 114.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses/1?start_date=2017-12-04" for ::1 at 2017-11-23 14:13:24 -0800
+Processing by CoursesController#show as HTML
+  Parameters: {"start_date"=>"2017-12-04", "id"=>"1"}
+  [1m[36mCourse Load (0.7ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/simple_calendar-2.2.7/app/views/simple_calendar/_week_calendar.html.erb (7.4ms)
+  Rendered courses/show.html.erb within layouts/application (10.5ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 92ms (Views: 87.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses/1?start_date=2017-12-03" for ::1 at 2017-11-23 14:13:26 -0800
+Processing by CoursesController#show as HTML
+  Parameters: {"start_date"=>"2017-12-03", "id"=>"1"}
+  [1m[35mCourse Load (2.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/simple_calendar-2.2.7/app/views/simple_calendar/_week_calendar.html.erb (7.5ms)
+  Rendered courses/show.html.erb within layouts/application (9.9ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 103ms (Views: 98.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/courses/1?start_date=2017-11-26" for ::1 at 2017-11-23 14:13:27 -0800
+Processing by CoursesController#show as HTML
+  Parameters: {"start_date"=>"2017-11-26", "id"=>"1"}
+  [1m[36mCourse Load (0.8ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/simple_calendar-2.2.7/app/views/simple_calendar/_week_calendar.html.erb (9.1ms)
+  Rendered courses/show.html.erb within layouts/application (12.5ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 93ms (Views: 88.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses/1?start_date=2017-12-04" for ::1 at 2017-11-23 14:13:28 -0800
+Processing by CoursesController#show as HTML
+  Parameters: {"start_date"=>"2017-12-04", "id"=>"1"}
+  [1m[35mCourse Load (1.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/simple_calendar-2.2.7/app/views/simple_calendar/_week_calendar.html.erb (11.5ms)
+  Rendered courses/show.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 103ms (Views: 99.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/courses/1?start_date=2017-12-18" for ::1 at 2017-11-23 14:13:29 -0800
+Processing by CoursesController#show as HTML
+  Parameters: {"start_date"=>"2017-12-18", "id"=>"1"}
+  [1m[36mCourse Load (1.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/simple_calendar-2.2.7/app/views/simple_calendar/_week_calendar.html.erb (7.0ms)
+  Rendered courses/show.html.erb within layouts/application (10.3ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 102ms (Views: 99.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/courses/1?start_date=2018-01-01" for ::1 at 2017-11-23 14:13:29 -0800
+Processing by CoursesController#show as HTML
+  Parameters: {"start_date"=>"2018-01-01", "id"=>"1"}
+  [1m[35mCourse Load (0.8ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/simple_calendar-2.2.7/app/views/simple_calendar/_week_calendar.html.erb (6.4ms)
+  Rendered courses/show.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 92ms (Views: 89.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses/1?start_date=2017-12-31" for ::1 at 2017-11-23 14:13:30 -0800
+Processing by CoursesController#show as HTML
+  Parameters: {"start_date"=>"2017-12-31", "id"=>"1"}
+  [1m[36mCourse Load (0.9ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/simple_calendar-2.2.7/app/views/simple_calendar/_week_calendar.html.erb (8.3ms)
+  Rendered courses/show.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 96ms (Views: 91.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/courses" for ::1 at 2017-11-23 14:13:32 -0800
+Processing by CoursesController#index as HTML
+  [1m[35mCourse Load (0.4ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered courses/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 62ms (Views: 61.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/courses/1/edit" for ::1 at 2017-11-23 14:13:37 -0800
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.6ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered courses/_form.html.erb (1.6ms)
+  Rendered courses/edit.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 85ms (Views: 79.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/courses" for ::1 at 2017-11-23 14:13:39 -0800
+Processing by CoursesController#index as HTML
+  [1m[35mCourse Load (0.5ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered courses/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 100ms (Views: 98.0ms | ActiveRecord: 0.5ms)
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateWidgets (20140707111715)
+  [1m[35m (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/xinbei/Go_Fit/db/migrate/20140707111715_create_widgets.rb:8)
+  [1m[36m (4.5ms)[0m  [1mCREATE TABLE "widgets" ("id" serial primary key, "name" character varying, "description" text, "stock" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140707111715"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20171103225707)
+  [1m[35m (0.2ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/xinbei/Go_Fit/db/migrate/20171103225707_create_users.rb:7)
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171103225707"]]
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+Migrating to AddIndexToUsersEmail (20171106091859)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171106091859"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddPasswordDigestToUsers (20171106093035)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "password_digest" character varying[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171106093035"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddTypeToUsers (20171107044425)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "type" character varying[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171107044425"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddAdminToUsers (20171107061548)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (6.3ms)[0m  [1mALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171107061548"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateMeetings (20171120062152)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE "meetings" ("id" serial primary key, "name" character varying, "start_time" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171120062152"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCourses (20171121070724)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "courses" ("id" serial primary key, "name" character varying, "instructor_id" integer, "limit" integer, "fee" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171121070724"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'courses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'meetings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'widgets'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'courses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (5.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'meetings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (5.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (5.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'widgets'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/courses" for ::1 at 2017-11-23 15:57:31 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CoursesController#index as HTML
+  [1m[35mCourse Load (0.7ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered courses/index.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.html.erb (15.8ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 510ms (Views: 496.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2017-11-23 15:57:44 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (402.6ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 473ms (Views: 472.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-11-23 15:57:46 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 71ms (Views: 70.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-11-23 15:57:54 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 74ms (Views: 73.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-11-23 15:58:14 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 146ms (Views: 146.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2017-11-23 15:58:14 -0800
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (4.6ms)
+  Rendered users/new.html.erb within layouts/application (11.2ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 184ms (Views: 165.5ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/courses" for ::1 at 2017-11-23 15:58:14 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CoursesController#index as HTML
+  [1m[35mCourse Load (0.7ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered courses/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_header.html.erb (6.2ms)
+  Rendered layouts/_footer.html.erb (4.2ms)
+Completed 200 OK in 406ms (Views: 391.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/courses" for ::1 at 2017-11-23 15:58:15 -0800
+Processing by CoursesController#index as HTML
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 78ms (Views: 77.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/courses" for ::1 at 2017-11-23 15:58:24 -0800
+Processing by CoursesController#index as HTML
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered courses/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 70ms (Views: 68.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/courses" for ::1 at 2017-11-23 16:01:48 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (3.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CoursesController#index as HTML
+  [1m[35mCourse Load (0.7ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered courses/index.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_header.html.erb (6.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 672ms (Views: 657.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2017-11-23 16:01:49 -0800
+Processing by SessionsController#new as HTML
+
+
+Started GET "/signup" for ::1 at 2017-11-23 16:01:49 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (5.7ms)
+  Rendered sessions/new.html.erb within layouts/application (603.8ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 684ms (Views: 683.7ms | ActiveRecord: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (659.0ms)
+  Rendered layouts/_header.html.erb (8.7ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 1290ms (Views: 1256.5ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/meeting" for ::1 at 2017-11-23 16:01:52 -0800
+
+ActionController::RoutingError (No route matches [GET] "/meeting"):
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+  puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+  puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+  puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+  puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.4ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.4ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (102.9ms)
+
+
+Started GET "/meetings" for ::1 at 2017-11-23 16:01:55 -0800
+Processing by MeetingsController#index as HTML
+  [1m[35mMeeting Load (1.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  Rendered meetings/index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 115ms (Views: 110.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/meetings/new" for ::1 at 2017-11-23 16:01:58 -0800
+Processing by MeetingsController#new as HTML
+  Rendered meetings/_form.html.erb (6.3ms)
+  Rendered meetings/new.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 91ms (Views: 83.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/meetings" for ::1 at 2017-11-23 16:05:36 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MeetingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kh27AOoRr33l+VnqVZY7sn+zEs3QNSWPdvBhLw2hWttRed35AmG1vHA1VbSINnBGyJbGlXtqe0EzmblDaQC1iA==", "meeting"=>{"name"=>"aaa", "start_time(1i)"=>"2017", "start_time(2i)"=>"11", "start_time(3i)"=>"24", "start_time(4i)"=>"00", "start_time(5i)"=>"01"}, "commit"=>"Create Meeting"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "meetings" ("name", "start_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "aaa"], ["start_time", "2017-11-24 00:01:00.000000"], ["created_at", "2017-11-24 00:05:36.668396"], ["updated_at", "2017-11-24 00:05:36.668396"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/meetings/1
+Completed 302 Found in 28ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/meetings/1" for ::1 at 2017-11-23 16:05:36 -0800
+Processing by MeetingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMeeting Load (0.6ms)[0m  [1mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered meetings/show.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_header.html.erb (8.5ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 692ms (Views: 683.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/meetings" for ::1 at 2017-11-23 16:05:39 -0800
+Processing by MeetingsController#index as HTML
+  [1m[35mMeeting Load (1.3ms)[0m  SELECT "meetings".* FROM "meetings"
+  Rendered meetings/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 162ms (Views: 159.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2017-11-23 16:05:55 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (372.5ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 436ms (Views: 435.5ms | ActiveRecord: 0.0ms)
+
+
+
+
+Started GET "/signup" for ::1 at 2017-11-23 16:06:35 -0800
+Started GET "/" for ::1 at 2017-11-23 16:06:35 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (3.3ms)
+  Rendered users/new.html.erb within layouts/application (673.3ms)
+  Rendered sessions/new.html.erb within layouts/application (715.2ms)
+  Rendered layouts/_header.html.erb (15.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 1383ms (Views: 1348.2ms | ActiveRecord: 6.2ms)
+  Rendered layouts/_header.html.erb (10.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 1427ms (Views: 1410.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/meetings" for ::1 at 2017-11-23 16:06:36 -0800
+Processing by MeetingsController#index as HTML
+  [1m[35mMeeting Load (2.8ms)[0m  SELECT "meetings".* FROM "meetings"
+  Rendered meetings/index.html.erb within layouts/application (16.4ms)
+
+
+Started GET "/meetings" for ::1 at 2017-11-23 16:06:36 -0800
+Processing by MeetingsController#index as HTML
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+  [1m[35mMeeting Load (1.0ms)[0m  SELECT "meetings".* FROM "meetings"
+Completed 200 OK in 255ms (Views: 243.6ms | ActiveRecord: 8.0ms)
+  Rendered meetings/index.html.erb within layouts/application (14.0ms)
+
+
+Started GET "/meetings/new" for ::1 at 2017-11-23 16:06:36 -0800
+Processing by MeetingsController#new as HTML
+  Rendered meetings/_form.html.erb (14.1ms)
+  Rendered meetings/new.html.erb within layouts/application (16.4ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 293ms (Views: 286.2ms | ActiveRecord: 3.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 281ms (Views: 280.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/meetings" for ::1 at 2017-11-23 16:13:09 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MeetingsController#index as HTML
+  [1m[35mMeeting Load (2.5ms)[0m  SELECT "meetings".* FROM "meetings"
+  Rendered meetings/index.html.erb within layouts/application (18.3ms)
+  Rendered layouts/_header.html.erb (11.8ms)
+  Rendered layouts/_footer.html.erb (1.8ms)
+Completed 200 OK in 804ms (Views: 781.5ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/courses" for ::1 at 2017-11-23 16:13:10 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CoursesController#index as HTML
+  [1m[35mCourse Load (0.8ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered courses/index.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_header.html.erb (7.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 669ms (Views: 647.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/courses" for ::1 at 2017-11-23 16:13:11 -0800
+Processing by CoursesController#index as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 102ms (Views: 100.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/courses/new" for ::1 at 2017-11-23 16:13:13 -0800
+Processing by CoursesController#new as HTML
+  Rendered courses/_form.html.erb (530.0ms)
+  Rendered courses/new.html.erb within layouts/application (531.3ms)
+Completed 500 Internal Server Error in 546ms (ActiveRecord: 4.9ms)
+
+ActionView::Template::Error (undefined method `start_time' for #<Course:0x007ff4968f9f98>):
+    29:   </div>
+    30:   <div class="field">
+    31:     <%= f.label :start_time %><br>
+    32:     <%= f.datetime_select :start_time %>
+    33:   </div>
+    34:   <div class="field">
+    35:     <%= f.label :end_time %><br>
+  app/views/courses/_form.html.erb:32:in `block in _app_views_courses__form_html_erb__877670860380321922_70344211664360'
+  app/views/courses/_form.html.erb:1:in `_app_views_courses__form_html_erb__877670860380321922_70344211664360'
+  app/views/courses/new.html.erb:3:in `_app_views_courses_new_html_erb___2949136884978665972_70344236928760'
+
+
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'courses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (5.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'meetings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'widgets'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/courses/new" for ::1 at 2017-11-23 16:14:11 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CoursesController#new as HTML
+  Rendered courses/_form.html.erb (462.9ms)
+  Rendered courses/new.html.erb within layouts/application (470.7ms)
+Completed 500 Internal Server Error in 504ms (ActiveRecord: 3.2ms)
+
+ActionView::Template::Error (undefined method `start_time' for #<Course:0x007feca4fbf7c8>):
+    29:   </div>
+    30:   <div class="field">
+    31:     <%= f.label :start_time %><br>
+    32:     <%= f.datetime_select :start_time %>
+    33:   </div>
+    34:   <div class="field">
+    35:     <%= f.label :end_time %><br>
+  app/views/courses/_form.html.erb:32:in `block in _app_views_courses__form_html_erb___2538325110121585469_70327199648520'
+  app/views/courses/_form.html.erb:1:in `_app_views_courses__form_html_erb___2538325110121585469_70327199648520'
+  app/views/courses/new.html.erb:3:in `_app_views_courses_new_html_erb__839776184730536775_70327179500720'
+
+
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.3ms)
+
+
+Started GET "/courses" for ::1 at 2017-11-23 16:14:17 -0800
+Processing by CoursesController#index as HTML
+  [1m[35mCourse Load (0.4ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered courses/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_header.html.erb (8.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 783ms (Views: 782.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/courses/new" for ::1 at 2017-11-23 16:14:20 -0800
+Processing by CoursesController#new as HTML
+  Rendered courses/_form.html.erb (9.7ms)
+  Rendered courses/new.html.erb within layouts/application (11.9ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `start_time' for #<Course:0x007feca5608738>):
+    29:   </div>
+    30:   <div class="field">
+    31:     <%= f.label :start_time %><br>
+    32:     <%= f.datetime_select :start_time %>
+    33:   </div>
+    34:   <div class="field">
+    35:     <%= f.label :end_time %><br>
+  app/views/courses/_form.html.erb:32:in `block in _app_views_courses__form_html_erb___2538325110121585469_70327199648520'
+  app/views/courses/_form.html.erb:1:in `_app_views_courses__form_html_erb___2538325110121585469_70327199648520'
+  app/views/courses/new.html.erb:3:in `_app_views_courses_new_html_erb__839776184730536775_70327179500720'
+
+
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.7ms)
+
+
+Started GET "/courses/new" for ::1 at 2017-11-23 16:16:06 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CoursesController#new as HTML
+  Rendered courses/_form.html.erb (478.9ms)
+  Rendered courses/new.html.erb within layouts/application (484.6ms)
+Completed 500 Internal Server Error in 522ms (ActiveRecord: 4.9ms)
+
+ActionView::Template::Error (undefined method `start_time' for #<Course:0x007feca613c7a8>):
+    29:   </div>
+    30:   <div class="field">
+    31:     <%= f.label :start_time %><br>
+    32:     <%= f.datetime_select :start_time %>
+    33:   </div>
+    34:   <div class="field">
+    35:     <%= f.label :end_time %><br>
+  app/views/courses/_form.html.erb:32:in `block in _app_views_courses__form_html_erb___2538325110121585469_70327177899920'
+  app/views/courses/_form.html.erb:1:in `_app_views_courses__form_html_erb___2538325110121585469_70327177899920'
+  app/views/courses/new.html.erb:3:in `_app_views_courses_new_html_erb__839776184730536775_70327178054560'
+
+
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (59.7ms)
+
+
+Started GET "/courses/new" for ::1 at 2017-11-23 16:18:25 -0800
+Processing by CoursesController#new as HTML
+  Rendered courses/_form.html.erb (12.4ms)
+  Rendered courses/new.html.erb within layouts/application (14.3ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 5.0ms)
+
+ActionView::Template::Error (undefined method `start_time' for #<Course:0x007fecaa1f3b48>):
+    29:   </div>
+    30:   <div class="field">
+    31:     <%= f.label :start_time %><br>
+    32:     <%= f.datetime_select :start_time %>
+    33:   </div>
+    34:   <div class="field">
+    35:     <%= f.label :end_time %><br>
+  app/views/courses/_form.html.erb:32:in `block in _app_views_courses__form_html_erb___2538325110121585469_70327199648520'
+  app/views/courses/_form.html.erb:1:in `_app_views_courses__form_html_erb___2538325110121585469_70327199648520'
+  app/views/courses/new.html.erb:3:in `_app_views_courses_new_html_erb__839776184730536775_70327179500720'
+
+
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.7ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (82.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'courses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'meetings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'widgets'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/courses/new" for ::1 at 2017-11-23 16:19:52 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CoursesController#new as HTML
+  Rendered courses/_form.html.erb (428.0ms)
+  Rendered courses/new.html.erb within layouts/application (435.6ms)
+Completed 500 Internal Server Error in 482ms (ActiveRecord: 3.8ms)
+
+ActionView::Template::Error (undefined method `start_time' for #<Course:0x007faef3e0fca0>):
+    29:   </div>
+    30:   <div class="field">
+    31:     <%= f.label :start_time %><br>
+    32:     <%= f.datetime_select :start_time %>
+    33:   </div>
+    34:   <div class="field">
+    35:     <%= f.label :end_time %><br>
+  app/views/courses/_form.html.erb:32:in `block in _app_views_courses__form_html_erb__2162976212668595100_70194686895680'
+  app/views/courses/_form.html.erb:1:in `_app_views_courses__form_html_erb__2162976212668595100_70194686895680'
+  app/views/courses/new.html.erb:3:in `_app_views_courses_new_html_erb__854697404339900763_70194687343460'
+
+
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (76.3ms)
+  [1m[36m (6.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateWidgets (20140707111715)
+  [1m[35m (0.2ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/xinbei/Go_Fit/db/migrate/20140707111715_create_widgets.rb:8)
+  [1m[36m (5.6ms)[0m  [1mCREATE TABLE "widgets" ("id" serial primary key, "name" character varying, "description" text, "stock" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140707111715"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20171103225707)
+  [1m[35m (0.4ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/xinbei/Go_Fit/db/migrate/20171103225707_create_users.rb:7)
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171103225707"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddIndexToUsersEmail (20171106091859)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171106091859"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddPasswordDigestToUsers (20171106093035)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "password_digest" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171106093035"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddTypeToUsers (20171107044425)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "users" ADD "type" character varying[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171107044425"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Migrating to AddAdminToUsers (20171107061548)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (5.3ms)[0m  [1mALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171107061548"]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateMeetings (20171120062152)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (4.9ms)[0m  [1mCREATE TABLE "meetings" ("id" serial primary key, "name" character varying, "start_time" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171120062152"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCourses (20171121070724)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (5.9ms)[0m  [1mCREATE TABLE "courses" ("id" serial primary key, "name" character varying, "instructor_id" integer, "limit" integer, "fee" integer, "start_time" timestamp, "end_time" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171121070724"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'courses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'meetings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (5.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'widgets'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/courses/new" for ::1 at 2017-11-23 16:28:56 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CoursesController#new as HTML
+  Rendered courses/_form.html.erb (440.7ms)
+  Rendered courses/new.html.erb within layouts/application (448.0ms)
+Completed 500 Internal Server Error in 486ms (ActiveRecord: 4.2ms)
+
+ActionView::Template::Error (undefined method `starttime' for #<Course:0x007fdd6ea5f3e0>
+Did you mean?  start_time
+               start_time?
+               start_time=):
+    29:   </div>
+    30:   <div class="field">
+    31:     <%= f.label :starttime %><br>
+    32:     <%= f.datetime_select :starttime %>
+    33:   </div>
+    34:   <div class="field">
+    35:     <%= f.label :endtime %><br>
+  app/views/courses/_form.html.erb:32:in `block in _app_views_courses__form_html_erb___4049026228065964480_70294480403620'
+  app/views/courses/_form.html.erb:1:in `_app_views_courses__form_html_erb___4049026228065964480_70294480403620'
+  app/views/courses/new.html.erb:3:in `_app_views_courses_new_html_erb___1508931593816456913_70294486340040'
+
+
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (62.0ms)
+
+
+Started GET "/courses/new" for ::1 at 2017-11-23 16:29:20 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CoursesController#new as HTML
+  Rendered courses/_form.html.erb (483.1ms)
+  Rendered courses/new.html.erb within layouts/application (490.0ms)
+  Rendered layouts/_header.html.erb (4.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 968ms (Views: 948.4ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/courses" for ::1 at 2017-11-23 16:35:23 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CoursesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JnZCjlzQ3RaeaJjLINmAgS+xANqPXkmf7YM2Ox+K1pPlEiR3tKDH1wuklJX9ect1mJTUgiQBF1Go6u5Xeys5wA==", "course"=>{"name"=>"aa", "instructor_id"=>"1", "limit"=>"2", "fee"=>"2", "start_time(1i)"=>"2017", "start_time(2i)"=>"11", "start_time(3i)"=>"24", "start_time(4i)"=>"00", "start_time(5i)"=>"29", "end_time(1i)"=>"2017", "end_time(2i)"=>"11", "end_time(3i)"=>"24", "end_time(4i)"=>"00", "end_time(5i)"=>"30"}, "commit"=>"Create Course"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO "courses" ("name", "instructor_id", "limit", "fee", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "aa"], ["instructor_id", 1], ["limit", 2], ["fee", 2], ["start_time", "2017-11-24 00:29:00.000000"], ["end_time", "2017-11-24 00:30:00.000000"], ["created_at", "2017-11-24 00:35:24.040918"], ["updated_at", "2017-11-24 00:35:24.040918"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 33ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-11-23 16:35:24 -0800
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/simple_calendar-2.2.7/app/views/simple_calendar/_week_calendar.html.erb (419.3ms)
+  Rendered courses/show.html.erb within layouts/application (428.6ms)
+  Rendered layouts/_header.html.erb (7.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 830ms (Views: 822.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/courses" for ::1 at 2017-11-23 16:35:29 -0800
+Processing by CoursesController#index as HTML
+  [1m[35mCourse Load (0.4ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered courses/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 151ms (Views: 149.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-11-23 16:35:33 -0800
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.7ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/simple_calendar-2.2.7/app/views/simple_calendar/_week_calendar.html.erb (8.0ms)
+  Rendered courses/show.html.erb within layouts/application (11.8ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 136ms (Views: 133.4ms | ActiveRecord: 0.7ms)
+  [1m[36mUser Load (4.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+
+
+Started GET "/courses/1" for ::1 at 2017-11-23 21:10:34 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.8) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.8) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+  puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+  puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+  puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+  puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (75.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUserCourse (20171124041001)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (18.4ms)[0m  [1mCREATE TABLE "user_courses" ("id" serial primary key, "user_id" integer, "course_id" integer) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171124041001"]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'courses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'meetings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_courses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'widgets'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/courses/1" for ::1 at 2017-11-23 21:11:04 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (/Users/xinbei/Go_Fit/app/controllers/courses_controller.rb:75: syntax error, unexpected ',', expecting =>
+.permit(course_ids: [], :name, :instructor_id, :limit, :fee,
+                              ^):
+  app/controllers/courses_controller.rb:75: syntax error, unexpected ',', expecting =>
+
+
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (16.1ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.1ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-11-23 21:11:53 -0800
+
+SyntaxError (/Users/xinbei/Go_Fit/app/controllers/courses_controller.rb:75: syntax error, unexpected ',', expecting =>
+.permit(course_ids: [], :name, :instructor_id, :limit, :fee,
+                              ^):
+  app/controllers/courses_controller.rb:75: syntax error, unexpected ',', expecting =>
+
+
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.6ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-11-23 21:12:14 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (/Users/xinbei/Go_Fit/app/controllers/courses_controller.rb:75: syntax error, unexpected ',', expecting =>
+.permit(course_ids: [], :name, :instructor_id, :limit, :fee,
+                              ^):
+  app/controllers/courses_controller.rb:75: syntax error, unexpected ',', expecting =>
+
+
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.3ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.5ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-11-23 21:12:17 -0800
+
+SyntaxError (/Users/xinbei/Go_Fit/app/controllers/courses_controller.rb:75: syntax error, unexpected ',', expecting =>
+.permit(course_ids: [], :name, :instructor_id, :limit, :fee,
+                              ^):
+  app/controllers/courses_controller.rb:75: syntax error, unexpected ',', expecting =>
+
+
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.6ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-11-23 21:13:40 -0800
+
+SyntaxError (/Users/xinbei/Go_Fit/app/controllers/courses_controller.rb:75: syntax error, unexpected ',', expecting =>
+.permit(course_ids: [], :name, :instructor_id, :limit, :fee,
+                              ^):
+  app/controllers/courses_controller.rb:75: syntax error, unexpected ',', expecting =>
+
+
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.9ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-11-23 21:13:54 -0800
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (1.8ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/simple_calendar-2.2.7/app/views/simple_calendar/_week_calendar.html.erb (424.5ms)
+  Rendered courses/show.html.erb within layouts/application (433.8ms)
+  Rendered layouts/_header.html.erb (6.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 840ms (Views: 811.3ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/courses" for ::1 at 2017-11-23 21:14:02 -0800
+Processing by CoursesController#index as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `users' for nil:NilClass):
+    24:         <td><%= course.fee %></td>
+    25:         <td><%= course.start_time %></td>
+    26:         <td><%= course.end_time %></td>
+    27:         <td><% if @course.users.any?  %>
+    28:           <p> Students: <%= render @course.users %> </p>
+    29:         <% end %></td>
+    30:         <td><small><%= plurlize(course.user.count, "students")%></small></td>
+  app/views/courses/index.html.erb:27:in `block in _app_views_courses_index_html_erb__1199951551997925063_70297279826160'
+  app/views/courses/index.html.erb:19:in `_app_views_courses_index_html_erb__1199951551997925063_70297279826160'
+
+
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.6ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/xinbei/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (76.5ms)
+  [1m[36mUserCourse Load (2.3ms)[0m  [1mSELECT "user_courses".* FROM "user_courses"[0m
+  [1m[35mUser Load (3.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (2.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('admin@example.com') LIMIT 1[0m
+  [1m[35mSQL (7.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Admin"], ["email", "admin@example.com"], ["password_digest", "$2a$10$umOQppPkLQPEQmBbl19VjO4ZgXSvb3DjKGBOmA1enBYdWxXRaWa62"], ["admin", "t"], ["created_at", "2017-11-24 05:20:24.562852"], ["updated_at", "2017-11-24 05:20:24.562852"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (1.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-1@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Karlie Bayer"], ["email", "example-1@railstutorial.org"], ["password_digest", "$2a$10$w5NooZY3zJE9HomUhzx5rur8DhFdjQNAH3kQwu.ps3TFlXoDL01cK"], ["created_at", "2017-11-24 05:20:25.042672"], ["updated_at", "2017-11-24 05:20:25.042672"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-2@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Dr. Julian Bahringer"], ["email", "example-2@railstutorial.org"], ["password_digest", "$2a$10$mBAUp9zllJWioxu8ORfiOez14xHrRaCvcvNO3BX2/p9qLoNvF1STe"], ["created_at", "2017-11-24 05:20:25.111053"], ["updated_at", "2017-11-24 05:20:25.111053"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-3@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Antonette Rohan V"], ["email", "example-3@railstutorial.org"], ["password_digest", "$2a$10$Ch16rlH6LRdNshTTeppMhuR5ipTUWWOe9pD6ZxTfzRNX7gqhOiL4S"], ["created_at", "2017-11-24 05:20:25.179250"], ["updated_at", "2017-11-24 05:20:25.179250"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-4@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Nova Bode"], ["email", "example-4@railstutorial.org"], ["password_digest", "$2a$10$bS1PMDj28x97yk7K37H9cOIe6o8MSqSXVYyW49ezCj4Ivptfxyf8O"], ["created_at", "2017-11-24 05:20:25.252145"], ["updated_at", "2017-11-24 05:20:25.252145"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (10.5ms)[0m  BEGIN
+  [1m[36mUser Exists (12.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-5@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Granville Keebler"], ["email", "example-5@railstutorial.org"], ["password_digest", "$2a$10$a1JlKwZA4Jes3Cgtl4SroOA2jDs8YNTa2MZMFI4HMRnOIULIcogWm"], ["created_at", "2017-11-24 05:20:25.346907"], ["updated_at", "2017-11-24 05:20:25.346907"]]
+  [1m[36m (8.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-6@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Charles O'Keefe"], ["email", "example-6@railstutorial.org"], ["password_digest", "$2a$10$rZgFlti/UbjxfMk1Y/XSJ.oX6ahmrl8nYrAvnrY19Nc192A1cCFIS"], ["created_at", "2017-11-24 05:20:25.426995"], ["updated_at", "2017-11-24 05:20:25.426995"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-7@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Margarette Gaylord"], ["email", "example-7@railstutorial.org"], ["password_digest", "$2a$10$xCGRz4h/qz3PoNyPuERctOULTwg3owXibJes0CQDIb6Ru0SbeEzma"], ["created_at", "2017-11-24 05:20:25.497325"], ["updated_at", "2017-11-24 05:20:25.497325"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-8@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Leslie West"], ["email", "example-8@railstutorial.org"], ["password_digest", "$2a$10$5y9BALXmjwZjw551KoumR.uunehEMnuUAk3XBiUvRNvd5rlQAftIW"], ["created_at", "2017-11-24 05:20:25.571790"], ["updated_at", "2017-11-24 05:20:25.571790"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-9@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Rosina Hilpert"], ["email", "example-9@railstutorial.org"], ["password_digest", "$2a$10$0XhIf7SgmV0xpYta5ib8I.3munAtMNMS6Zq7rCMVZ1Y0GKprL116y"], ["created_at", "2017-11-24 05:20:25.641040"], ["updated_at", "2017-11-24 05:20:25.641040"]]
+  [1m[36m (7.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-10@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Uriel Aufderhar"], ["email", "example-10@railstutorial.org"], ["password_digest", "$2a$10$bVMnTUrk2C8rQOC9oSvKx.mM64XDx2C3gi3xh3/mGc1YkOwR/i2hC"], ["created_at", "2017-11-24 05:20:25.724602"], ["updated_at", "2017-11-24 05:20:25.724602"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-11@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Cayla Moore Sr."], ["email", "example-11@railstutorial.org"], ["password_digest", "$2a$10$xGesBbNicK/djZicDfyVhuqN2VH5OuR/liM8SOPMcnz17AcTMr6I6"], ["created_at", "2017-11-24 05:20:25.811191"], ["updated_at", "2017-11-24 05:20:25.811191"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.7ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-12@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Ms. Margret Jones"], ["email", "example-12@railstutorial.org"], ["password_digest", "$2a$10$cF/cwDOOZUqYBwxmEdeLB.w6D0BT6SJElWIa/CW5wFTnBh8oHMDIm"], ["created_at", "2017-11-24 05:20:25.885366"], ["updated_at", "2017-11-24 05:20:25.885366"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.9ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-13@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Miss Elna Erdman"], ["email", "example-13@railstutorial.org"], ["password_digest", "$2a$10$B.RzWwaHWBeMa3HIQBkorecRUUmVAEB2Y4d5rHC5Gud2eDP1Hw7vu"], ["created_at", "2017-11-24 05:20:25.958974"], ["updated_at", "2017-11-24 05:20:25.958974"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-14@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Celine Blick"], ["email", "example-14@railstutorial.org"], ["password_digest", "$2a$10$QP/bbd/VVUKZ2tCprzFJkekZG.PtZ5C2N1YrwSWkxTTnGsmUEAqT2"], ["created_at", "2017-11-24 05:20:26.031294"], ["updated_at", "2017-11-24 05:20:26.031294"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-15@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Heloise Zemlak"], ["email", "example-15@railstutorial.org"], ["password_digest", "$2a$10$8xBNwP8GY3xjw9Mv6ftYYOppn9b/5abVjxYou0VFvme9yYRpegKAW"], ["created_at", "2017-11-24 05:20:26.102631"], ["updated_at", "2017-11-24 05:20:26.102631"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (5.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-16@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Mabelle Goldner"], ["email", "example-16@railstutorial.org"], ["password_digest", "$2a$10$3gOwhUeoNbm18HgJE3uq9Oi6RhzPXD0rGo9vM.s3JIDkv9idR.WYW"], ["created_at", "2017-11-24 05:20:26.181990"], ["updated_at", "2017-11-24 05:20:26.181990"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-17@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Stanford Purdy"], ["email", "example-17@railstutorial.org"], ["password_digest", "$2a$10$HJCjyc6tKvcvJMDmKnbCuO2DwKtIs5c/84rKlKyhgFKJJC4iG7DB6"], ["created_at", "2017-11-24 05:20:26.256792"], ["updated_at", "2017-11-24 05:20:26.256792"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-18@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Lelia Daniel"], ["email", "example-18@railstutorial.org"], ["password_digest", "$2a$10$U3Yp09jm1rNzihW2Me6YdOROdIxNWfXGs66nf9XappY9n/.akxuwi"], ["created_at", "2017-11-24 05:20:26.327644"], ["updated_at", "2017-11-24 05:20:26.327644"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-19@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Ebony Hoppe MD"], ["email", "example-19@railstutorial.org"], ["password_digest", "$2a$10$gnFsayxi8SgH79LiDiidEOYKC/rUHyckMqvWr2vittnCKdOUmVQU6"], ["created_at", "2017-11-24 05:20:26.394957"], ["updated_at", "2017-11-24 05:20:26.394957"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-20@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Ms. Eleanora Windler"], ["email", "example-20@railstutorial.org"], ["password_digest", "$2a$10$WCRi6hdxmcdQUZLH8NGjKek1MsJV1WDE36VkeBX2TDcpyV8.ZpPL."], ["created_at", "2017-11-24 05:20:26.461106"], ["updated_at", "2017-11-24 05:20:26.461106"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-21@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Martina Pfannerstill"], ["email", "example-21@railstutorial.org"], ["password_digest", "$2a$10$3n8mEYh3KhekgvhPL2MWP.aWzLKHcJkW93ExZYyRIQtUOnkgGPzeC"], ["created_at", "2017-11-24 05:20:26.527529"], ["updated_at", "2017-11-24 05:20:26.527529"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-22@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Vincenzo Muller"], ["email", "example-22@railstutorial.org"], ["password_digest", "$2a$10$Btftz9z4RUvXqhn9GBxZweNNU7KwNR2XpE9XEi1Zv4g.5PQ0uTXBu"], ["created_at", "2017-11-24 05:20:26.598742"], ["updated_at", "2017-11-24 05:20:26.598742"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-23@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Ida Ziemann"], ["email", "example-23@railstutorial.org"], ["password_digest", "$2a$10$T.TIhiTdhJBxitXnHCELy.rZQxBnOdMU5mVc1ytEE5D4GjWt343gS"], ["created_at", "2017-11-24 05:20:26.676096"], ["updated_at", "2017-11-24 05:20:26.676096"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-24@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Enos Wilkinson"], ["email", "example-24@railstutorial.org"], ["password_digest", "$2a$10$WKYiz6wTVNC2PZ2H7LijF.wl3ZlKQyDXBPifuvHgWOte6JENzy5t2"], ["created_at", "2017-11-24 05:20:26.745842"], ["updated_at", "2017-11-24 05:20:26.745842"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-25@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Willie Dach III"], ["email", "example-25@railstutorial.org"], ["password_digest", "$2a$10$qNInOYPDrYV7V8CyNIpkZO6kbYbjlvgJbs1v7iKhz6KJeWOIIwXL6"], ["created_at", "2017-11-24 05:20:26.810616"], ["updated_at", "2017-11-24 05:20:26.810616"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-26@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Jena Nienow"], ["email", "example-26@railstutorial.org"], ["password_digest", "$2a$10$K8UD61AR0SOQXmksPgGYYOsmKepaOZZa3WHzpf0NuaQTVhbvkwbjm"], ["created_at", "2017-11-24 05:20:26.884513"], ["updated_at", "2017-11-24 05:20:26.884513"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-27@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Celestino Hamill"], ["email", "example-27@railstutorial.org"], ["password_digest", "$2a$10$ETIXc4p3xRtsba7FuAIBoua9F7aoUVOcej9ePravhTiIA.xrtVifS"], ["created_at", "2017-11-24 05:20:26.953436"], ["updated_at", "2017-11-24 05:20:26.953436"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-28@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Mr. Reanna Hoeger"], ["email", "example-28@railstutorial.org"], ["password_digest", "$2a$10$Cs8UURlee5R0W9QotjYA9efESO3TNkgSUXLiu5eoK1sromAq5a0Da"], ["created_at", "2017-11-24 05:20:27.022646"], ["updated_at", "2017-11-24 05:20:27.022646"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-29@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Talon Bartoletti MD"], ["email", "example-29@railstutorial.org"], ["password_digest", "$2a$10$tWyXm7G.E1ahYbIg8wmBoOLPEIPGSUoZiUCOtn1xY7g0iAIAhnyXS"], ["created_at", "2017-11-24 05:20:27.089762"], ["updated_at", "2017-11-24 05:20:27.089762"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-30@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Glenda Hermiston"], ["email", "example-30@railstutorial.org"], ["password_digest", "$2a$10$.OHC2JgDL/7BII5AE8tusuvakIwp8NOo3anyWlRMmoQECHw9e8WRu"], ["created_at", "2017-11-24 05:20:27.159619"], ["updated_at", "2017-11-24 05:20:27.159619"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-31@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Ms. Trace Moen"], ["email", "example-31@railstutorial.org"], ["password_digest", "$2a$10$Cv4FIS8zcidoeSxvxKFhTO1jFbaItxBfzo4pmyoWP/z3B15MTG0Qm"], ["created_at", "2017-11-24 05:20:27.227542"], ["updated_at", "2017-11-24 05:20:27.227542"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-32@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Howell Johnston"], ["email", "example-32@railstutorial.org"], ["password_digest", "$2a$10$vWn1dsWkZpYB9zUhv7RWV.MCS3U8ZZcCi0krWhLeXOiCflDKTPU4u"], ["created_at", "2017-11-24 05:20:27.294429"], ["updated_at", "2017-11-24 05:20:27.294429"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-33@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Meaghan Zboncak"], ["email", "example-33@railstutorial.org"], ["password_digest", "$2a$10$fyBjVR7rxCs88RjDrC0JUOgKrMQ.dbueQOqSkcOVvUDD5iMOdCQZe"], ["created_at", "2017-11-24 05:20:27.363388"], ["updated_at", "2017-11-24 05:20:27.363388"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-34@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Kiarra Gottlieb"], ["email", "example-34@railstutorial.org"], ["password_digest", "$2a$10$zqC2Qozme5C5Ct.J9GslI.qlGNakMFYwUi6bkIl5XgrqHigHo.it2"], ["created_at", "2017-11-24 05:20:27.428440"], ["updated_at", "2017-11-24 05:20:27.428440"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-35@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Wilfredo Funk III"], ["email", "example-35@railstutorial.org"], ["password_digest", "$2a$10$4cUPu/tgB0VrDj2kX8/FMe/KmMM.2VTP22B3IsPjW2t91cB3tWsRi"], ["created_at", "2017-11-24 05:20:27.495152"], ["updated_at", "2017-11-24 05:20:27.495152"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-36@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Kelly Keeling"], ["email", "example-36@railstutorial.org"], ["password_digest", "$2a$10$IENcD.zZhKeEjKAnpOv9H.h.CxZo1j7wEBd5ogB6U75k1hdeiL7.y"], ["created_at", "2017-11-24 05:20:27.562874"], ["updated_at", "2017-11-24 05:20:27.562874"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-37@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Haylie White"], ["email", "example-37@railstutorial.org"], ["password_digest", "$2a$10$5WocNqvd7J70dsyga0gr8./226SneAjGoSIaO2llxbvXgjPnHFgYy"], ["created_at", "2017-11-24 05:20:27.635042"], ["updated_at", "2017-11-24 05:20:27.635042"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-38@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Alberto Bogan"], ["email", "example-38@railstutorial.org"], ["password_digest", "$2a$10$neEkTeYPJdUGCfNJbr7lQ.inFMcoc1YsLxhG2v6wRAsjYnDPVC6O."], ["created_at", "2017-11-24 05:20:27.705458"], ["updated_at", "2017-11-24 05:20:27.705458"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-39@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Winnifred Borer"], ["email", "example-39@railstutorial.org"], ["password_digest", "$2a$10$CHsDDYK/Vdb6VQC4qdqABe.jxtZ9fM5pXHH6j93vnDY3X9kFkDK1y"], ["created_at", "2017-11-24 05:20:27.771009"], ["updated_at", "2017-11-24 05:20:27.771009"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-40@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Merle Osinski"], ["email", "example-40@railstutorial.org"], ["password_digest", "$2a$10$vKL/xLDNMQPzWwRnyUuKFuZ/MjgZ8LsI18rO.ahU1yr05GoRf59pm"], ["created_at", "2017-11-24 05:20:27.836408"], ["updated_at", "2017-11-24 05:20:27.836408"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-41@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Sasha Rodriguez"], ["email", "example-41@railstutorial.org"], ["password_digest", "$2a$10$5wQ7Xa244LrZtK2yadpsL.Sdb3CiadvLbWv90CpdNjSd7Td3aRHPW"], ["created_at", "2017-11-24 05:20:27.905079"], ["updated_at", "2017-11-24 05:20:27.905079"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-42@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Kelli Mertz"], ["email", "example-42@railstutorial.org"], ["password_digest", "$2a$10$PNLG3Pf0Xv9sxHs.iqWAmufRKBKVx4kh.cts4ggGbrZU26tG0nC1y"], ["created_at", "2017-11-24 05:20:27.974926"], ["updated_at", "2017-11-24 05:20:27.974926"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-43@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Miss Helga Block"], ["email", "example-43@railstutorial.org"], ["password_digest", "$2a$10$.s6X0QTsH6hS5DR2f1/w7OmbfJzKDDEgdiIqUMS9XUZE/SoT75Hh2"], ["created_at", "2017-11-24 05:20:28.042506"], ["updated_at", "2017-11-24 05:20:28.042506"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-44@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Doug Carter"], ["email", "example-44@railstutorial.org"], ["password_digest", "$2a$10$L3WUmRuCraSu2cN49eYSSezvG4v7hO87.aA9EaoRbwYLizkHEiuim"], ["created_at", "2017-11-24 05:20:28.111247"], ["updated_at", "2017-11-24 05:20:28.111247"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-45@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Carmella Lebsack"], ["email", "example-45@railstutorial.org"], ["password_digest", "$2a$10$SZV7jLFOsuI.8Vq25rGDNOdPQ39.34x1Gb0WzUzpWxTcIo6kUadOi"], ["created_at", "2017-11-24 05:20:28.178972"], ["updated_at", "2017-11-24 05:20:28.178972"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-46@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Mrs. Koby Hermann"], ["email", "example-46@railstutorial.org"], ["password_digest", "$2a$10$whTqxHyCiCcA15h0KYwzJe8GeXfFwie2TS6yFqKYroac/6RhLhnre"], ["created_at", "2017-11-24 05:20:28.243886"], ["updated_at", "2017-11-24 05:20:28.243886"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-47@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Francisca Klocko"], ["email", "example-47@railstutorial.org"], ["password_digest", "$2a$10$LOxA9ivk05jUUOP8yUHujePQ95a8X5kTnvHybvvT6JgIvLAbbwrpe"], ["created_at", "2017-11-24 05:20:28.311552"], ["updated_at", "2017-11-24 05:20:28.311552"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-48@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Maxwell Kerluke IV"], ["email", "example-48@railstutorial.org"], ["password_digest", "$2a$10$NmJAzTnsAgEHbgrzfLefFufAY7lLuFQLvl6XMN9YQccSZCQj8atim"], ["created_at", "2017-11-24 05:20:28.378260"], ["updated_at", "2017-11-24 05:20:28.378260"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-49@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Dr. Madisen Torphy"], ["email", "example-49@railstutorial.org"], ["password_digest", "$2a$10$H6cZQlkVMFsYuLB9UDg8OOjoh1nR6kIFb39fpLI4LmLdT80RAReXO"], ["created_at", "2017-11-24 05:20:28.442530"], ["updated_at", "2017-11-24 05:20:28.442530"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-50@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Katrine Schmeler"], ["email", "example-50@railstutorial.org"], ["password_digest", "$2a$10$NIm/9j0jyk0LtC4G4HYmZ.321pDLwwl6LI48tRsveToxgYmZfvwAq"], ["created_at", "2017-11-24 05:20:28.511037"], ["updated_at", "2017-11-24 05:20:28.511037"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-51@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Jarrell Roob PhD"], ["email", "example-51@railstutorial.org"], ["password_digest", "$2a$10$FlEf6eb/nIXRaBVOE8ErDez6zYZWrfX6rX9sBGc3LVDyG3SX0nL3q"], ["created_at", "2017-11-24 05:20:28.577916"], ["updated_at", "2017-11-24 05:20:28.577916"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-52@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Kaylah Rowe"], ["email", "example-52@railstutorial.org"], ["password_digest", "$2a$10$X7sJ5uF25pGAiqEdVzgIt.uB09hahbaOTHqIsDaobYPzTpZGD8FMi"], ["created_at", "2017-11-24 05:20:28.644682"], ["updated_at", "2017-11-24 05:20:28.644682"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-53@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Quincy Kiehn"], ["email", "example-53@railstutorial.org"], ["password_digest", "$2a$10$NIeiBPaAgfSgXVa/e2Q.9Osl.rAMMTjt9YcpVkW2ASFeZHwH245Uq"], ["created_at", "2017-11-24 05:20:28.712198"], ["updated_at", "2017-11-24 05:20:28.712198"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-54@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Mr. Gloria Bruen"], ["email", "example-54@railstutorial.org"], ["password_digest", "$2a$10$T7g9MKq8f6mVWkWsUXH/UeK/BcBGZ4tMYn1HfUcDQovdJSRi.fL32"], ["created_at", "2017-11-24 05:20:28.778585"], ["updated_at", "2017-11-24 05:20:28.778585"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-55@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Deron Crona"], ["email", "example-55@railstutorial.org"], ["password_digest", "$2a$10$uXnFVY2PX9HgkYDj0yxiFOxQzuFzaXWLRnwiraUi0AfadOZQh7alO"], ["created_at", "2017-11-24 05:20:28.845809"], ["updated_at", "2017-11-24 05:20:28.845809"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-56@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Junior Gerhold PhD"], ["email", "example-56@railstutorial.org"], ["password_digest", "$2a$10$LJsmvvXskZeym5pZNrO0b.GOSxBT4NlcrABeKxOeCNx1Mw/0HrbiW"], ["created_at", "2017-11-24 05:20:28.911101"], ["updated_at", "2017-11-24 05:20:28.911101"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-57@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Johnnie Feil"], ["email", "example-57@railstutorial.org"], ["password_digest", "$2a$10$9tuWmzJ2reOOpkfBs5jigOReXekhLfeF08AjGwisZKaRc9PhJYAJ6"], ["created_at", "2017-11-24 05:20:28.977319"], ["updated_at", "2017-11-24 05:20:28.977319"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-58@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Miss Tanya Paucek"], ["email", "example-58@railstutorial.org"], ["password_digest", "$2a$10$ASYTlxIwvs2ToYEQ27XFEuWM7mt..yHtyzBCE7KQQFr0dUU4mDiTq"], ["created_at", "2017-11-24 05:20:29.043748"], ["updated_at", "2017-11-24 05:20:29.043748"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-59@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Dr. Loren Cassin"], ["email", "example-59@railstutorial.org"], ["password_digest", "$2a$10$knxnQdpvAb3wwt7z64j4Eeyqnz7tIAQZwU9juGrfY.4DmhGrCQuki"], ["created_at", "2017-11-24 05:20:29.112191"], ["updated_at", "2017-11-24 05:20:29.112191"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-60@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Micah VonRueden"], ["email", "example-60@railstutorial.org"], ["password_digest", "$2a$10$ENyFu.5UCw01Ry0PL6n7EOfhzVayiG4nRY.A6dPUvBAHbia3sFLRG"], ["created_at", "2017-11-24 05:20:29.180048"], ["updated_at", "2017-11-24 05:20:29.180048"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-61@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Mrs. Royce Ferry"], ["email", "example-61@railstutorial.org"], ["password_digest", "$2a$10$ALRt3oyqfySxm61qHXT4NOzzFZ6tg2X8k.OY41mC4Qd6rWAT5Vnji"], ["created_at", "2017-11-24 05:20:29.245692"], ["updated_at", "2017-11-24 05:20:29.245692"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-62@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Destin Lind"], ["email", "example-62@railstutorial.org"], ["password_digest", "$2a$10$6xIXw5gjr2tWdSKfQAm7g.3DRfgeFofE.hbzDR7Lao7JozpxUmO2W"], ["created_at", "2017-11-24 05:20:29.313230"], ["updated_at", "2017-11-24 05:20:29.313230"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-63@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Curtis Konopelski"], ["email", "example-63@railstutorial.org"], ["password_digest", "$2a$10$8eh53AC6wuurudvYVN6MgOda7hFq4mnnl5utuNDvlZflpfYgcdwRG"], ["created_at", "2017-11-24 05:20:29.387874"], ["updated_at", "2017-11-24 05:20:29.387874"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-64@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Mrs. Mariela Wilderman"], ["email", "example-64@railstutorial.org"], ["password_digest", "$2a$10$SzFj3H4aGsFXfzsoAKjCVuoUv4LiJkpORxyoI/wzArrO0NF3HP4Ve"], ["created_at", "2017-11-24 05:20:29.456085"], ["updated_at", "2017-11-24 05:20:29.456085"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-65@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Haskell Heaney"], ["email", "example-65@railstutorial.org"], ["password_digest", "$2a$10$x6Xc7I0HTumUsHrwH1LODey5/A6D4IFlJQIqTSs16hyRKAe4.X77y"], ["created_at", "2017-11-24 05:20:29.525038"], ["updated_at", "2017-11-24 05:20:29.525038"]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-66@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Dr. Joelle Wiza"], ["email", "example-66@railstutorial.org"], ["password_digest", "$2a$10$glfvl3tm.4OT1pBpLAjSf.o5WPVH4tA/KMzD/IA3zpktx/N3iOe6S"], ["created_at", "2017-11-24 05:20:29.595493"], ["updated_at", "2017-11-24 05:20:29.595493"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-67@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Allene Ferry"], ["email", "example-67@railstutorial.org"], ["password_digest", "$2a$10$aNzJcVBY9z1Gcd8qDIY8JeVlxPw09M4/J7.VLLw0JCo17YqcRIyRW"], ["created_at", "2017-11-24 05:20:29.665820"], ["updated_at", "2017-11-24 05:20:29.665820"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-68@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Dr. Krystel Osinski"], ["email", "example-68@railstutorial.org"], ["password_digest", "$2a$10$f6vuVOhjDdu33iP.Ij18hORHnWPWMVP6JZuq6rdD4GwDomp/PsN1W"], ["created_at", "2017-11-24 05:20:29.736108"], ["updated_at", "2017-11-24 05:20:29.736108"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-69@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Dr. Fae Brekke"], ["email", "example-69@railstutorial.org"], ["password_digest", "$2a$10$HRGbWjs.7zerpoiwXtPrNecdUNO76lcUrwxP.n4XjY1ynU47Hj0.m"], ["created_at", "2017-11-24 05:20:29.805503"], ["updated_at", "2017-11-24 05:20:29.805503"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-70@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Maritza Auer"], ["email", "example-70@railstutorial.org"], ["password_digest", "$2a$10$BSutUnBwiD5N9TZwIFHTvu6Bjgdt0AFYUYoAZZqTkC3wFWylXfEV2"], ["created_at", "2017-11-24 05:20:29.875897"], ["updated_at", "2017-11-24 05:20:29.875897"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-71@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Edgardo Klein"], ["email", "example-71@railstutorial.org"], ["password_digest", "$2a$10$FUiIwm4/c0NE0OKG5nb.VeE7omDKJWRzLttklR4JAnWug7au/ZZR2"], ["created_at", "2017-11-24 05:20:29.944368"], ["updated_at", "2017-11-24 05:20:29.944368"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-72@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Addison Beier DVM"], ["email", "example-72@railstutorial.org"], ["password_digest", "$2a$10$Y/zfLenCQylvpe1DGs9SzOEQNbEJdGIuZgh6n1F6uUVE0NdgBCf3S"], ["created_at", "2017-11-24 05:20:30.011965"], ["updated_at", "2017-11-24 05:20:30.011965"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-73@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Miss Virgie Farrell"], ["email", "example-73@railstutorial.org"], ["password_digest", "$2a$10$xUv628UdCm74Fylvz1NSBeBYRzJNNIHQf7nedo0xzPzY7.5t0Gxke"], ["created_at", "2017-11-24 05:20:30.079993"], ["updated_at", "2017-11-24 05:20:30.079993"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-74@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Daija Trantow"], ["email", "example-74@railstutorial.org"], ["password_digest", "$2a$10$mZbY0aj2TOQgNg8HaiAaPeYiC2CpbimOsqBPTx.6vMWg9rc1wBEOq"], ["created_at", "2017-11-24 05:20:30.148322"], ["updated_at", "2017-11-24 05:20:30.148322"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-75@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Hudson Fahey"], ["email", "example-75@railstutorial.org"], ["password_digest", "$2a$10$h839aKr9BUtSHdTgIshGNeO.gFhlrswQqBPgw4dsGIHUyazxv7due"], ["created_at", "2017-11-24 05:20:30.216811"], ["updated_at", "2017-11-24 05:20:30.216811"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-76@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Mauricio Brakus IV"], ["email", "example-76@railstutorial.org"], ["password_digest", "$2a$10$JCi021lOiA/DNtfB7JZ5AeNWrkb2h9d2PYadbBATszc0EomUWZKtC"], ["created_at", "2017-11-24 05:20:30.282569"], ["updated_at", "2017-11-24 05:20:30.282569"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-77@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Marcelino Shanahan"], ["email", "example-77@railstutorial.org"], ["password_digest", "$2a$10$IBe0xZ4wEsUQrcrbteu/auseZtArgWfv4lSW1sskQERiiqgHwj0SS"], ["created_at", "2017-11-24 05:20:30.351162"], ["updated_at", "2017-11-24 05:20:30.351162"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-78@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Clair Beier"], ["email", "example-78@railstutorial.org"], ["password_digest", "$2a$10$HEAPcKzF2q.w8WppmGCe/eay/Ix9aJJLa0G39Q8c/rYMfNObuXuDG"], ["created_at", "2017-11-24 05:20:30.424307"], ["updated_at", "2017-11-24 05:20:30.424307"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-79@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Jacklyn Hartmann"], ["email", "example-79@railstutorial.org"], ["password_digest", "$2a$10$s15uAuStydNY.VzKPA3TpeVaZth1TehEunJx0ngwVfrPwB3dUVpyi"], ["created_at", "2017-11-24 05:20:30.489235"], ["updated_at", "2017-11-24 05:20:30.489235"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-80@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Ms. Russell Simonis"], ["email", "example-80@railstutorial.org"], ["password_digest", "$2a$10$I8gH7uvmAzwjuXtM4F7qb.88OYg/kgP.hz1xVK6ePCQQjOql6PwBa"], ["created_at", "2017-11-24 05:20:30.558016"], ["updated_at", "2017-11-24 05:20:30.558016"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-81@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Dawson Halvorson III"], ["email", "example-81@railstutorial.org"], ["password_digest", "$2a$10$b2YqKjSpsxzs27vJ7K.LMOuAmbRHtDui1qoHvgGBNcAKuNmzeuAq2"], ["created_at", "2017-11-24 05:20:30.626554"], ["updated_at", "2017-11-24 05:20:30.626554"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-82@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Rachael Ferry IV"], ["email", "example-82@railstutorial.org"], ["password_digest", "$2a$10$c8fc.PJatrCXnuwOCJxND.bgK6zHK1YxQVTT8fl25KW5lr9Jr69.u"], ["created_at", "2017-11-24 05:20:30.694224"], ["updated_at", "2017-11-24 05:20:30.694224"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-83@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Mrs. Hunter Oberbrunner"], ["email", "example-83@railstutorial.org"], ["password_digest", "$2a$10$hoV.9xa4CsphwJvy8Xdl6u5vNxJemvCCJ9q7.tst0bRuRXMhSNsRu"], ["created_at", "2017-11-24 05:20:30.764729"], ["updated_at", "2017-11-24 05:20:30.764729"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-84@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Mrs. Antonetta Grant"], ["email", "example-84@railstutorial.org"], ["password_digest", "$2a$10$MaUlsIImrViJMknwlvKZyuIZjv.kAWn6lxUHCwS79IrMgRn/hCiii"], ["created_at", "2017-11-24 05:20:30.832666"], ["updated_at", "2017-11-24 05:20:30.832666"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-85@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Ila Abshire DDS"], ["email", "example-85@railstutorial.org"], ["password_digest", "$2a$10$iylj6AL8IT2e8GkDjc/Vnu.IHfWQ.G.67FquHSnX9OWQafDXkUpKC"], ["created_at", "2017-11-24 05:20:30.900635"], ["updated_at", "2017-11-24 05:20:30.900635"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-86@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Lacy Wunsch"], ["email", "example-86@railstutorial.org"], ["password_digest", "$2a$10$RR6JfruvAnLZRklDQ4FyT.ylf59RjznHP0T6s2rSQV3Wn9FdaBjgq"], ["created_at", "2017-11-24 05:20:30.966112"], ["updated_at", "2017-11-24 05:20:30.966112"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-87@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Mrs. Christop Yundt"], ["email", "example-87@railstutorial.org"], ["password_digest", "$2a$10$NEvqrgXWJXHDzUsGERg8b.1H15n8Qzf4hbjru7t7mrWMcklNAc4xi"], ["created_at", "2017-11-24 05:20:31.037965"], ["updated_at", "2017-11-24 05:20:31.037965"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-88@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Mrs. Max Lockman"], ["email", "example-88@railstutorial.org"], ["password_digest", "$2a$10$RJOvLgcR4RuWYCCmU848de8zUmCE3vGSN/vQ3R8gAeWpuBSgEIQZq"], ["created_at", "2017-11-24 05:20:31.109283"], ["updated_at", "2017-11-24 05:20:31.109283"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-89@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Edgar Legros"], ["email", "example-89@railstutorial.org"], ["password_digest", "$2a$10$iOEaUt/1z6xY3kfPonQ5kersSzuPCEJaGzukiMJF2KLKdzLNtAJsC"], ["created_at", "2017-11-24 05:20:31.181138"], ["updated_at", "2017-11-24 05:20:31.181138"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-90@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Kevin Yost"], ["email", "example-90@railstutorial.org"], ["password_digest", "$2a$10$IjhaaeAUpOeIYX49cw1SH.y/N.Qlar1PZUfUQvsg1UWxRga.6QIji"], ["created_at", "2017-11-24 05:20:31.254731"], ["updated_at", "2017-11-24 05:20:31.254731"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-91@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Ms. Tatum Schmeler"], ["email", "example-91@railstutorial.org"], ["password_digest", "$2a$10$C67wAdXhC2rOAOX1g0vALeWnsA/qQiQ8JK514qHbkKCa/TT1.Qv.e"], ["created_at", "2017-11-24 05:20:31.328228"], ["updated_at", "2017-11-24 05:20:31.328228"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-92@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Ms. Geovany Treutel"], ["email", "example-92@railstutorial.org"], ["password_digest", "$2a$10$cSphaP/zSbBVu31afMbOEeRqfWoWnO2jqlQIa8gRUgbMBL0EFiaPK"], ["created_at", "2017-11-24 05:20:31.399997"], ["updated_at", "2017-11-24 05:20:31.399997"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-93@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Parker King"], ["email", "example-93@railstutorial.org"], ["password_digest", "$2a$10$.uWbAo/RAqGK5pjfoGzoK.qYXcW7J2Uihq6e0DWmgxbVM6xIGkdje"], ["created_at", "2017-11-24 05:20:31.468603"], ["updated_at", "2017-11-24 05:20:31.468603"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-94@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Katarina Mertz"], ["email", "example-94@railstutorial.org"], ["password_digest", "$2a$10$K.Fo2v03vX7P8HjbfODYCus5K6uKtdgIaiAj.TI2nnhgNaqLEPuPO"], ["created_at", "2017-11-24 05:20:31.535827"], ["updated_at", "2017-11-24 05:20:31.535827"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-95@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Annie Kirlin DDS"], ["email", "example-95@railstutorial.org"], ["password_digest", "$2a$10$S7MOmWTniURS5WuJzR8z8OeVoS922.d7SOja43bXz6PJHXpdrk94."], ["created_at", "2017-11-24 05:20:31.601946"], ["updated_at", "2017-11-24 05:20:31.601946"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-96@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Richmond Hoeger"], ["email", "example-96@railstutorial.org"], ["password_digest", "$2a$10$Sn/e3bpN1T18T0Wqc1tpz.5xP/.tpyChHLUiJrmuXSUoSDaW5CisG"], ["created_at", "2017-11-24 05:20:31.670563"], ["updated_at", "2017-11-24 05:20:31.670563"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-97@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Jacques Larson"], ["email", "example-97@railstutorial.org"], ["password_digest", "$2a$10$kWRRjTrDHSIdiyiaUwCdAO50titNB540Lz6g1Fh/BYZ4A0/2tsYKm"], ["created_at", "2017-11-24 05:20:31.739878"], ["updated_at", "2017-11-24 05:20:31.739878"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-98@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Ms. Emil Ledner"], ["email", "example-98@railstutorial.org"], ["password_digest", "$2a$10$gaJJFzWUzzd5.z8QbPLP0OhCVV4Bh8pba1pcCu/zBaIxu7wU21r1O"], ["created_at", "2017-11-24 05:20:31.806717"], ["updated_at", "2017-11-24 05:20:31.806717"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-99@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Lia Buckridge"], ["email", "example-99@railstutorial.org"], ["password_digest", "$2a$10$fs71ta7wpX1KGVVGhxD4ve3HbP.AnhOthEwq1Ag1EvxZJYge1r1Cq"], ["created_at", "2017-11-24 05:20:31.871491"], ["updated_at", "2017-11-24 05:20:31.871491"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mCourse Load (0.6ms)[0m  [1mSELECT "courses".* FROM "courses" INNER JOIN "user_courses" ON "courses"."id" = "user_courses"."course_id" WHERE "user_courses"."user_id" = $1[0m  [["user_id", 100]]
+  [1m[35mCourse Load (6.7ms)[0m  SELECT "courses".* FROM "courses"
+  [1m[36mCourse Load (0.7ms)[0m  [1mSELECT  "courses".* FROM "courses"  ORDER BY "courses"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_courses" ON "users"."id" = "user_courses"."user_id" WHERE "user_courses"."course_id" = $1  [["course_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "user_courses" ("course_id", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["course_id", 1], ["user_id", 100]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mCourse Load (1.4ms)[0m  [1mSELECT "courses".* FROM "courses" INNER JOIN "user_courses" ON "courses"."id" = "user_courses"."course_id" WHERE "user_courses"."user_id" = $1[0m  [["user_id", 100]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (1.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "user_courses" ("course_id", "user_id") VALUES ($1, $2) RETURNING "id"  [["course_id", 1], ["user_id", 2]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
