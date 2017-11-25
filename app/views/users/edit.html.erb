@@ -20,6 +20,22 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
+
+
+      <%= f.label :height %> (cm)
+      <%= f.number_field :height, class: 'form-control' %>
+
+      <%= f.label :weight %> (kg)
+      <%= f.number_field :weight, class: 'form-control' %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description, class: 'form-control' %>
+
+      <%= f.label :date_of_birth %> (m/d/y)
+      <%= f.date_field :date_of_birth, class: 'form-control' %>
+
+
+
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
   </div>

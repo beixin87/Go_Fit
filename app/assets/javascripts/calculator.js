@@ -8,7 +8,6 @@ function cal()
   var age = document.getElementById("age").value;
   var ex_level = document.getElementById("level").value;
 
-
   if ( weight <= 0 || isNaN(weight))
   {
     alert("Invalid Input");
@@ -51,7 +50,6 @@ if ( age <= 0 || isNaN(age))
 
   document.getElementById("result").innerHTML = result;
   document.getElementById("fat_loss_result").innerHTML = result - 400;
-  document.getElementById("ex_fat_loss_result").innerHTML = result - 800;
 
 
 }

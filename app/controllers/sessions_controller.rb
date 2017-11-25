@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+before_filter :redirect_if_logged_in, :except=>[:destroy]
 
   def new
   end
@@ -8,12 +9,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # Log the user in and redirect to the user's show page.
       log_in user
-      if current_user.admin?
-          redirect_to :controller => "users", :action => "index"
-      else
-        redirect_to user
-      end
-
+      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+      redirect_by_user_type
     else
       # Create an error message.
       flash.now[:danger] = 'Invalid email/password combination' # Not quite right!
@@ -22,7 +19,23 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    log_out if logged_in?
     redirect_to root_url
   end
+
+
+  def redirect_if_logged_in
+    if logged_in?
+      redirect_by_user_type
+    end
+  end
+
+  def redirect_by_user_type
+    if current_user.admin?
+        redirect_to :controller => "users", :action => "index"
+    else
+      redirect_to current_user
+    end
+  end
+
 end
