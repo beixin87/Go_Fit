@@ -12,6 +12,7 @@
   <%= link_to ' Edit ', edit_guide_path(@guide), class: "btn btn-success" %>
   <%= link_to 'Delete', guide_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> 
 <% end %>  
+
 <div id="disqus_thread"></div>
 <script>
 
@@ -33,5 +34,6 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 
 <%= link_to 'Back', guides_path, class: "btn btn-primary" %>
