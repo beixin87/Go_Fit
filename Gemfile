@@ -48,3 +48,11 @@ gem 'byebug', group: [:development, :test]
 
 # For custom stylesheet
 gem 'bootstrap-sass', '3.3.6'
+
+# For wysiwyg
+gem 'simple_form'
+gem 'jquery-turbolinks'
+gem 'font-awesome-rails'
+gem 'summernote-rails'
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
