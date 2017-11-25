@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   attr_accessor :remember_token
 
   has_many :guides
+  has_one :calculator
 
   before_save { self.email = email.downcase }
   validates :name, presence: true, length: { maximum: 50}  #Used to check empty
