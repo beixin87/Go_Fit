@@ -13,5 +13,5 @@ private
     age
   end
 
->>>>>>> 3bdb46609a99e35f8471d467265a39ee04336a6a
+
 end
