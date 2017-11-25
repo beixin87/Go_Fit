@@ -1,0 +1,89 @@
+<% provide(:title, "Calories Calculator") %>
+<h1>Calories Calculator</h1>
+
+<table>
+
+  <thead>
+    <tr>
+      <th>Exercise Level</th>
+      <th rowspan="1"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+
+      <tr>
+        <td>
+          <select id = "level">
+            <option  value="1">Almost No Exercise</option>
+            <option  value="2">1-3 times per Week</option>
+            <option  value="3">3-5 times per Week</option>
+            <option  value="4">6-7 times per Week</option>
+            <option  value="5">Athlete</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <th>Gender</th>
+      </tr>
+
+      <tr>
+        <td>
+          <select id = "gender">
+            <option  value="1">Male</option>
+            <option  value="0">Female</option>
+          </select>
+        </td>
+
+      </tr>
+
+      <tr>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <th><input type="text" id="age" value = "<%=@age%>"></th>
+
+
+      </tr>
+
+      <tr>
+        <th>Height(cm)</th>
+      </tr>
+      <tr>
+        <th><input type="text" id="height" value = "<%=@user.height%>"></th>
+
+
+
+      </tr>
+
+      <tr>
+        <th>Weight(kg)</th>
+      </tr>
+      <tr>
+        <th><input type="text" id="weight" value = "<%=@user.weight%>"></th>
+
+      </tr>
+
+      <tr>
+        <th><br>Calories Demand(Calories/day)</br></th>
+      </tr>
+      <tr>
+        <th><span id="result"></span></th>
+      </tr>
+
+      <tr>
+        <th><br>Fat Loss(Calories/day)</br></th>
+      </tr>
+      <tr>
+        <th><span id="fat_loss_result"></span></th>
+      </tr>
+
+
+      <tr>
+        <th><br><button type="button" onclick="cal()">Start</button></span></br></th>
+      </tr>
+
+  </tbody>
+</table>

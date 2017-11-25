@@ -34,7 +34,7 @@ before_filter :redirect_if_logged_in, :except=>[:destroy]
     if current_user.admin?
         redirect_to :controller => "users", :action => "index"
     else
-      redirect_to user
+      redirect_to current_user
     end
   end
 
