@@ -11,7 +11,7 @@ User.create!(name:  "Admin",
              password_confirmation: "admin1",
              height: "99",
              weight: "99",
-             age: "18",
+             date_of_birth: "05/12/12",
              description: "I am Admin.",
              admin: true)
 
