@@ -27,6 +27,7 @@ $ ->
   document.addEventListener 'turbolinks:load', ->
     $('[data-provider="summernote"]').each ->
       $(this).summernote 
+        
         height: 360
         callbacks: 
           onImageUpload: (files) ->
