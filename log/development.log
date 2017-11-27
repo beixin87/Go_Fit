@@ -1,0 +1,158 @@
+  [1m[36mActiveRecord::SchemaMigration Load (5.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (3.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (16.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'calculators'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'guides'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (25.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'gyms'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (11.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'images'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (9.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'widgets'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-25 05:08:14 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2135.4ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 35318ms (Views: 35287.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-2bff90cfacd9adfde8083367be19268d73a74dfbecc3e83779b5b17f8050b04d.css?body=1" for 127.0.0.1 at 2017-11-25 05:08:50 -0800
+
+
+Started GET "/assets/map.self-4aa5655a116e01109a0c24e4b2646dc7f3363e40eadf3ca8caa8895e648f2c86.css?body=1" for 127.0.0.1 at 2017-11-25 05:08:50 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (10.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/assets/custom.self-5aa6a51e175cc827c8c16e66c1c97154ee609f6a3f855f594e0ce719ba71cb47.css?body=1" for 127.0.0.1 at 2017-11-25 05:08:51 -0800
+
+
+Started POST "/login" for 127.0.0.1 at 2017-11-25 05:09:20 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UcZfsgHqDg/YNomjrQvuYGTX46uMgAxB1QJ9D252sT1gYtAWAixkexJo0y4JeIfHNUpc4WVZt5uW1/q9PL2tvQ==", "session"=>{"email"=>"sma161@sfu.ca", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (11.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "sma161@sfu.ca"]]
+  [1m[36m (5.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:5000/users/1
+Completed 302 Found in 442ms (ActiveRecord: 32.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-11-25 05:09:21 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (3.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (6.0ms)
+  [1m[36mUser Load (6.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (9.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 450ms (Views: 428.0ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2017-11-25 05:09:25 -0800
+Processing by GuidesController#index as HTML
+  [1m[35m (5.8ms)[0m  SELECT COUNT(*) FROM "guides"
+  [1m[36mGuide Load (4.1ms)[0m  [1mSELECT  "guides".* FROM "guides"  ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  Rendered guides/index.html.erb within layouts/application (38.4ms)
+  [1m[35mUser Load (5.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (8.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 641ms (Views: 577.2ms | ActiveRecord: 23.2ms)
+
+
+Started GET "/guides/new" for 127.0.0.1 at 2017-11-25 05:09:34 -0800
+Processing by GuidesController#new as HTML
+  Rendered guides/new.html.erb within layouts/application (387.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 732ms (Views: 727.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2017-11-25 05:09:38 -0800
+Processing by GuidesController#index as HTML
+  [1m[35m (3.1ms)[0m  SELECT COUNT(*) FROM "guides"
+  [1m[36mGuide Load (2.6ms)[0m  [1mSELECT  "guides".* FROM "guides"  ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  Rendered guides/index.html.erb within layouts/application (4.5ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (5.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 308ms (Views: 300.5ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-11-25 05:09:39 -0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (3.8ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_user.html.erb (5.8ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/index.html.erb within layouts/application (16.0ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 384ms (Views: 375.6ms | ActiveRecord: 6.8ms)
