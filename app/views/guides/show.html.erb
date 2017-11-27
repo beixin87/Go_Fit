@@ -1,17 +1,49 @@
 <% provide(:title, @guide) %>
+
+<h1>Show Guide</h1>
+
+<style>
+[class*="col-"]{
+	padding: 8px;
+	border: 1px solid gray;
+	text-align: left;
+}
+</style>
+
 <div class="container">  
 
-  <p><strong>Title : </strong>
-    <%= @guide.title %></p>        
-  <p><strong>Content : </strong>
-    <%=raw @guide.content %></p>    
- 
-</div>
+  <div class="row"> 
 
+ 	<table class="table"> 	
+      <thead>
+      	<tr>
+      	  <td><strong> <%= @guide.title %></strong></td>
+      	</tr>   
+        <tr>
+          <td><%= @guide.user_name %></td> <td>&nbsp;        &nbsp;</td>
+          <td>Created : <%= @guide.created_at %></td>
+          <td>Hits : <%= @guide.hits %></td>
+        </tr>
+      </thead>	
+	</table>
+ 	 			 	
+  </div>	  
+
+  <div class="row">       
+  	<div class="col-md-12">
+      <%=raw @guide.content %>    
+ 	</div>	 	
+  </div>	  
+
+<br>
 <% if  @guide.user_id == session[:user_id] %>
   <%= link_to ' Edit ', edit_guide_path(@guide), class: "btn btn-success" %>
   <%= link_to 'Delete', guide_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> 
 <% end %>  
+<%= link_to 'Back', guides_path, class: "btn btn-primary" %>
+
+</div>
+
 
 <div id="disqus_thread"></div>
 <script>
@@ -36,4 +68,3 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-<%= link_to 'Back', guides_path, class: "btn btn-primary" %>
