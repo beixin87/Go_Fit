@@ -24,13 +24,13 @@ class UserCoursesController < ApplicationController
   # POST /user_courses
   # POST /user_courses.json
   def create
-    
+
 
     @user_course = UserCourse.new(user_id: current_user.id, course_id: params[:course_id] )
 
     respond_to do |format|
       if @user_course.save
-        format.html { redirect_to request.referrer, notice: 'Course was successfully created.' }
+        format.html { redirect_to request.referrer, notice: 'Course was successfully added.' }
         format.json { render :show, status: :created, location: @user_course }
       else
         format.html { render :new }
