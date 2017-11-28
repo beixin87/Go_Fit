@@ -20,7 +20,7 @@
 
 <p>
   <strong>Numberofenrolled:</strong>
-  <%= @course.numberofenrolled %>
+  <%= @course.user_courses.count %>
 </p>
 
 <p>
@@ -32,29 +32,42 @@
   <strong>End:</strong>
   <%= @course.end %>
 </p>
-<table class="table table-striped">
+<table >
   <th>
     <tr>
       <th>Students</th>
     </tr>
   </th>
   <tb>
+
     <% @user_courses.each do |user_course| %>
     <tr>
-      <td><%= user_course.name %></td>
-      <% if current_user.admin? && !current_user?(user) %>
+      <%student = User.find(user_course.user_id)%>
+      <td><%= student.name %></td>
+
       <td>
         <%= link_to 'Delete', user_course_path(user_course),
                                 :method => :delete,
                                 :data => { :confirm => "Are you sure?" },
                                 :class => "btn btn-xs btn-danger" %>
       </td>
-      <% end %>
+
     </tr>
     <% end %>
   </tb>
+  <%if @course.can_add_student?(@course.id)%>
+    <%= link_to 'Add to my Courses', user_courses_path(user: current_user, course_id: @course.id),
+             class: 'btn btn-xs btn-success', method: :post  %> |
+  <%else%>
+    <span class="label label-default">
+      Student cannot be added because you have already added
+      <%if !@course.under_course_limit?(@course.id)%>
+      <%= @course.limit %> students
+      <%end %>
 
-<td><%= link_to 'Add to my Courses', user_courses_path(user: current_user, course_id: @course.id),
-         class: 'btn btn-xs btn-success', method: :post  %></td>
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+      <%if @course.student_already_added?(ucurrent_user.id )%>
+      this student
+      <%end%>
+  <%end%>
+  <%= link_to 'Edit', edit_course_path(@course) %> |
+  <%= link_to 'Back', courses_path %>

@@ -12,7 +12,7 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @instrutor = User.find(@course.user_id)
-    @user_courses = current_user.courses
+    @user_courses = @course.user_courses
     @user = current_user
   end
 

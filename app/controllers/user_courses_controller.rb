@@ -30,6 +30,8 @@ class UserCoursesController < ApplicationController
 
     respond_to do |format|
       if @user_course.save
+        @course = Course.find(params[:course_id])
+        @course.numberofenrolled = @course.user_courses.count
         format.html { redirect_to request.referrer, notice: 'Course was successfully added.' }
         format.json { render :show, status: :created, location: @user_course }
       else
@@ -58,7 +60,7 @@ class UserCoursesController < ApplicationController
   def destroy
     @user_course.destroy
     respond_to do |format|
-      format.html { redirect_to user_courses_url, notice: 'User course was successfully destroyed.' }
+      format.html { redirect_to request.referrer, notice: 'Student was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
