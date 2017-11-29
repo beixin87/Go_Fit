@@ -1,6 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+<<<<<<< HEAD
 one: {}
 
 
 two: {}
+=======
+one:
+  name: MyString
+  address: MyString
+  description: MyText
+
+two:
+  name: MyString
+  address: MyString
+  description: MyText
+>>>>>>> e7629e842362b2a3c50fe57c5ff68ca01c3f3242

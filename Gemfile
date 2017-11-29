@@ -11,8 +11,9 @@ gem 'bcrypt', '3.1.11'
 gem 'faker',          '1.7.3'
 gem 'will_paginate',           '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0'
-
+ 
 # Use postgresql as the database for Active Record
+
 gem 'pg'
 gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
@@ -53,10 +54,17 @@ gem 'bootstrap-sass', '3.3.6'
 
 # For wysiwyg
 gem 'simple_form'
+<<<<<<< HEAD
+=======
+gem 'jquery-turbolinks'
+>>>>>>> e7629e842362b2a3c50fe57c5ff68ca01c3f3242
 gem 'font-awesome-rails'
 gem 'summernote-rails'
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
+<<<<<<< HEAD
 
 # Date validator
 gem 'date_validator'
+=======
+>>>>>>> e7629e842362b2a3c50fe57c5ff68ca01c3f3242
