@@ -11,18 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20171125015438) do
-=======
-ActiveRecord::Schema.define(version: 20171124233617) do
->>>>>>> e7629e842362b2a3c50fe57c5ff68ca01c3f3242
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "ar_internal_metadata", primary_key: "key", force: :cascade do |t|
+    t.string   "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "calculators", force: :cascade do |t|
     t.integer  "calories"
     t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cities", id: :bigserial, force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,16 +51,11 @@ ActiveRecord::Schema.define(version: 20171124233617) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-<<<<<<< HEAD
     t.integer  "user_id"
   end
 
   add_index "gyms", ["user_id"], name: "index_gyms_on_user_id", using: :btree
 
-=======
-  end
-
->>>>>>> e7629e842362b2a3c50fe57c5ff68ca01c3f3242
   create_table "images", force: :cascade do |t|
     t.string   "image_id"
     t.string   "image_filename"
@@ -60,6 +63,22 @@ ActiveRecord::Schema.define(version: 20171124233617) do
     t.string   "image_content_type"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "triplaces", id: :bigserial, force: :cascade do |t|
+    t.string   "title"
+    t.decimal  "price"
+    t.string   "photoURL"
+    t.string   "description"
+    t.integer  "city_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "userinfos", id: :bigserial, force: :cascade do |t|
+    t.string   "realname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

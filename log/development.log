@@ -30336,3 +30336,2368 @@ Processing by GuidesController#show as HTML
   Rendered layouts/_footer.html.erb (0.1ms)
 Completed 200 OK in 233ms (Views: 219.9ms | ActiveRecord: 9.7ms)
 >>>>>>> e7629e842362b2a3c50fe57c5ff68ca01c3f3242
+  [1m[36mActiveRecord::SchemaMigration Load (4.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateWidgets (20140707111715)
+  [1m[35m (0.2ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /home/coleung/sfuhome/cmpt276/Go_fit_master/db/migrate/20140707111715_create_widgets.rb:8)
+  [1m[36m (405.7ms)[0m  [1mCREATE TABLE "widgets" ("id" serial primary key, "name" character varying, "description" text, "stock" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"  [["version", "20140707111715"]]
+  [1m[36m (52.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20171103225707)
+  [1m[35m (0.2ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /home/coleung/sfuhome/cmpt276/Go_fit_master/db/migrate/20171103225707_create_users.rb:7)
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (7.1ms)[0m  [1mDROP DATABASE IF EXISTS "cmpt276"[0m
+  [1m[35m (0.2ms)[0m  DROP DATABASE IF EXISTS "cmpt276_test"
+  [1m[36m (0.3ms)[0m  [1mCREATE DATABASE "cmpt276" ENCODING = 'unicode'[0m
+  [1m[35m (0.2ms)[0m  CREATE DATABASE "cmpt276_test" ENCODING = 'unicode'
+  [1m[36m (0.2ms)[0m  [1mDROP DATABASE IF EXISTS "cmpt276"[0m
+  [1m[35m (0.2ms)[0m  DROP DATABASE IF EXISTS "cmpt276_test"
+  [1m[36m (0.2ms)[0m  [1mCREATE DATABASE "cmpt276" ENCODING = 'unicode'[0m
+  [1m[35m (0.2ms)[0m  CREATE DATABASE "cmpt276_test" ENCODING = 'unicode'
+  [1m[36mSQL (26.6ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (59.4ms)[0m  CREATE TABLE "calculators" ("id" serial primary key, "calories" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (102.8ms)[0m  [1mCREATE TABLE "guides" ("id" serial primary key, "title" character varying, "content" text, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "hits" integer, "user_name" character varying) [0m
+  [1m[35m (69.5ms)[0m  CREATE TABLE "gyms" ("id" serial primary key, "name" character varying, "address" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" integer) 
+  [1m[36m (34.7ms)[0m  [1mCREATE  INDEX  "index_gyms_on_user_id" ON "gyms" USING btree ("user_id")[0m
+  [1m[35m (60.7ms)[0m  CREATE TABLE "images" ("id" serial primary key, "image_id" character varying, "image_filename" character varying, "image_size" integer, "image_content_type" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (94.9ms)[0m  [1mDROP TABLE "users" CASCADE[0m
+  [1m[35m (61.0ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp, "updated_at" timestamp, "password_digest" character varying, "type" character varying, "admin" boolean DEFAULT 'f', "height" float, "weight" float, "date_of_birth" date, "description" text, "remember_digest" character varying) 
+  [1m[36m (48.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (10.8ms)[0m  DROP TABLE "widgets" CASCADE
+  [1m[36m (63.2ms)[0m  [1mCREATE TABLE "widgets" ("id" serial primary key, "name" character varying, "description" text, "stock" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (7.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20171125015438')[0m
+  [1m[35m (11.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20171103225707')
+  [1m[36m (12.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20171106091859')[0m
+  [1m[35m (11.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20171106093035')
+  [1m[36m (12.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20171107044425')[0m
+  [1m[35m (11.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20171107061548')
+  [1m[36m (12.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20171112085153')[0m
+  [1m[35m (11.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20171113145601')
+  [1m[36m (13.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20171119131853')[0m
+  [1m[35m (11.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20171123203303')
+  [1m[36m (11.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20171123205507')[0m
+  [1m[35m (13.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20171124233617')
+  [1m[36m (11.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20171123220653')[0m
+  [1m[35mSQL (1.2ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (185.4ms)[0m  [1mCREATE TABLE "calculators" ("id" serial primary key, "calories" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (73.8ms)[0m  CREATE TABLE "guides" ("id" serial primary key, "title" character varying, "content" text, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "hits" integer, "user_name" character varying) 
+  [1m[36m (62.4ms)[0m  [1mCREATE TABLE "gyms" ("id" serial primary key, "name" character varying, "address" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" integer) [0m
+  [1m[35m (53.6ms)[0m  CREATE  INDEX  "index_gyms_on_user_id" ON "gyms" USING btree ("user_id")
+  [1m[36m (71.8ms)[0m  [1mCREATE TABLE "images" ("id" serial primary key, "image_id" character varying, "image_filename" character varying, "image_size" integer, "image_content_type" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (45.5ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (60.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp, "updated_at" timestamp, "password_digest" character varying, "type" character varying, "admin" boolean DEFAULT 'f', "height" float, "weight" float, "date_of_birth" date, "description" text, "remember_digest" character varying) [0m
+  [1m[35m (35.0ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (72.0ms)[0m  [1mCREATE TABLE "widgets" ("id" serial primary key, "name" character varying, "description" text, "stock" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (41.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (30.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20171125015438')[0m
+  [1m[35m (11.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140707111715')
+  [1m[36m (12.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20171103225707')[0m
+  [1m[35m (11.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20171106091859')
+  [1m[36m (11.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20171106093035')[0m
+  [1m[35m (13.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20171107044425')
+  [1m[36m (11.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20171107061548')[0m
+  [1m[35m (12.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20171112085153')
+  [1m[36m (11.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20171113145601')[0m
+  [1m[35m (11.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20171119131853')
+  [1m[36m (13.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20171123203303')[0m
+  [1m[35m (11.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20171123205507')
+  [1m[36m (13.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20171124233617')[0m
+  [1m[35m (11.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20171123220653')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.3ms)[0m  [1mDROP DATABASE IF EXISTS "cmpt276"[0m
+  [1m[35m (0.3ms)[0m  DROP DATABASE IF EXISTS "cmpt276_test"
+  [1m[36m (0.2ms)[0m  [1mCREATE DATABASE "cmpt276" ENCODING = 'unicode'[0m
+  [1m[35m (0.3ms)[0m  CREATE DATABASE "cmpt276_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (47.8ms)[0m  DROP TABLE "calculators" CASCADE
+  [1m[36m (103.5ms)[0m  [1mCREATE TABLE "calculators" ("id" serial primary key, "calories" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (26.6ms)[0m  DROP TABLE "guides" CASCADE
+  [1m[36m (60.9ms)[0m  [1mCREATE TABLE "guides" ("id" serial primary key, "title" character varying, "content" text, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "hits" integer, "user_name" character varying) [0m
+  [1m[35m (12.1ms)[0m  DROP TABLE "gyms" CASCADE
+  [1m[36m (60.9ms)[0m  [1mCREATE TABLE "gyms" ("id" serial primary key, "name" character varying, "address" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" integer) [0m
+  [1m[35m (46.6ms)[0m  CREATE  INDEX  "index_gyms_on_user_id" ON "gyms" USING btree ("user_id")
+  [1m[36m (12.4ms)[0m  [1mDROP TABLE "images" CASCADE[0m
+  [1m[35m (102.6ms)[0m  CREATE TABLE "images" ("id" serial primary key, "image_id" character varying, "image_filename" character varying, "image_size" integer, "image_content_type" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (11.1ms)[0m  [1mDROP TABLE "users" CASCADE[0m
+  [1m[35m (60.4ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp, "updated_at" timestamp, "password_digest" character varying, "type" character varying, "admin" boolean DEFAULT 'f', "height" float, "weight" float, "date_of_birth" date, "description" text, "remember_digest" character varying) 
+  [1m[36m (36.3ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (11.2ms)[0m  DROP TABLE "widgets" CASCADE
+  [1m[36m (60.9ms)[0m  [1mCREATE TABLE "widgets" ("id" serial primary key, "name" character varying, "description" text, "stock" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (22.3ms)[0m  DROP TABLE "calculators" CASCADE
+  [1m[36m (36.1ms)[0m  [1mCREATE TABLE "calculators" ("id" serial primary key, "calories" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (13.9ms)[0m  DROP TABLE "guides" CASCADE
+  [1m[36m (72.7ms)[0m  [1mCREATE TABLE "guides" ("id" serial primary key, "title" character varying, "content" text, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "hits" integer, "user_name" character varying) [0m
+  [1m[35m (11.2ms)[0m  DROP TABLE "gyms" CASCADE
+  [1m[36m (62.1ms)[0m  [1mCREATE TABLE "gyms" ("id" serial primary key, "name" character varying, "address" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" integer) [0m
+  [1m[35m (34.8ms)[0m  CREATE  INDEX  "index_gyms_on_user_id" ON "gyms" USING btree ("user_id")
+  [1m[36m (10.8ms)[0m  [1mDROP TABLE "images" CASCADE[0m
+  [1m[35m (74.1ms)[0m  CREATE TABLE "images" ("id" serial primary key, "image_id" character varying, "image_filename" character varying, "image_size" integer, "image_content_type" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (11.0ms)[0m  [1mDROP TABLE "users" CASCADE[0m
+  [1m[35m (60.4ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp, "updated_at" timestamp, "password_digest" character varying, "type" character varying, "admin" boolean DEFAULT 'f', "height" float, "weight" float, "date_of_birth" date, "description" text, "remember_digest" character varying) 
+  [1m[36m (35.1ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (12.3ms)[0m  DROP TABLE "widgets" CASCADE
+  [1m[36m (60.8ms)[0m  [1mCREATE TABLE "widgets" ("id" serial primary key, "name" character varying, "description" text, "stock" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.2ms)[0m  [1mDROP DATABASE IF EXISTS "cmpt276"[0m
+  [1m[35m (0.1ms)[0m  DROP DATABASE IF EXISTS "cmpt276_test"
+  [1m[36m (0.2ms)[0m  [1mCREATE DATABASE "cmpt276" ENCODING = 'unicode'[0m
+  [1m[35m (0.2ms)[0m  CREATE DATABASE "cmpt276_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (27.8ms)[0m  DROP TABLE "calculators" CASCADE
+  [1m[36m (64.4ms)[0m  [1mCREATE TABLE "calculators" ("id" serial primary key, "calories" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (9.0ms)[0m  DROP TABLE "guides" CASCADE
+  [1m[36m (61.2ms)[0m  [1mCREATE TABLE "guides" ("id" serial primary key, "title" character varying, "content" text, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "hits" integer, "user_name" character varying) [0m
+  [1m[35m (15.6ms)[0m  DROP TABLE "gyms" CASCADE
+  [1m[36m (79.2ms)[0m  [1mCREATE TABLE "gyms" ("id" serial primary key, "name" character varying, "address" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" integer) [0m
+  [1m[35m (36.2ms)[0m  CREATE  INDEX  "index_gyms_on_user_id" ON "gyms" USING btree ("user_id")
+  [1m[36m (12.7ms)[0m  [1mDROP TABLE "images" CASCADE[0m
+  [1m[35m (67.4ms)[0m  CREATE TABLE "images" ("id" serial primary key, "image_id" character varying, "image_filename" character varying, "image_size" integer, "image_content_type" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (11.6ms)[0m  [1mDROP TABLE "users" CASCADE[0m
+  [1m[35m (74.2ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp, "updated_at" timestamp, "password_digest" character varying, "type" character varying, "admin" boolean DEFAULT 'f', "height" float, "weight" float, "date_of_birth" date, "description" text, "remember_digest" character varying) 
+  [1m[36m (41.3ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (8.3ms)[0m  DROP TABLE "widgets" CASCADE
+  [1m[36m (61.8ms)[0m  [1mCREATE TABLE "widgets" ("id" serial primary key, "name" character varying, "description" text, "stock" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (11.5ms)[0m  DROP TABLE "calculators" CASCADE
+  [1m[36m (41.9ms)[0m  [1mCREATE TABLE "calculators" ("id" serial primary key, "calories" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (12.2ms)[0m  DROP TABLE "guides" CASCADE
+  [1m[36m (72.0ms)[0m  [1mCREATE TABLE "guides" ("id" serial primary key, "title" character varying, "content" text, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "hits" integer, "user_name" character varying) [0m
+  [1m[35m (9.6ms)[0m  DROP TABLE "gyms" CASCADE
+  [1m[36m (62.0ms)[0m  [1mCREATE TABLE "gyms" ("id" serial primary key, "name" character varying, "address" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" integer) [0m
+  [1m[35m (41.9ms)[0m  CREATE  INDEX  "index_gyms_on_user_id" ON "gyms" USING btree ("user_id")
+  [1m[36m (12.7ms)[0m  [1mDROP TABLE "images" CASCADE[0m
+  [1m[35m (62.1ms)[0m  CREATE TABLE "images" ("id" serial primary key, "image_id" character varying, "image_filename" character varying, "image_size" integer, "image_content_type" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (11.3ms)[0m  [1mDROP TABLE "users" CASCADE[0m
+  [1m[35m (63.1ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp, "updated_at" timestamp, "password_digest" character varying, "type" character varying, "admin" boolean DEFAULT 'f', "height" float, "weight" float, "date_of_birth" date, "description" text, "remember_digest" character varying) 
+  [1m[36m (36.2ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (11.3ms)[0m  DROP TABLE "widgets" CASCADE
+  [1m[36m (63.8ms)[0m  [1mCREATE TABLE "widgets" ("id" serial primary key, "name" character varying, "description" text, "stock" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.2ms)[0m  [1mDROP DATABASE IF EXISTS "cmpt276"[0m
+  [1m[35m (0.2ms)[0m  DROP DATABASE IF EXISTS "cmpt276_test"
+  [1m[36m (0.2ms)[0m  [1mCREATE DATABASE "cmpt276" ENCODING = 'unicode'[0m
+  [1m[35m (0.2ms)[0m  CREATE DATABASE "cmpt276_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (43.9ms)[0m  DROP TABLE "calculators" CASCADE
+  [1m[36m (36.1ms)[0m  [1mCREATE TABLE "calculators" ("id" serial primary key, "calories" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (10.5ms)[0m  DROP TABLE "guides" CASCADE
+  [1m[36m (144.8ms)[0m  [1mCREATE TABLE "guides" ("id" serial primary key, "title" character varying, "content" text, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "hits" integer, "user_name" character varying) [0m
+  [1m[35m (12.0ms)[0m  DROP TABLE "gyms" CASCADE
+  [1m[36m (61.5ms)[0m  [1mCREATE TABLE "gyms" ("id" serial primary key, "name" character varying, "address" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" integer) [0m
+  [1m[35m (35.2ms)[0m  CREATE  INDEX  "index_gyms_on_user_id" ON "gyms" USING btree ("user_id")
+  [1m[36m (12.0ms)[0m  [1mDROP TABLE "images" CASCADE[0m
+  [1m[35m (70.1ms)[0m  CREATE TABLE "images" ("id" serial primary key, "image_id" character varying, "image_filename" character varying, "image_size" integer, "image_content_type" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (11.9ms)[0m  [1mDROP TABLE "users" CASCADE[0m
+  [1m[35m (61.5ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp, "updated_at" timestamp, "password_digest" character varying, "type" character varying, "admin" boolean DEFAULT 'f', "height" float, "weight" float, "date_of_birth" date, "description" text, "remember_digest" character varying) 
+  [1m[36m (48.6ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (10.6ms)[0m  DROP TABLE "widgets" CASCADE
+  [1m[36m (61.7ms)[0m  [1mCREATE TABLE "widgets" ("id" serial primary key, "name" character varying, "description" text, "stock" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (16.7ms)[0m  DROP TABLE "calculators" CASCADE
+  [1m[36m (36.4ms)[0m  [1mCREATE TABLE "calculators" ("id" serial primary key, "calories" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (12.6ms)[0m  DROP TABLE "guides" CASCADE
+  [1m[36m (62.2ms)[0m  [1mCREATE TABLE "guides" ("id" serial primary key, "title" character varying, "content" text, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "hits" integer, "user_name" character varying) [0m
+  [1m[35m (14.6ms)[0m  DROP TABLE "gyms" CASCADE
+  [1m[36m (60.9ms)[0m  [1mCREATE TABLE "gyms" ("id" serial primary key, "name" character varying, "address" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" integer) [0m
+  [1m[35m (35.2ms)[0m  CREATE  INDEX  "index_gyms_on_user_id" ON "gyms" USING btree ("user_id")
+  [1m[36m (11.2ms)[0m  [1mDROP TABLE "images" CASCADE[0m
+  [1m[35m (94.3ms)[0m  CREATE TABLE "images" ("id" serial primary key, "image_id" character varying, "image_filename" character varying, "image_size" integer, "image_content_type" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (12.4ms)[0m  [1mDROP TABLE "users" CASCADE[0m
+  [1m[35m (72.4ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp, "updated_at" timestamp, "password_digest" character varying, "type" character varying, "admin" boolean DEFAULT 'f', "height" float, "weight" float, "date_of_birth" date, "description" text, "remember_digest" character varying) 
+  [1m[36m (35.1ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (12.2ms)[0m  DROP TABLE "widgets" CASCADE
+  [1m[36m (102.5ms)[0m  [1mCREATE TABLE "widgets" ("id" serial primary key, "name" character varying, "description" text, "stock" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('admin@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "date_of_birth", "description", "admin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["name", "Admin"], ["email", "admin@example.com"], ["password_digest", "$2a$10$QYiV7Bbsb9kh4MSUkk5m6ek3sbO8pf7stqt4KbKTGrxU14v2.dCZ2"], ["height", 99.0], ["weight", 99.0], ["date_of_birth", "2005-12-12"], ["description", "I am Admin."], ["admin", "t"], ["created_at", "2017-11-29 06:31:03.912397"], ["updated_at", "2017-11-29 06:31:03.912397"]]
+  [1m[36m (9.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-1@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Kimberly Ullrich"], ["email", "example-1@railstutorial.org"], ["password_digest", "$2a$10$rTL75Xcv8hZk8E15xThazuzhhyslXAQWAm4SiA1KfU2cPVlGX..li"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:04.475668"], ["updated_at", "2017-11-29 06:31:04.475668"]]
+  [1m[36m (25.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-2@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Lelia Abshire MD"], ["email", "example-2@railstutorial.org"], ["password_digest", "$2a$10$Alrx2nxqD1Z.ayi/EOM4S.aX8rYDMBBoIF9ANmuOoxtoxLvbMNs5a"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:04.557940"], ["updated_at", "2017-11-29 06:31:04.557940"]]
+  [1m[36m (14.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-3@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Alberta Kirlin"], ["email", "example-3@railstutorial.org"], ["password_digest", "$2a$10$wsNfl17u3v.lXkoYld4D2./Sw.5NZDdJUxc8JvHS9HobIhtQNWH0O"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:04.630378"], ["updated_at", "2017-11-29 06:31:04.630378"]]
+  [1m[36m (11.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-4@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Rick Waters MD"], ["email", "example-4@railstutorial.org"], ["password_digest", "$2a$10$c44CSKzKhssZLVRKNjDaPehEQjzYo4UBmnvC5P8D7EplbrqxMkz7G"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:04.699470"], ["updated_at", "2017-11-29 06:31:04.699470"]]
+  [1m[36m (13.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-5@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Sonny Bradtke"], ["email", "example-5@railstutorial.org"], ["password_digest", "$2a$10$W6dce9ekJlos0F/oPBfFA.HCDB9tIVXhf5qH1Pn0.NjJs1nLSifFC"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:04.769781"], ["updated_at", "2017-11-29 06:31:04.769781"]]
+  [1m[36m (14.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-6@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Aiyana Cassin"], ["email", "example-6@railstutorial.org"], ["password_digest", "$2a$10$zgFbHzkcWJs4kIxgG4zS2ObJ6t6sWpG6mzZ6ndzjhZbcLWDv.XaVO"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:04.841512"], ["updated_at", "2017-11-29 06:31:04.841512"]]
+  [1m[36m (12.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-7@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Jaydon Cartwright"], ["email", "example-7@railstutorial.org"], ["password_digest", "$2a$10$m/Xn3qHSFIbAC/uxdExJjOTzY5QK80.PUuV42DH/uQcWP906QlfkC"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:04.911034"], ["updated_at", "2017-11-29 06:31:04.911034"]]
+  [1m[36m (14.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-8@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Maverick Reinger"], ["email", "example-8@railstutorial.org"], ["password_digest", "$2a$10$T2RAj73BWPs1lNV1gYtdoumUpiPsVh3NwVAarkLwd258IbW5FSpRa"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:04.982288"], ["updated_at", "2017-11-29 06:31:04.982288"]]
+  [1m[36m (13.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-9@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Justina Pagac"], ["email", "example-9@railstutorial.org"], ["password_digest", "$2a$10$.xTnKVfS6T4E6BluXMRGf.JyJrHoRJdzfNbQZx1PwciyhL81ZEaVK"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:05.051458"], ["updated_at", "2017-11-29 06:31:05.051458"]]
+  [1m[36m (13.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-10@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Janiya Satterfield"], ["email", "example-10@railstutorial.org"], ["password_digest", "$2a$10$Qo0nlZGuicNlCf4S9vjjsuiOy0KGJ0EXnMcetR6pAeecmmrH8NmBS"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:05.122868"], ["updated_at", "2017-11-29 06:31:05.122868"]]
+  [1m[36m (13.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-11@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Ms. Audra Abernathy"], ["email", "example-11@railstutorial.org"], ["password_digest", "$2a$10$hy.VaaXwVCDrShIS8iESOeCNT8NNXWQ7H.al/BJtjroMRLFQm1sOe"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:05.194020"], ["updated_at", "2017-11-29 06:31:05.194020"]]
+  [1m[36m (12.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-12@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Carmine Lind"], ["email", "example-12@railstutorial.org"], ["password_digest", "$2a$10$SG4ofLp3jDf5/Z9L3FgSsepib9QndiyanJ5niQvP2xMVrDHPNolsG"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:05.263609"], ["updated_at", "2017-11-29 06:31:05.263609"]]
+  [1m[36m (14.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-13@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Mrs. Selena Langworth"], ["email", "example-13@railstutorial.org"], ["password_digest", "$2a$10$buurSn1og0pnBrB.AXisLOD0BrXN81VLpZVjNDQobuAl2d598KIeu"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:05.336094"], ["updated_at", "2017-11-29 06:31:05.336094"]]
+  [1m[36m (11.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-14@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Kennith McDermott"], ["email", "example-14@railstutorial.org"], ["password_digest", "$2a$10$axa5PH1GWpAT/9bE3UMTsu7ui/h.O1M2ZNJmpS8uEMRBdxtj/4BAS"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:05.403960"], ["updated_at", "2017-11-29 06:31:05.403960"]]
+  [1m[36m (15.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-15@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Perry Turner"], ["email", "example-15@railstutorial.org"], ["password_digest", "$2a$10$/obbEJBArMysQYpT4Rwxge.o3oPTrn2o8gsN2Xg3vTBfMjiSRi6ci"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:05.476860"], ["updated_at", "2017-11-29 06:31:05.476860"]]
+  [1m[36m (12.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-16@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Coty Feil"], ["email", "example-16@railstutorial.org"], ["password_digest", "$2a$10$ojWV4QJ7i9ScNrfLFCaD/OORCutiwSGT7MZKHr.7uf5CRnpgETgTi"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:05.545130"], ["updated_at", "2017-11-29 06:31:05.545130"]]
+  [1m[36m (14.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-17@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Ms. Anabelle Grant"], ["email", "example-17@railstutorial.org"], ["password_digest", "$2a$10$qmcGhpY0vNT1uTQ258SKh.LCXCulzXW9nqc5/Lpkp2u19BcHfkNRW"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:05.616299"], ["updated_at", "2017-11-29 06:31:05.616299"]]
+  [1m[36m (14.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-18@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Mr. Lorine Konopelski"], ["email", "example-18@railstutorial.org"], ["password_digest", "$2a$10$l8FHihJCavwkhYNYzzvDV.1wCIg.rIzBln1c1ZC/56bxhIWMbXHJK"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:05.686654"], ["updated_at", "2017-11-29 06:31:05.686654"]]
+  [1m[36m (14.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-19@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Olaf Balistreri"], ["email", "example-19@railstutorial.org"], ["password_digest", "$2a$10$eA2cAz8LcK8FWhsyfKRqyeeYKaNTFSnZmHFjihm4Upft3jobt294y"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:05.757674"], ["updated_at", "2017-11-29 06:31:05.757674"]]
+  [1m[36m (14.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-20@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Nannie Pfannerstill"], ["email", "example-20@railstutorial.org"], ["password_digest", "$2a$10$6Twmy4hea8DaYdjX7BccV.mo7./mPll9aVSyYk8VKqpCiDlnmW6u."], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:05.828593"], ["updated_at", "2017-11-29 06:31:05.828593"]]
+  [1m[36m (13.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-21@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Wilma Heathcote III"], ["email", "example-21@railstutorial.org"], ["password_digest", "$2a$10$cI2d9YGwh9D1qHQVwvgi/eNMb0eVDN99Oev0t3hkiQCsD6uJeG4ce"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:05.900017"], ["updated_at", "2017-11-29 06:31:05.900017"]]
+  [1m[36m (12.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-22@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Issac Pfeffer"], ["email", "example-22@railstutorial.org"], ["password_digest", "$2a$10$okduoUNuCnX7HLcUX3XVCu8WTbjStxV76q1xgNs2bBqdUdeklEz6G"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:05.967755"], ["updated_at", "2017-11-29 06:31:05.967755"]]
+  [1m[36m (16.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-23@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Serena Torphy Sr."], ["email", "example-23@railstutorial.org"], ["password_digest", "$2a$10$Jv1DvC3Td0DVsSxSHH.ViuQSk3iO0.lJM1bDXs9/JazKN9ec2vvHS"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:06.040869"], ["updated_at", "2017-11-29 06:31:06.040869"]]
+  [1m[36m (13.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-24@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Ms. Karelle Schaden"], ["email", "example-24@railstutorial.org"], ["password_digest", "$2a$10$TjNBbzV7Fm9x1gcCJNB28uohKQxfMlYPxu3DxvvD1MQ1xPauW6rPW"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:06.109816"], ["updated_at", "2017-11-29 06:31:06.109816"]]
+  [1m[36m (15.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-25@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Craig Cremin"], ["email", "example-25@railstutorial.org"], ["password_digest", "$2a$10$k2VI8Lzh7UJDv2S9rh.hveOeG25dq3KD4CkHcnkq6N/kcNZouBjUK"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:06.183278"], ["updated_at", "2017-11-29 06:31:06.183278"]]
+  [1m[36m (11.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-26@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Robbie Waters"], ["email", "example-26@railstutorial.org"], ["password_digest", "$2a$10$.YAhiMIWwe0j6YAnWF9wne9FwLEf7OAmmgQ3nm9Y7sM77pHD31s02"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:06.251298"], ["updated_at", "2017-11-29 06:31:06.251298"]]
+  [1m[36m (13.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-27@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Nestor Green"], ["email", "example-27@railstutorial.org"], ["password_digest", "$2a$10$GrgITfjZ.Yoh9Sk3IyizcO1jXHaqxeUMlWt.BANSFAso6Hnppdbd2"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:06.328110"], ["updated_at", "2017-11-29 06:31:06.328110"]]
+  [1m[36m (16.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-28@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Katelynn Cruickshank"], ["email", "example-28@railstutorial.org"], ["password_digest", "$2a$10$6lKb5MZ4d6U3h13/goIyeOQbAQVNqyll2QY.Wz73k./.IAvE5MMke"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:06.400081"], ["updated_at", "2017-11-29 06:31:06.400081"]]
+  [1m[36m (14.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-29@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Adriana Lockman"], ["email", "example-29@railstutorial.org"], ["password_digest", "$2a$10$lM9xPeUntGYS3kB1oSnMyeRA1WLDVC6zdkgJFCorl4cJQPKs1UCwa"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:06.473469"], ["updated_at", "2017-11-29 06:31:06.473469"]]
+  [1m[36m (12.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-30@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Judge Goldner DVM"], ["email", "example-30@railstutorial.org"], ["password_digest", "$2a$10$qpNtl9vuSP/WT4jpiHhxAOzxi3KOFBrEhu/eqtnBwhiQbd3XKANou"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:06.542021"], ["updated_at", "2017-11-29 06:31:06.542021"]]
+  [1m[36m (14.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-31@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Curtis Kassulke"], ["email", "example-31@railstutorial.org"], ["password_digest", "$2a$10$NbcUwv4OZIK2LvUvRrarAuc4GBZiS/213YB0/Yw7uEG4aCM4VUVfK"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:06.613902"], ["updated_at", "2017-11-29 06:31:06.613902"]]
+  [1m[36m (13.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-32@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Alene Lubowitz V"], ["email", "example-32@railstutorial.org"], ["password_digest", "$2a$10$hldsBe4DR0CPb536bCQmVe0QLpn1fmpx5Qy1ukoVTC93jWqG4feaK"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:06.683831"], ["updated_at", "2017-11-29 06:31:06.683831"]]
+  [1m[36m (13.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-33@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Mrs. Sedrick Mante"], ["email", "example-33@railstutorial.org"], ["password_digest", "$2a$10$nNB4EAwk62CC61i7H0lRiOG2paZnIK/UexHSJ/J4WPUEEeniszc3a"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:06.755204"], ["updated_at", "2017-11-29 06:31:06.755204"]]
+  [1m[36m (12.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-34@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Kayla Hammes"], ["email", "example-34@railstutorial.org"], ["password_digest", "$2a$10$u4xJgJeANmnVISo2.v2uEuPSQ1lyoRuG3Npn5uNuLdA0JuTD.dOwW"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:06.823751"], ["updated_at", "2017-11-29 06:31:06.823751"]]
+  [1m[36m (15.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-35@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Elise Parker"], ["email", "example-35@railstutorial.org"], ["password_digest", "$2a$10$7.OW1Ph09Kx8dflSsK9D8eDLIVIDCmWDdnLDtCZ4w656IV0AN4GE6"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:06.895867"], ["updated_at", "2017-11-29 06:31:06.895867"]]
+  [1m[36m (13.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-36@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Hillard Marvin"], ["email", "example-36@railstutorial.org"], ["password_digest", "$2a$10$hio/DYhSLy10rC.6FrKbXOuEpNJrf6kEEXT94K8BIQA4hrJmiVz6O"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:06.966381"], ["updated_at", "2017-11-29 06:31:06.966381"]]
+  [1m[36m (14.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-37@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Eli D'Amore IV"], ["email", "example-37@railstutorial.org"], ["password_digest", "$2a$10$ZdLWOysNyenAxr79sBEqbe.U51C.B2STagjb9IMcSojDQreq6Ln6O"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:07.040147"], ["updated_at", "2017-11-29 06:31:07.040147"]]
+  [1m[36m (10.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-38@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Jeffery McDermott"], ["email", "example-38@railstutorial.org"], ["password_digest", "$2a$10$YOfSdhgrhmN6znyAVemy6eX7/6Jg9ICWplOf0s3hIkIcpZ8DEC3s6"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:07.108585"], ["updated_at", "2017-11-29 06:31:07.108585"]]
+  [1m[36m (11.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-39@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Angel Mraz"], ["email", "example-39@railstutorial.org"], ["password_digest", "$2a$10$VA5KDzS4jgZOSLSLlBerj.NblXoGTdsXIqSu6yQQx7n9Zyr8hU77m"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:07.176854"], ["updated_at", "2017-11-29 06:31:07.176854"]]
+  [1m[36m (14.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-40@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Mrs. Nicholaus Strosin"], ["email", "example-40@railstutorial.org"], ["password_digest", "$2a$10$X8/ZiL6hqJt7dy8HVWOIa.ufWtD1MCjCNW30UuehwCpoxRcNIxDfq"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:07.248180"], ["updated_at", "2017-11-29 06:31:07.248180"]]
+  [1m[36m (13.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-41@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Berniece Osinski"], ["email", "example-41@railstutorial.org"], ["password_digest", "$2a$10$Jxa/Opao0BTuppX0z3Lzz.ZEJL0SePBdsFHShPwrM/FG0w6tFIzG6"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:07.319535"], ["updated_at", "2017-11-29 06:31:07.319535"]]
+  [1m[36m (13.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-42@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Lucile Ferry"], ["email", "example-42@railstutorial.org"], ["password_digest", "$2a$10$/pZzS00A/aCQKc5Dhr9qRegOFDbBNX70PnfqbFXW6Zu2lltj.aaDW"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:07.386843"], ["updated_at", "2017-11-29 06:31:07.386843"]]
+  [1m[36m (8.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-43@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Edward Dietrich II"], ["email", "example-43@railstutorial.org"], ["password_digest", "$2a$10$lYBj.S5QII.1tlgk2hBsBuspqzGGjYsUJDTfxNqmpFYtU3j3rQsum"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:07.450642"], ["updated_at", "2017-11-29 06:31:07.450642"]]
+  [1m[36m (15.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-44@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Lew McGlynn"], ["email", "example-44@railstutorial.org"], ["password_digest", "$2a$10$B6klcLXvp8ou1GUEd9mVCOgTXIlJVy297eVuZtVkupfnZu6VO.B7C"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:07.522306"], ["updated_at", "2017-11-29 06:31:07.522306"]]
+  [1m[36m (14.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-45@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Joesph Kihn"], ["email", "example-45@railstutorial.org"], ["password_digest", "$2a$10$B4DFtPmLb7ytBS4hfotQj.LBd.rgW1kwXNLu84V4L8DoiYhlSaJVa"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:07.591310"], ["updated_at", "2017-11-29 06:31:07.591310"]]
+  [1m[36m (14.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-46@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Heloise Schowalter"], ["email", "example-46@railstutorial.org"], ["password_digest", "$2a$10$KBj0bWAU/4v97xGX437LV.Cz4.7yYUD49LUswHJaKg0xSjGvJ9qoO"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:07.663015"], ["updated_at", "2017-11-29 06:31:07.663015"]]
+  [1m[36m (14.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-47@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Amaya Kuvalis V"], ["email", "example-47@railstutorial.org"], ["password_digest", "$2a$10$ejiZd.R.99HHb3QNGa3H7.4fjnz6.Vod4FVVCeiKlHsQhbss1OWWC"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:07.734240"], ["updated_at", "2017-11-29 06:31:07.734240"]]
+  [1m[36m (13.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-48@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Joyce Keebler"], ["email", "example-48@railstutorial.org"], ["password_digest", "$2a$10$dRLXj3kD.rRSTSnGeHdGLuHgcBI.3MtBQveh/sQDF7pI69Wj.7a7."], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:07.804327"], ["updated_at", "2017-11-29 06:31:07.804327"]]
+  [1m[36m (14.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-49@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Dora Rolfson I"], ["email", "example-49@railstutorial.org"], ["password_digest", "$2a$10$erXeVIqd.9qifEtqNRjp7eaNbD56cVmrPvqURlrNsI1ZEbvsNF3M2"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:07.876430"], ["updated_at", "2017-11-29 06:31:07.876430"]]
+  [1m[36m (12.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-50@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Mrs. Lisandro Haley"], ["email", "example-50@railstutorial.org"], ["password_digest", "$2a$10$VsoNMrduvhWjKNXovjy4KudehtgXcueaos.W6ArQuR19FuVoj7fSy"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:07.945623"], ["updated_at", "2017-11-29 06:31:07.945623"]]
+  [1m[36m (13.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-51@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Lillian Blanda"], ["email", "example-51@railstutorial.org"], ["password_digest", "$2a$10$nkffxutnHvxfuX.Hqbxn6OD/Jc/6AKSUyfmnWMf2bAEtMjRdxaFKq"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:08.014822"], ["updated_at", "2017-11-29 06:31:08.014822"]]
+  [1m[36m (15.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-52@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Dalton Miller"], ["email", "example-52@railstutorial.org"], ["password_digest", "$2a$10$hoZyWFE4zltEqhQRzcdzEO7pGI/gOjSvVdChM0FKpB3vbkRb0emse"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:08.087050"], ["updated_at", "2017-11-29 06:31:08.087050"]]
+  [1m[36m (13.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-53@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Mrs. Erica Little"], ["email", "example-53@railstutorial.org"], ["password_digest", "$2a$10$Zi8tY3PXKienHQW.DPuGBuXoJXvI.4eE1QqcpDKFXjXse0zcEC2ua"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:08.156932"], ["updated_at", "2017-11-29 06:31:08.156932"]]
+  [1m[36m (14.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-54@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Lisette Legros Sr."], ["email", "example-54@railstutorial.org"], ["password_digest", "$2a$10$XdKEzavOogjI2HZfjn6lUujJUhDjQ67ICwSNTInCWGKxMr80t6ore"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:08.227725"], ["updated_at", "2017-11-29 06:31:08.227725"]]
+  [1m[36m (14.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-55@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Isac O'Connell"], ["email", "example-55@railstutorial.org"], ["password_digest", "$2a$10$6dqG/E.hhetZ.ib9RMBjfeKz2KjAxQYutLjqyzWEMNodR0XA2Z/EC"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:08.295728"], ["updated_at", "2017-11-29 06:31:08.295728"]]
+  [1m[36m (7.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-56@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Shannon Reichel"], ["email", "example-56@railstutorial.org"], ["password_digest", "$2a$10$ZkLTkrk9Y.c2NNkjLhjwDeL8J2mM.BdqsuDIQCOSX1PU8xwEsWHIG"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:08.358750"], ["updated_at", "2017-11-29 06:31:08.358750"]]
+  [1m[36m (16.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-57@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Ford Quigley"], ["email", "example-57@railstutorial.org"], ["password_digest", "$2a$10$pOkmbYsVTkMb1KbbaTjlGeGCPL2tLKMSCC8iVe6zlQuknV.WzodOK"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:08.428340"], ["updated_at", "2017-11-29 06:31:08.428340"]]
+  [1m[36m (8.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-58@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Jayson Larkin"], ["email", "example-58@railstutorial.org"], ["password_digest", "$2a$10$FCX9vZBTmgJmS6EhDV538OJ4Xj.ihJNqscHXzPgmYv37TYM0wsPGq"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:08.491128"], ["updated_at", "2017-11-29 06:31:08.491128"]]
+  [1m[36m (8.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-59@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Ulises Cremin"], ["email", "example-59@railstutorial.org"], ["password_digest", "$2a$10$JG/JSrugf7FVKeH.Gtb7z.cZCIi6kllRXi0jAw.Z.MFWOuUPDnNeG"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:08.553282"], ["updated_at", "2017-11-29 06:31:08.553282"]]
+  [1m[36m (8.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-60@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Mr. Kamron Emmerich"], ["email", "example-60@railstutorial.org"], ["password_digest", "$2a$10$9s.fqCk7akAQ57LYoLF4pOLrzYnzGTKq1VL1RZPb/RwOVwmAnZv.W"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:08.616549"], ["updated_at", "2017-11-29 06:31:08.616549"]]
+  [1m[36m (16.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-61@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Mylene Cormier V"], ["email", "example-61@railstutorial.org"], ["password_digest", "$2a$10$9tnngH/SO.eu1sVfyL4O9OsmcbpZmLJl6gTNtrf1ZixjAR0VQ/Dri"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:08.689004"], ["updated_at", "2017-11-29 06:31:08.689004"]]
+  [1m[36m (8.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-62@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Mr. Xander Jast"], ["email", "example-62@railstutorial.org"], ["password_digest", "$2a$10$PeDFUIzDTtLEDS8OQCbxLO/.dHvWFtoBpFBCkH.lEaxSKRRi6UmoC"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:08.754462"], ["updated_at", "2017-11-29 06:31:08.754462"]]
+  [1m[36m (14.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-63@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Roosevelt Quigley"], ["email", "example-63@railstutorial.org"], ["password_digest", "$2a$10$aBoTmuk2Mgo7GJ0vHpqEYOj3levDFhkwWEEOFiuhy21NfaMfAQBuO"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:08.824741"], ["updated_at", "2017-11-29 06:31:08.824741"]]
+  [1m[36m (14.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-64@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Dr. Jamison Botsford"], ["email", "example-64@railstutorial.org"], ["password_digest", "$2a$10$SxInBCxRUC/L4FyN/Cphee43d6LCJGpVdA6oEwNghzZ6R81dcDEI2"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:08.893905"], ["updated_at", "2017-11-29 06:31:08.893905"]]
+  [1m[36m (16.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-65@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Enola Emmerich II"], ["email", "example-65@railstutorial.org"], ["password_digest", "$2a$10$oVvdZq8VnphVE/fk6i3xNuaLUoqLFLPBSffp0xDUG/jVmRUGehSDO"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:08.966045"], ["updated_at", "2017-11-29 06:31:08.966045"]]
+  [1m[36m (14.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-66@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Amalia Farrell"], ["email", "example-66@railstutorial.org"], ["password_digest", "$2a$10$8V6IKJRL8NjitgtjfGmHGO./.3zuIusucx5q.UZH0pn5nMCstzT/G"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:09.035178"], ["updated_at", "2017-11-29 06:31:09.035178"]]
+  [1m[36m (7.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-67@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Annabell Rau MD"], ["email", "example-67@railstutorial.org"], ["password_digest", "$2a$10$pm5QV4zbWg6oe2FKss8mLuycsgqkidXg9K4RrtIp1Skz5DSmut.5a"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:09.097334"], ["updated_at", "2017-11-29 06:31:09.097334"]]
+  [1m[36m (16.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-68@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Corbin Mueller"], ["email", "example-68@railstutorial.org"], ["password_digest", "$2a$10$BQQ.8SnWeas86KaCiQEBteSNy4/6r/fl/BOhfzh7.bbAnidA.gbsm"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:09.167781"], ["updated_at", "2017-11-29 06:31:09.167781"]]
+  [1m[36m (7.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-69@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Dillon Hoppe"], ["email", "example-69@railstutorial.org"], ["password_digest", "$2a$10$WhVY/79lyPQByn8LZ47cDO/wff8tVlxUs6zAbt2KEem7LMrtg1JH6"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:09.230376"], ["updated_at", "2017-11-29 06:31:09.230376"]]
+  [1m[36m (16.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-70@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Vena Quitzon"], ["email", "example-70@railstutorial.org"], ["password_digest", "$2a$10$2Yvqn7vojoHo8EoCxruGk.6puZAn.kwph/KcxVwl81X7h8nR3.D9O"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:09.300338"], ["updated_at", "2017-11-29 06:31:09.300338"]]
+  [1m[36m (8.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-71@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Aubree Gorczany"], ["email", "example-71@railstutorial.org"], ["password_digest", "$2a$10$Ekofx4tbkSWgG/IhAXUFXOzSlOaZzp5lp0p.rWpI.yfwyBAsOSMe2"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:09.362599"], ["updated_at", "2017-11-29 06:31:09.362599"]]
+  [1m[36m (7.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-72@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Patsy Swaniawski"], ["email", "example-72@railstutorial.org"], ["password_digest", "$2a$10$tLERDhAdu5.OiwTF.uen0eo3PIq6KOzVCUsZeyN2PHd6j/x0JctW6"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:09.425164"], ["updated_at", "2017-11-29 06:31:09.425164"]]
+  [1m[36m (16.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-73@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Virginie Beier"], ["email", "example-73@railstutorial.org"], ["password_digest", "$2a$10$3sShMdzfJAqEijvlzgiz.udCdOt9CovTGP6GHiBtTHg4SVTXtAW6m"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:09.495151"], ["updated_at", "2017-11-29 06:31:09.495151"]]
+  [1m[36m (8.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-74@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Manuel Dach"], ["email", "example-74@railstutorial.org"], ["password_digest", "$2a$10$gcQ40XDRf.LYmUxeinXKn.mqOcSVc10UxzoivEH52DNUm1x7JIFUS"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:09.556587"], ["updated_at", "2017-11-29 06:31:09.556587"]]
+  [1m[36m (9.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-75@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Gerry Murphy"], ["email", "example-75@railstutorial.org"], ["password_digest", "$2a$10$QJkl7Q3cs3YGTEyCeN2n/.PvRUcqLEePOEeeSSiJFvvZ5KflT1Rpa"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:09.619652"], ["updated_at", "2017-11-29 06:31:09.619652"]]
+  [1m[36m (8.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-76@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Kristin Beer"], ["email", "example-76@railstutorial.org"], ["password_digest", "$2a$10$0oOLSbztS.Mw8APVlfzOSu2GaCSIFo9D.60NSJ9JKmdGBLhWb4lpy"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:09.681379"], ["updated_at", "2017-11-29 06:31:09.681379"]]
+  [1m[36m (9.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-77@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Kian Vandervort V"], ["email", "example-77@railstutorial.org"], ["password_digest", "$2a$10$wJSbGzRwR3oZqnRqx1iaPO8srf4/oYBv3V0FVY1GMOoUY1q7nbQmO"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:09.744403"], ["updated_at", "2017-11-29 06:31:09.744403"]]
+  [1m[36m (8.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-78@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Adolphus Corwin"], ["email", "example-78@railstutorial.org"], ["password_digest", "$2a$10$H6OaTDqo87ebd0NgP4KEoufEVeGSFnq8MZ.slJwg6MWyT7NDZI5/2"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:09.806196"], ["updated_at", "2017-11-29 06:31:09.806196"]]
+  [1m[36m (8.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-79@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Stewart King"], ["email", "example-79@railstutorial.org"], ["password_digest", "$2a$10$9SqhPHcv3n4SIxR9bMQpc.ocTt9t2h9A0Yo54pfkXOTe7PKuG4IM."], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:09.867747"], ["updated_at", "2017-11-29 06:31:09.867747"]]
+  [1m[36m (11.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-80@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Dallas Zboncak DVM"], ["email", "example-80@railstutorial.org"], ["password_digest", "$2a$10$5joE6VocY0TvM7GMFW05ruIGbeB3iXHWqJRZ3YHa3UqssAxPtqdR2"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:09.932558"], ["updated_at", "2017-11-29 06:31:09.932558"]]
+  [1m[36m (8.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-81@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Kay Bailey"], ["email", "example-81@railstutorial.org"], ["password_digest", "$2a$10$zvkRnlrbs/MEzEPIYPplAOSKYHElWoVS7kJ64h44Ckmynqgym4yZa"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:09.994818"], ["updated_at", "2017-11-29 06:31:09.994818"]]
+  [1m[36m (9.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-82@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Ms. Lillie Jaskolski"], ["email", "example-82@railstutorial.org"], ["password_digest", "$2a$10$wSU1t1Vhcf.QKXochtRmjOtvyxdLNmBp8hGKX15PWtfiT18lBdr1."], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:10.056429"], ["updated_at", "2017-11-29 06:31:10.056429"]]
+  [1m[36m (9.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-83@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Bernadette Wilkinson"], ["email", "example-83@railstutorial.org"], ["password_digest", "$2a$10$GXuoUts/exS/LFrnkKYKpulTwpZetAKVJijJsPo9Owz1OxgtYSLPu"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:10.118944"], ["updated_at", "2017-11-29 06:31:10.118944"]]
+  [1m[36m (8.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-84@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Nikko Hegmann"], ["email", "example-84@railstutorial.org"], ["password_digest", "$2a$10$LZR3h5isB0iuYNSSKml3c.QEwSc6DACRiHNkQQd9mUxASwFSvHK.."], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:10.180713"], ["updated_at", "2017-11-29 06:31:10.180713"]]
+  [1m[36m (9.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-85@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Henriette Barton I"], ["email", "example-85@railstutorial.org"], ["password_digest", "$2a$10$x/lketsO7B4.RK5geBxcIuQ9tgyWqBNpDbpbveyBKbG9yQBkuzaVO"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:10.244467"], ["updated_at", "2017-11-29 06:31:10.244467"]]
+  [1m[36m (7.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-86@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Adriana Ullrich"], ["email", "example-86@railstutorial.org"], ["password_digest", "$2a$10$5VlnL1/pR2CWTs5kBEZtFOJgrBzMC/vbKl8c7r/OJgxEXiQRGXtOi"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:10.305402"], ["updated_at", "2017-11-29 06:31:10.305402"]]
+  [1m[36m (9.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-87@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Kellen Beahan"], ["email", "example-87@railstutorial.org"], ["password_digest", "$2a$10$dTs1U46XgVaVUtxtfvIlMOjO7VDlbEP3CMm6z5vMEwjTgDBOWLLQW"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:10.370089"], ["updated_at", "2017-11-29 06:31:10.370089"]]
+  [1m[36m (15.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-88@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Elta Rutherford"], ["email", "example-88@railstutorial.org"], ["password_digest", "$2a$10$0uq8JXxuUFzpRlMMFxoX2ur95.NRUbDSYslmJttuTo.NMo/2Iv4.i"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:10.439666"], ["updated_at", "2017-11-29 06:31:10.439666"]]
+  [1m[36m (8.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-89@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Cristina Swaniawski"], ["email", "example-89@railstutorial.org"], ["password_digest", "$2a$10$jJHId8ZlE/gmy3k3g7SUauvN8lA06aqNPccZNY0hjmmIkAfcCC5TW"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:10.501514"], ["updated_at", "2017-11-29 06:31:10.501514"]]
+  [1m[36m (8.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-90@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Ward Rau MD"], ["email", "example-90@railstutorial.org"], ["password_digest", "$2a$10$hPOTPvG70FKY/b0Vrg10xOTO43dG/a1Af2ZeBnBqMQLENARQiWLDm"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:10.563109"], ["updated_at", "2017-11-29 06:31:10.563109"]]
+  [1m[36m (8.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-91@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Mr. Heber Bogisich"], ["email", "example-91@railstutorial.org"], ["password_digest", "$2a$10$999HZCsHglmW3KhSKdCIqu2rByA89nJtCqyJgp66Xer97glfufoJe"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:10.624840"], ["updated_at", "2017-11-29 06:31:10.624840"]]
+  [1m[36m (9.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-92@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Wilford Skiles"], ["email", "example-92@railstutorial.org"], ["password_digest", "$2a$10$M4TwSqxkfskoHCAljvYqBuBPmTzckpONH52if7nABShQNXQ2Ark8u"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:10.687127"], ["updated_at", "2017-11-29 06:31:10.687127"]]
+  [1m[36m (9.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-93@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Ms. Alexanne Lueilwitz"], ["email", "example-93@railstutorial.org"], ["password_digest", "$2a$10$loX8dlChYs1NBk6BCAXQmeC5AE.VEMfFrYub1u.5t5J5rqwKWBq96"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:10.749733"], ["updated_at", "2017-11-29 06:31:10.749733"]]
+  [1m[36m (9.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-94@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Adrianna Durgan"], ["email", "example-94@railstutorial.org"], ["password_digest", "$2a$10$oO9qXBJ9YIavW.CgvCyHgeFLjGWvOVIk8aae.MF5GqBBeSAJ5B3FS"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:10.812747"], ["updated_at", "2017-11-29 06:31:10.812747"]]
+  [1m[36m (8.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-95@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Britney Herzog"], ["email", "example-95@railstutorial.org"], ["password_digest", "$2a$10$j4uinZLtQ3XRKgzhZQC/Eujcnx8BwZmoUoujns0Jq.BzLgxSMiiI6"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:10.873602"], ["updated_at", "2017-11-29 06:31:10.873602"]]
+  [1m[36m (9.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-96@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Bulah Bednar PhD"], ["email", "example-96@railstutorial.org"], ["password_digest", "$2a$10$wKX8B8oI6kSQ8FRnNvxSDegagMQ47GXsIg6K1m6wu.dHSazOz7Nji"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:10.936191"], ["updated_at", "2017-11-29 06:31:10.936191"]]
+  [1m[36m (9.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-97@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Annie Balistreri"], ["email", "example-97@railstutorial.org"], ["password_digest", "$2a$10$JqdnePZsmf33nXrkmYpgQuxAfDAuXNeJ1oqHIcSNmcn8CGXuFtmwu"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:10.998972"], ["updated_at", "2017-11-29 06:31:10.998972"]]
+  [1m[36m (8.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-98@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Myah Reynolds"], ["email", "example-98@railstutorial.org"], ["password_digest", "$2a$10$TEhDs4XIoyF7.nGn814xmOb2h.QfXFYqzV5k0BQDjgodeJrl2KKF."], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:11.060002"], ["updated_at", "2017-11-29 06:31:11.060002"]]
+  [1m[36m (10.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-99@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "height", "weight", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Patsy Schaefer Sr."], ["email", "example-99@railstutorial.org"], ["password_digest", "$2a$10$Zk/xJtFB3SBzqGHKHEz7yet60xA8XUZH/lT6a8g/vNvefg26wurf6"], ["height", 99.0], ["weight", 99.0], ["description", "I am a fake user."], ["created_at", "2017-11-29 06:31:11.123855"], ["updated_at", "2017-11-29 06:31:11.123855"]]
+  [1m[36m (8.5ms)[0m  [1mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('admin@example.com') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-28 22:32:14 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (476.6ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 75102ms (Views: 75056.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e8cd99a6ef66e9cc624fb64cf55bacb5bd232b5f0590e66bd54afe38f8aba098.js?body=1" for 127.0.0.1 at 2017-11-28 22:33:30 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2017-11-28 22:33:30 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/assets/map.self-da4af013c4db101ebce6e28cd74588f7fd837a2cb95071a44c24cd36158d20a5.css?body=1" for 127.0.0.1 at 2017-11-28 22:33:31 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-28 22:34:47 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (663.9ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 9819ms (Views: 9654.4ms | ActiveRecord: 0.0ms)
+
+
+
+
+Started GET "/assets/application%20.self-3533380c6c5e2f96ef2c65e8edb49ceaca614b1e5b5f3df96f14566327d04caa.css?body=1" for 127.0.0.1 at 2017-11-28 22:34:58 -0800
+Started GET "/assets/application.self-95c290add38fb427f3b8786a42fb99ba17da380b4f5bcc787b1e35f26c5d5f9d.css?body=1" for 127.0.0.1 at 2017-11-28 22:34:58 -0800
+
+
+Started GET "/assets/custom.self-7e05b6b7235604c57c78d5da7d61980a0744c832af23e6c2733673215620fcd5.css?body=1" for 127.0.0.1 at 2017-11-28 22:34:58 -0800
+
+
+Started GET "/assets/calculator.self-e8abd6da845918ad4d1e14db0d000937dfbd938740dcd317df5534889a5b1a0d.css?body=1" for 127.0.0.1 at 2017-11-28 22:34:58 -0800
+
+
+Started GET "/assets/map.self-da4af013c4db101ebce6e28cd74588f7fd837a2cb95071a44c24cd36158d20a5.css?body=1" for 127.0.0.1 at 2017-11-28 22:34:58 -0800
+
+
+Started GET "/assets/gym.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:34:58 -0800
+
+
+Started GET "/assets/scaffolds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:34:59 -0800
+
+
+Started GET "/assets/guides.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:34:59 -0800
+
+
+
+
+Started GET "/assets/images.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:34:59 -0800
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:34:59 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:34:59 -0800
+
+
+Started GET "/assets/widgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:34:59 -0800
+
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:34:59 -0800
+
+Started GET "/assets/jquery-ui/datepicker.self-bf92a2196df590f06fad4ab5bb7ed4db1874a9bef0c9af85ea0490d2108b9966.css?body=1" for 127.0.0.1 at 2017-11-28 22:34:59 -0800
+
+
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-28 22:35:00 -0800
+Started GET "/assets/jquery-ui/theme.self-df1da30301997b52795cb0213bccd335f2897b65f84d1d7d7c63c04f048d902f.css?body=1" for 127.0.0.1 at 2017-11-28 22:35:00 -0800
+
+
+Started GET "/assets/jquery-ui/core.self-23329dbe1961b938278306c019037fe36ff6ccb28193f1038e52ccbf52858163.css?body=1" for 127.0.0.1 at 2017-11-28 22:35:00 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2017-11-28 22:35:00 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2017-11-28 22:35:00 -0800
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2017-11-28 22:35:00 -0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-28 22:35:00 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2017-11-28 22:35:00 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2017-11-28 22:35:00 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2017-11-28 22:35:00 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2017-11-28 22:35:01 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2017-11-28 22:35:01 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2017-11-28 22:35:01 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2017-11-28 22:35:01 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2017-11-28 22:35:01 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2017-11-28 22:35:01 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2017-11-28 22:35:01 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2017-11-28 22:35:01 -0800
+
+
+Started GET "/assets/application.self-e8cd99a6ef66e9cc624fb64cf55bacb5bd232b5f0590e66bd54afe38f8aba098.js?body=1" for 127.0.0.1 at 2017-11-28 22:35:01 -0800
+
+
+Started POST "/login" for 127.0.0.1 at 2017-11-28 22:35:20 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DJgY6HiUNyVYRU9Wtitl2z/dHNdzyK6eq4O2ILZ9bDYdJNfEQ4PPTO3TS9kfGtDWDt+wBHxch34BWKOapbCrIA==", "session"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "admin@example.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:5000/users
+Completed 302 Found in 181ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-11-28 22:35:20 -0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_user.html.erb (1.9ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.7ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/index.html.erb within layouts/application (9137.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 10356ms (Views: 10354.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-11-28 22:36:13 -0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_user.html.erb (1.1ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.7ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.7ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.8ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.7ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.8ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.7ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.7ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/index.html.erb within layouts/application (17512.9ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 19220ms (Views: 18994.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.self-95c290add38fb427f3b8786a42fb99ba17da380b4f5bcc787b1e35f26c5d5f9d.css?body=1" for 127.0.0.1 at 2017-11-28 22:36:33 -0800
+
+
+Started GET "/assets/application%20.self-3533380c6c5e2f96ef2c65e8edb49ceaca614b1e5b5f3df96f14566327d04caa.css?body=1" for 127.0.0.1 at 2017-11-28 22:36:33 -0800
+
+
+Started GET "/assets/calculator.self-e8abd6da845918ad4d1e14db0d000937dfbd938740dcd317df5534889a5b1a0d.css?body=1" for 127.0.0.1 at 2017-11-28 22:36:33 -0800
+
+
+Started GET "/assets/guides.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:36:33 -0800
+
+
+Started GET "/assets/custom.self-7e05b6b7235604c57c78d5da7d61980a0744c832af23e6c2733673215620fcd5.css?body=1" for 127.0.0.1 at 2017-11-28 22:36:33 -0800
+
+
+Started GET "/assets/images.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:36:33 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:36:33 -0800
+
+
+Started GET "/assets/gym.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:36:33 -0800
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:36:33 -0800
+
+
+Started GET "/assets/scaffolds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:36:33 -0800
+
+
+Started GET "/assets/jquery-ui/theme.self-df1da30301997b52795cb0213bccd335f2897b65f84d1d7d7c63c04f048d902f.css?body=1" for 127.0.0.1 at 2017-11-28 22:36:34 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:36:34 -0800
+
+
+Started GET "/assets/widgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:36:34 -0800
+
+
+Started GET "/assets/jquery-ui/datepicker.self-bf92a2196df590f06fad4ab5bb7ed4db1874a9bef0c9af85ea0490d2108b9966.css?body=1" for 127.0.0.1 at 2017-11-28 22:36:34 -0800
+
+
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2017-11-28 22:36:34 -0800
+Started GET "/assets/jquery-ui/core.self-23329dbe1961b938278306c019037fe36ff6ccb28193f1038e52ccbf52858163.css?body=1" for 127.0.0.1 at 2017-11-28 22:36:34 -0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-28 22:36:34 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2017-11-28 22:36:34 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2017-11-28 22:36:35 -0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-28 22:36:35 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2017-11-28 22:36:35 -0800
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2017-11-28 22:36:35 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2017-11-28 22:36:35 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2017-11-28 22:36:35 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2017-11-28 22:36:35 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2017-11-28 22:36:35 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2017-11-28 22:36:35 -0800
+
+
+Started GET "/assets/map.self-da4af013c4db101ebce6e28cd74588f7fd837a2cb95071a44c24cd36158d20a5.css?body=1" for 127.0.0.1 at 2017-11-28 22:36:35 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2017-11-28 22:36:35 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2017-11-28 22:36:36 -0800
+
+
+Started GET "/assets/application.self-e8cd99a6ef66e9cc624fb64cf55bacb5bd232b5f0590e66bd54afe38f8aba098.js?body=1" for 127.0.0.1 at 2017-11-28 22:36:36 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2017-11-28 22:36:36 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2017-11-28 22:36:36 -0800
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-11-28 22:37:06 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 1115ms (Views: 1113.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-11-28 22:37:10 -0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/index.html.erb within layouts/application (8952.2ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 10060ms (Views: 10058.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2017-11-28 22:37:28 -0800
+Processing by GuidesController#index as HTML
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/coleung/sfuhome/cmpt276/Go_fit_master/app/models/guide.rb:4: syntax error, unexpected <<, expecting keyword_end
+<<<<<<< HEAD
+  ^
+/home/coleung/sfuhome/cmpt276/Go_fit_master/app/models/guide.rb:8: syntax error, unexpected >>, expecting keyword_end
+>>>>>>> e7629e842362b2a3c50fe57c5ff68ca01c3f3242
+  ^):
+  app/models/guide.rb:4: syntax error, unexpected <<, expecting keyword_end
+  app/models/guide.rb:8: syntax error, unexpected >>, expecting keyword_end
+  app/controllers/guides_controller.rb:5:in `index'
+
+
+  Rendered /home/coleung/.gemsexport/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered /home/coleung/.gemsexport/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/coleung/.gemsexport/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/coleung/.gemsexport/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (317.3ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2017-11-28 22:38:12 -0800
+Processing by GuidesController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guides"
+  [1m[36mGuide Load (0.4ms)[0m  [1mSELECT  "guides".* FROM "guides"  ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  Rendered guides/index.html.erb within layouts/application (2.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (187.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 4209ms (Views: 3935.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/calculator.self-e8abd6da845918ad4d1e14db0d000937dfbd938740dcd317df5534889a5b1a0d.css?body=1" for 127.0.0.1 at 2017-11-28 22:38:17 -0800
+
+
+Started GET "/assets/application%20.self-3533380c6c5e2f96ef2c65e8edb49ceaca614b1e5b5f3df96f14566327d04caa.css?body=1" for 127.0.0.1 at 2017-11-28 22:38:17 -0800
+
+
+Started GET "/assets/application.self-95c290add38fb427f3b8786a42fb99ba17da380b4f5bcc787b1e35f26c5d5f9d.css?body=1" for 127.0.0.1 at 2017-11-28 22:38:17 -0800
+
+
+Started GET "/assets/custom.self-7e05b6b7235604c57c78d5da7d61980a0744c832af23e6c2733673215620fcd5.css?body=1" for 127.0.0.1 at 2017-11-28 22:38:18 -0800
+
+
+Started GET "/assets/images.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:38:18 -0800
+
+
+Started GET "/assets/gym.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:38:18 -0800
+
+
+Started GET "/assets/scaffolds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:38:18 -0800
+
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:38:18 -0800
+
+Started GET "/assets/guides.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:38:18 -0800
+
+
+Started GET "/assets/map.self-da4af013c4db101ebce6e28cd74588f7fd837a2cb95071a44c24cd36158d20a5.css?body=1" for 127.0.0.1 at 2017-11-28 22:38:19 -0800
+
+
+Started GET "/assets/widgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:38:19 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:38:19 -0800
+
+
+Started GET "/assets/jquery-ui/core.self-23329dbe1961b938278306c019037fe36ff6ccb28193f1038e52ccbf52858163.css?body=1" for 127.0.0.1 at 2017-11-28 22:38:19 -0800
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:38:20 -0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-28 22:38:20 -0800
+
+
+Started GET "/assets/jquery-ui/theme.self-df1da30301997b52795cb0213bccd335f2897b65f84d1d7d7c63c04f048d902f.css?body=1" for 127.0.0.1 at 2017-11-28 22:38:20 -0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-28 22:38:20 -0800
+
+
+Started GET "/assets/jquery-ui/datepicker.self-bf92a2196df590f06fad4ab5bb7ed4db1874a9bef0c9af85ea0490d2108b9966.css?body=1" for 127.0.0.1 at 2017-11-28 22:38:20 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2017-11-28 22:38:20 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2017-11-28 22:38:21 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2017-11-28 22:38:21 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2017-11-28 22:38:21 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2017-11-28 22:38:21 -0800
+
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2017-11-28 22:38:21 -0800
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2017-11-28 22:38:21 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2017-11-28 22:38:22 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2017-11-28 22:38:22 -0800
+
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2017-11-28 22:38:22 -0800
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2017-11-28 22:38:22 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2017-11-28 22:38:22 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2017-11-28 22:38:22 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2017-11-28 22:38:23 -0800
+
+
+Started GET "/assets/application.self-e8cd99a6ef66e9cc624fb64cf55bacb5bd232b5f0590e66bd54afe38f8aba098.js?body=1" for 127.0.0.1 at 2017-11-28 22:38:23 -0800
+
+
+Started GET "/guides/new" for 127.0.0.1 at 2017-11-28 22:38:28 -0800
+Processing by GuidesController#new as HTML
+  Rendered guides/new.html.erb within layouts/application (777.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 4915ms (Views: 4911.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/guides/new" for 127.0.0.1 at 2017-11-28 22:39:52 -0800
+Processing by GuidesController#new as HTML
+  Rendered guides/new.html.erb within layouts/application (155.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4128ms (Views: 4127.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-95c290add38fb427f3b8786a42fb99ba17da380b4f5bcc787b1e35f26c5d5f9d.css?body=1" for 127.0.0.1 at 2017-11-28 22:39:56 -0800
+
+
+Started GET "/assets/application%20.self-3533380c6c5e2f96ef2c65e8edb49ceaca614b1e5b5f3df96f14566327d04caa.css?body=1" for 127.0.0.1 at 2017-11-28 22:39:56 -0800
+
+
+
+Started GET "/assets/calculator.self-e8abd6da845918ad4d1e14db0d000937dfbd938740dcd317df5534889a5b1a0d.css?body=1" for 127.0.0.1 at 2017-11-28 22:39:57 -0800
+
+Started GET "/assets/custom.self-7e05b6b7235604c57c78d5da7d61980a0744c832af23e6c2733673215620fcd5.css?body=1" for 127.0.0.1 at 2017-11-28 22:39:57 -0800
+
+
+Started GET "/assets/images.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:39:58 -0800
+
+
+Started GET "/assets/guides.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:39:58 -0800
+
+
+
+
+Started GET "/assets/gym.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:39:58 -0800
+Started GET "/assets/scaffolds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:39:58 -0800
+
+
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:39:58 -0800
+Started GET "/assets/map.self-da4af013c4db101ebce6e28cd74588f7fd837a2cb95071a44c24cd36158d20a5.css?body=1" for 127.0.0.1 at 2017-11-28 22:39:58 -0800
+
+
+
+
+Started GET "/assets/jquery-ui/theme.self-df1da30301997b52795cb0213bccd335f2897b65f84d1d7d7c63c04f048d902f.css?body=1" for 127.0.0.1 at 2017-11-28 22:39:59 -0800
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:39:59 -0800
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:39:59 -0800
+
+
+Started GET "/assets/jquery-ui/datepicker.self-bf92a2196df590f06fad4ab5bb7ed4db1874a9bef0c9af85ea0490d2108b9966.css?body=1" for 127.0.0.1 at 2017-11-28 22:39:59 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2017-11-28 22:39:59 -0800
+
+
+Started GET "/assets/widgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:39:59 -0800
+
+
+Started GET "/assets/jquery-ui/core.self-23329dbe1961b938278306c019037fe36ff6ccb28193f1038e52ccbf52858163.css?body=1" for 127.0.0.1 at 2017-11-28 22:39:59 -0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-28 22:39:59 -0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-28 22:40:00 -0800
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2017-11-28 22:40:00 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2017-11-28 22:40:00 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2017-11-28 22:40:00 -0800
+
+
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2017-11-28 22:40:01 -0800
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2017-11-28 22:40:01 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2017-11-28 22:40:01 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2017-11-28 22:40:01 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2017-11-28 22:40:01 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2017-11-28 22:40:01 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2017-11-28 22:40:02 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2017-11-28 22:40:02 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2017-11-28 22:40:02 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2017-11-28 22:40:02 -0800
+
+
+Started GET "/assets/application.self-e8cd99a6ef66e9cc624fb64cf55bacb5bd232b5f0590e66bd54afe38f8aba098.js?body=1" for 127.0.0.1 at 2017-11-28 22:40:03 -0800
+
+
+Started POST "/guides" for 127.0.0.1 at 2017-11-28 22:40:08 -0800
+Processing by GuidesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4RF6kFN5TIPwpwprTWWSC5l7dVCmtLQmncw8q612qk/wrbW8aG606kUxDuTkVCcGqHnZg6kgncY3FykRvrttWQ==", "guide"=>{"title"=>"123", "content"=>"123"}, "commit"=>"Create my guide"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "guides" ("title", "content", "user_id", "user_name", "hits", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "123"], ["content", "123"], ["user_id", 1], ["user_name", "Admin"], ["hits", 0], ["created_at", "2017-11-29 06:40:08.746361"], ["updated_at", "2017-11-29 06:40:08.746361"]]
+  [1m[35m (25.1ms)[0m  COMMIT
+Redirected to http://localhost:5000/guides/1
+Completed 302 Found in 29ms (ActiveRecord: 25.7ms)
+
+
+Started GET "/guides/1" for 127.0.0.1 at 2017-11-28 22:40:08 -0800
+Processing by GuidesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuide Load (0.2ms)[0m  [1mSELECT  "guides".* FROM "guides" WHERE "guides"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered guides/show.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 3927ms (Views: 3925.6ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/guides/1" for 127.0.0.1 at 2017-11-28 22:40:39 -0800
+Processing by GuidesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7PV3GlSu0Bl+wg7+tgF8MNu1ntxNoziYouHEO9IQ8pb9Sbg2b7kocMtUCnEfMMk96rcyD0I3EXgIOtGBwd01gA==", "id"=>"1"}
+  [1m[36mGuide Load (0.4ms)[0m  [1mSELECT  "guides".* FROM "guides" WHERE "guides"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "guides" WHERE "guides"."id" = $1[0m  [["id", 1]]
+  [1m[35m (26.7ms)[0m  COMMIT
+Redirected to http://localhost:5000/guides
+Completed 302 Found in 30ms (ActiveRecord: 27.4ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2017-11-28 22:40:39 -0800
+Processing by GuidesController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guides"[0m
+  [1m[35mGuide Load (0.4ms)[0m  SELECT  "guides".* FROM "guides"  ORDER BY id DESC LIMIT 5 OFFSET 0
+  Rendered guides/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4325ms (Views: 4322.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/guides/new" for 127.0.0.1 at 2017-11-28 22:40:51 -0800
+Processing by GuidesController#new as HTML
+  Rendered guides/new.html.erb within layouts/application (129.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 4043ms (Views: 4042.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guides/new" for 127.0.0.1 at 2017-11-28 22:48:24 -0800
+Processing by GuidesController#new as HTML
+  Rendered guides/new.html.erb within layouts/application (159.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (152.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 15840ms (Views: 15768.6ms | ActiveRecord: 2.3ms)
+
+
+
+Started GET "/assets/application.self-95c290add38fb427f3b8786a42fb99ba17da380b4f5bcc787b1e35f26c5d5f9d.css?body=1" for 127.0.0.1 at 2017-11-28 22:48:41 -0800
+
+Started GET "/assets/application%20.self-3533380c6c5e2f96ef2c65e8edb49ceaca614b1e5b5f3df96f14566327d04caa.css?body=1" for 127.0.0.1 at 2017-11-28 22:48:41 -0800
+
+
+Started GET "/assets/gym.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:48:41 -0800
+
+
+Started GET "/assets/calculator.self-e8abd6da845918ad4d1e14db0d000937dfbd938740dcd317df5534889a5b1a0d.css?body=1" for 127.0.0.1 at 2017-11-28 22:48:42 -0800
+
+
+Started GET "/assets/custom.self-7e05b6b7235604c57c78d5da7d61980a0744c832af23e6c2733673215620fcd5.css?body=1" for 127.0.0.1 at 2017-11-28 22:48:42 -0800
+
+
+Started GET "/assets/map.self-da4af013c4db101ebce6e28cd74588f7fd837a2cb95071a44c24cd36158d20a5.css?body=1" for 127.0.0.1 at 2017-11-28 22:48:42 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:48:42 -0800
+
+
+Started GET "/assets/guides.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:48:42 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:48:43 -0800
+
+
+Started GET "/assets/images.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:48:43 -0800
+
+
+
+Started GET "/assets/scaffolds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:48:43 -0800
+
+Started GET "/assets/widgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:48:43 -0800
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:48:44 -0800
+
+
+Started GET "/assets/jquery-ui/datepicker.self-bf92a2196df590f06fad4ab5bb7ed4db1874a9bef0c9af85ea0490d2108b9966.css?body=1" for 127.0.0.1 at 2017-11-28 22:48:44 -0800
+
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:44 -0800
+
+Started GET "/assets/jquery-ui/theme.self-df1da30301997b52795cb0213bccd335f2897b65f84d1d7d7c63c04f048d902f.css?body=1" for 127.0.0.1 at 2017-11-28 22:48:44 -0800
+
+
+Started GET "/assets/jquery-ui/core.self-23329dbe1961b938278306c019037fe36ff6ccb28193f1038e52ccbf52858163.css?body=1" for 127.0.0.1 at 2017-11-28 22:48:45 -0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:45 -0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:45 -0800
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:45 -0800
+
+
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:46 -0800
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:46 -0800
+
+
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:46 -0800
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:46 -0800
+
+
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:46 -0800
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:46 -0800
+
+
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:47 -0800
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:47 -0800
+
+
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:47 -0800
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:47 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:48 -0800
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:48 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:48 -0800
+
+
+Started GET "/assets/summernote/summernote.self-8d145cec613950b82650536eb085e5f31bab8eb39b5254b16b43da48b25c4676.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:48 -0800
+
+
+Started GET "/assets/map.self-636531fcc733051636c9cf136cef60288e340d512b4850ac309fd9c56f0f16a0.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:48 -0800
+
+
+
+
+Started GET "/assets/calculator.self-c2fd1afbaf8bcbd406c849964f9ba7c89cf34be631faa705263533a876f357ce.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:49 -0800
+Started GET "/assets/application.self-615b08d70befa01e03a9680e7b0a148934126173f87687971db6b7170385a1cd.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:49 -0800
+
+
+Started GET "/assets/gym.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:49 -0800
+
+
+Started GET "/assets/summernote/index.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:49 -0800
+
+
+Started GET "/assets/guides.self-d8e2e60d866b3219913bd0768cdb678addbbd8b83e8e0e6912c8dccfdb50021b.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:50 -0800
+
+
+Started GET "/assets/personal_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:50 -0800
+
+
+Started GET "/assets/images.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:50 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:50 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:50 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:51 -0800
+
+
+Started GET "/assets/widgets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:51 -0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2017-11-28 22:48:51 -0800
+
+
+Started POST "/guides" for 127.0.0.1 at 2017-11-28 22:49:02 -0800
+Processing by GuidesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cW4+qYnXZ8tRPVsWDJya1E7XvoMBw39EX1HVFxzbYMxg0vGFssCfouSrX5mlrS/Zf9USUA5XVqT1isCtDxan2g==", "guide"=>{"title"=>"123", "content"=>"<p>123<br></p>"}, "files"=>"", "commit"=>"Create my guide"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "guides" ("title", "content", "user_id", "user_name", "hits", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "123"], ["content", "<p>123<br></p>"], ["user_id", 1], ["user_name", "Admin"], ["hits", 0], ["created_at", "2017-11-29 06:49:04.464967"], ["updated_at", "2017-11-29 06:49:04.464967"]]
+  [1m[36m (28.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:5000/guides/2
+Completed 302 Found in 392ms (ActiveRecord: 31.0ms)
+
+
+Started GET "/guides/2" for 127.0.0.1 at 2017-11-28 22:49:04 -0800
+Processing by GuidesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mGuide Load (0.2ms)[0m  SELECT  "guides".* FROM "guides" WHERE "guides"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered guides/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (9.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 5924ms (Views: 5917.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2017-11-28 22:49:22 -0800
+Processing by GuidesController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guides"
+  [1m[36mGuide Load (0.5ms)[0m  [1mSELECT  "guides".* FROM "guides"  ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  Rendered guides/index.html.erb within layouts/application (5.9ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (5.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 2636ms (Views: 2631.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/guides/2" for 127.0.0.1 at 2017-11-28 22:49:27 -0800
+Processing by GuidesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGuide Load (0.2ms)[0m  [1mSELECT  "guides".* FROM "guides" WHERE "guides"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered guides/show.html.erb within layouts/application (0.6ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2017-11-28 22:49:29 -0800
+Processing by GuidesController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guides"
+  [1m[36mGuide Load (0.5ms)[0m  [1mSELECT  "guides".* FROM "guides"  ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  Rendered guides/index.html.erb within layouts/application (3.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 2684ms (Views: 2679.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/guides/2" for 127.0.0.1 at 2017-11-28 22:49:30 -0800
+Processing by GuidesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGuide Load (0.3ms)[0m  [1mSELECT  "guides".* FROM "guides" WHERE "guides"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered guides/show.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (5.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 2782ms (Views: 2775.6ms | ActiveRecord: 1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 2474ms (Views: 2465.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2017-11-28 22:49:33 -0800
+Processing by GuidesController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guides"[0m
+  [1m[35mGuide Load (0.3ms)[0m  SELECT  "guides".* FROM "guides"  ORDER BY id DESC LIMIT 5 OFFSET 0
+  Rendered guides/index.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (9.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3196ms (Views: 3191.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/guides/2" for 127.0.0.1 at 2017-11-28 22:50:03 -0800
+Processing by GuidesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mGuide Load (0.3ms)[0m  SELECT  "guides".* FROM "guides" WHERE "guides"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered guides/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (4.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 2974ms (Views: 2968.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides/2/edit" for 127.0.0.1 at 2017-11-28 22:50:08 -0800
+Processing by GuidesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mGuide Load (0.3ms)[0m  SELECT  "guides".* FROM "guides" WHERE "guides"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered guides/edit.html.erb within layouts/application (457.1ms)
+
+
+Started GET "/guides/2/edit" for 127.0.0.1 at 2017-11-28 22:50:10 -0800
+Processing by GuidesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGuide Load (0.3ms)[0m  [1mSELECT  "guides".* FROM "guides" WHERE "guides"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered guides/edit.html.erb within layouts/application (91.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (7.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 4161ms (Views: 4156.8ms | ActiveRecord: 0.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (4.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 3344ms (Views: 3337.3ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/guides/2" for 127.0.0.1 at 2017-11-28 22:50:16 -0800
+Processing by GuidesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zzRdj77A3F4kd8bSZyqy9ZTAxUaneUKrJHcClUV1WwbeiJKjhdckN5Hhwl3OGwf4pcJplajta0uOrBcvVricEA==", "guide"=>{"title"=>"123", "content"=>"<p>123<br></p>"}, "files"=>"", "commit"=>"Update my guide", "id"=>"2"}
+  [1m[36mGuide Load (0.2ms)[0m  [1mSELECT  "guides".* FROM "guides" WHERE "guides"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:5000/guides/2
+Completed 302 Found in 10ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/guides/2" for 127.0.0.1 at 2017-11-28 22:50:16 -0800
+Processing by GuidesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mGuide Load (0.3ms)[0m  SELECT  "guides".* FROM "guides" WHERE "guides"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered guides/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (5.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 2249ms (Views: 2246.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2017-11-28 22:50:22 -0800
+Processing by GuidesController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guides"
+  [1m[36mGuide Load (0.3ms)[0m  [1mSELECT  "guides".* FROM "guides"  ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  Rendered guides/index.html.erb within layouts/application (5.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (7.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4490ms (Views: 4484.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-28 22:50:29 -0800
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:5000/users
+Filter chain halted as :redirect_if_logged_in rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-11-28 22:50:29 -0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (3.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.7ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (1.8ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (1.0ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.7ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/index.html.erb within layouts/application (21641.1ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 24374ms (Views: 24361.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/map" for 127.0.0.1 at 2017-11-28 22:50:59 -0800
+Processing by MapController#index as HTML
+  Rendered map/index.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (4.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 2343ms (Views: 2341.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/map" for 127.0.0.1 at 2017-11-28 22:52:00 -0800
+Processing by MapController#index as HTML
+  Rendered map/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (7.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 4698ms (Views: 4697.7ms | ActiveRecord: 0.3ms)
+
+
+
+Started GET "/assets/application.self-95c290add38fb427f3b8786a42fb99ba17da380b4f5bcc787b1e35f26c5d5f9d.css?body=1" for 127.0.0.1 at 2017-11-28 22:52:05 -0800
+
+Started GET "/assets/calculator.self-e8abd6da845918ad4d1e14db0d000937dfbd938740dcd317df5534889a5b1a0d.css?body=1" for 127.0.0.1 at 2017-11-28 22:52:05 -0800
+
+
+Started GET "/assets/gym.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:52:06 -0800
+
+
+Started GET "/assets/map.self-da4af013c4db101ebce6e28cd74588f7fd837a2cb95071a44c24cd36158d20a5.css?body=1" for 127.0.0.1 at 2017-11-28 22:52:06 -0800
+
+
+Started GET "/assets/application%20.self-3533380c6c5e2f96ef2c65e8edb49ceaca614b1e5b5f3df96f14566327d04caa.css?body=1" for 127.0.0.1 at 2017-11-28 22:52:06 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:52:06 -0800
+
+
+Started GET "/assets/custom.self-7e05b6b7235604c57c78d5da7d61980a0744c832af23e6c2733673215620fcd5.css?body=1" for 127.0.0.1 at 2017-11-28 22:52:07 -0800
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:52:07 -0800
+
+
+Started GET "/assets/guides.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:52:07 -0800
+
+
+Started GET "/assets/jquery-ui/theme.self-df1da30301997b52795cb0213bccd335f2897b65f84d1d7d7c63c04f048d902f.css?body=1" for 127.0.0.1 at 2017-11-28 22:52:07 -0800
+
+
+Started GET "/assets/images.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:52:07 -0800
+
+
+Started GET "/assets/jquery-ui/datepicker.self-bf92a2196df590f06fad4ab5bb7ed4db1874a9bef0c9af85ea0490d2108b9966.css?body=1" for 127.0.0.1 at 2017-11-28 22:52:07 -0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:08 -0800
+
+
+Started GET "/assets/scaffolds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:52:08 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:52:08 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:08 -0800
+
+
+Started GET "/assets/widgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 22:52:09 -0800
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:09 -0800
+
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:09 -0800
+
+Started GET "/assets/jquery-ui/core.self-23329dbe1961b938278306c019037fe36ff6ccb28193f1038e52ccbf52858163.css?body=1" for 127.0.0.1 at 2017-11-28 22:52:09 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:09 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:09 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:09 -0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:10 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:10 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:10 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:10 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:10 -0800
+
+
+Started GET "/assets/summernote/summernote.self-8d145cec613950b82650536eb085e5f31bab8eb39b5254b16b43da48b25c4676.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:10 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:10 -0800
+
+
+Started GET "/assets/calculator.self-c2fd1afbaf8bcbd406c849964f9ba7c89cf34be631faa705263533a876f357ce.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:10 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:11 -0800
+
+
+Started GET "/assets/gym.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:11 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:11 -0800
+
+
+Started GET "/assets/personal_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:11 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:11 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:11 -0800
+
+
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:12 -0800
+Started GET "/assets/summernote/index.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:12 -0800
+
+
+
+
+Started GET "/assets/guides.self-d8e2e60d866b3219913bd0768cdb678addbbd8b83e8e0e6912c8dccfdb50021b.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:12 -0800
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:12 -0800
+
+
+Started GET "/assets/images.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:12 -0800
+
+
+Started GET "/assets/application.self-615b08d70befa01e03a9680e7b0a148934126173f87687971db6b7170385a1cd.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:13 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:13 -0800
+
+
+Started GET "/assets/widgets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:13 -0800
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:13 -0800
+
+
+Started GET "/assets/map.self-636531fcc733051636c9cf136cef60288e340d512b4850ac309fd9c56f0f16a0.js?body=1" for 127.0.0.1 at 2017-11-28 22:52:14 -0800
+
+
+Started GET "/calculator/1" for 127.0.0.1 at 2017-11-28 22:52:16 -0800
+Processing by CalculatorController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered calculator/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4950ms (Views: 4941.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2017-11-28 22:52:35 -0800
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/edit.html.erb within layouts/application (227.8ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 2524ms (Views: 2513.8ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2017-11-28 22:52:41 -0800
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wIA6BHr+sqYW5p7rHlcLP+0pkjheZbSrw1YxVMbZbo/RPPUoQelKz6NwmmS3Zr4y3Cs+61HxnUtpjSTu1RSpmQ==", "user"=>{"name"=>"Admin", "email"=>"admin@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "height"=>"99.0", "weight"=>"99.0", "description"=>"I am Admin.", "date_of_birth"=>"2005-12-12"}, "commit"=>"Save changes", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('admin@example.com') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered shared/_error_messages.html.erb (1.1ms)
+  Rendered users/edit.html.erb within layouts/application (144.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 2527ms (Views: 2434.1ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2017-11-28 22:52:48 -0800
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rc5biXgbdBYWRSmF5GEZYsX1RXh2hAfdtQB7gxnE4hlUcpSlQwyMf6PTLQpNUKxv9Pfpq3kQLj0f2245CgklDw==", "user"=>{"name"=>"Admin", "email"=>"admin@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "height"=>"99.0", "weight"=>"99.0", "description"=>"I am Admin.", "date_of_birth"=>"2005-12-12"}, "commit"=>"Save changes", "id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('admin@example.com') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["password_digest", "$2a$10$3iaJ3Y/kGKIq6yKcN3IIp.OayVH5gYmaA3ExUqng32.04eoWdzK7u"], ["updated_at", "2017-11-29 06:52:49.077562"], ["id", 1]]
+  [1m[35m (23.5ms)[0m  COMMIT
+Redirected to http://localhost:5000/users/1
+Completed 302 Found in 95ms (ActiveRecord: 24.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-11-28 22:52:49 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 2234ms (Views: 2230.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2017-11-28 22:53:12 -0800
+Processing by GuidesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "guides"[0m
+  [1m[35mGuide Load (0.3ms)[0m  SELECT  "guides".* FROM "guides"  ORDER BY id DESC LIMIT 5 OFFSET 0
+  Rendered guides/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 2383ms (Views: 2378.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/guides/2" for 127.0.0.1 at 2017-11-28 22:53:18 -0800
+Processing by GuidesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mGuide Load (0.3ms)[0m  SELECT  "guides".* FROM "guides" WHERE "guides"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered guides/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 2353ms (Views: 2349.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/guides" for 127.0.0.1 at 2017-11-28 22:53:22 -0800
+Processing by GuidesController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guides"
+  [1m[36mGuide Load (0.3ms)[0m  [1mSELECT  "guides".* FROM "guides"  ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  Rendered guides/index.html.erb within layouts/application (3.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 2064ms (Views: 2060.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-28 22:53:34 -0800
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:5000/users
+Filter chain halted as :redirect_if_logged_in rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-11-28 22:53:34 -0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.7ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (1.2ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.6ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/index.html.erb within layouts/application (14689.9ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 17077ms (Views: 17072.0ms | ActiveRecord: 1.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'ar_internal_metadata'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'calculators'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'cities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'guides'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'gyms'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'images'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'triplaces'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'userinfos'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'widgets'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
