@@ -2,9 +2,6 @@ class User < ActiveRecord::Base
   #attr_accessor :name, :email (causes nil attributes)
   attr_accessor :remember_token
 
-  has_many :guides
-  has_one :calculator
-
   before_save { self.email = email.downcase }
   validates :name, presence: true, length: { maximum: 50}  #Used to check empty
 
@@ -25,7 +22,11 @@ class User < ActiveRecord::Base
   validates :type, inclusion: { in: %w(student, instructor, manager),
                                 message: "%{value} is not a valid type" },
                                 allow_nil: true
+  has_secure_password
+  validates :password, presence: true, length: { minimum: 6 }
 
+  has_many :guides
+  has_one :calculator
   def initialize(attributes = {}) #Call when we execute User.new
     super
     @name  = attributes[:name]
@@ -40,9 +41,6 @@ class User < ActiveRecord::Base
   def formatted_email
     "#{@name} <#{@email}>"
   end
-
-  has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
 
   # Returns the hash digest of the given string.
   def User.digest(string)
