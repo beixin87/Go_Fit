@@ -14,17 +14,10 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
-<<<<<<< HEAD
-//= require summernote
-//= require_tree .
-//= require jquery-ui
-=======
 //= require bootstrap
 //= require summernote
 //= require_tree .
 //= require turbolinks
-
->>>>>>> e7629e842362b2a3c50fe57c5ff68ca01c3f3242
 
 $(function() {
   $("#user_date_of_birth").datepicker({
@@ -36,7 +29,3 @@ $(function() {
   		minDate: '-100Y'
   	});
 });
-<<<<<<< HEAD
-=======
-
->>>>>>> e7629e842362b2a3c50fe57c5ff68ca01c3f3242

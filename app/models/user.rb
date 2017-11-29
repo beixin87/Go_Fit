@@ -4,11 +4,6 @@ class User < ActiveRecord::Base
 
   has_many :guides
   has_one :calculator
-<<<<<<< HEAD
-=======
-
-  has_many :guides
->>>>>>> e7629e842362b2a3c50fe57c5ff68ca01c3f3242
 
   before_save { self.email = email.downcase }
   validates :name, presence: true, length: { maximum: 50}  #Used to check empty
@@ -27,6 +22,9 @@ class User < ActiveRecord::Base
   validates :date_of_birth, :date => {:after => Proc.new { Time.now - 120.years},
                                       :before => Proc.new { Time.now},
                                       :allow_blank => true}
+  validates :type, inclusion: { in: %w(student, instructor, manager),
+                                message: "%{value} is not a valid type" },
+                                allow_nil: true
 
   def initialize(attributes = {}) #Call when we execute User.new
     super
@@ -36,10 +34,7 @@ class User < ActiveRecord::Base
     @weight = attributes[:weight]
     @date_of_birth = attributes[:date_of_birth]
     @description = attributes[:description]
-<<<<<<< HEAD
-=======
     @type = attributes[:type]
->>>>>>> e7629e842362b2a3c50fe57c5ff68ca01c3f3242
   end
 
   def formatted_email

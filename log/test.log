@@ -11609,3 +11609,936 @@ Processing by UsersController#show as HTML
   Rendered layouts/_footer.html.erb (0.1ms)
 Completed 200 OK in 97ms (Views: 95.6ms | ActiveRecord: 0.7ms)
   [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.5ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "guides"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "admin", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$8bUfEJCUJbUZc0nK07pqZOA.ZFVKVsbGFuvatoGwk0ufy/kPfUjd6', 't', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 762146111)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$hfCpB0c1wul3GLhpWN1evupcdaLCbu/LeJxTDfJea/eB3wnmT1wHu', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 950961012)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Lana Kane', 'hands@example.gov', '$2a$04$9OjQlDhv3VTI1JscPE95NeypmhSD0CgYeHjREOq67E3pWmOhWRtJa', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 409608538)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Malory Archer', 'boss@example.gov', '$2a$04$kJAfduRuR/fvf0gpqWLQJe/aWdVQKo69pyaEa8q06pGuZ3ZaoWTrG', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 659682706)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 0', 'user-0@example.com', '$2a$04$n35JuaxpJCgS5cOxAc4H3.N6zDZ80PID9aoy4LGzxI3p7uFVYScre', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 338193910)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 1', 'user-1@example.com', '$2a$04$/6ZvYpXvAHc31plT8/9Hn.xr2ZvW59xjQko8s7754AEW9PDzk5sdq', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 590306657)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 2', 'user-2@example.com', '$2a$04$buZO3lCm2YJ3L2PfWYEX1.sDTrVOfLKkUceE3abt6QS8TVxmCyXXy', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 975572189)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 3', 'user-3@example.com', '$2a$04$2ZW.syz0qWp.VPUJIuYeAuqnvF1lc/6Hb9gwAE9C.5lwQ94nCVyuS', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 220281934)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 4', 'user-4@example.com', '$2a$04$v7ExdY.ouCX0GS0yxmG5gewBizRvwjwPBBU47G0ABKNx3pPtPLG.C', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 323332591)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 5', 'user-5@example.com', '$2a$04$Huu/c2SptsXJkhAGfGjqZuGy/yUVEeiobSYWkTqYnS.ow8pw14DLu', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 608344442)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 6', 'user-6@example.com', '$2a$04$4J7eSoVkD/vUp2oprXUifeA6sbWXharTZ7Tj8.IzsbhmRrCTdMpTK', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1028376774)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 7', 'user-7@example.com', '$2a$04$OBgSe/l8idJf6HVH7MVAcOhGK8QbBudmLOTiFNXvoEzPio8y0kG/.', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 172816471)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 8', 'user-8@example.com', '$2a$04$cRhrYEGGGNHBa7wquAmto.yWcOrHZmuDEozof0qMG7H9FOvwALTMS', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 452191684)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 9', 'user-9@example.com', '$2a$04$e1zbasN1prs7CEkAjCuKXOlg/TJuE40XDyfpTlHpWl/gtnZ5.FaY.', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 771020115)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 10', 'user-10@example.com', '$2a$04$PtFt/0Fmsd6O.xN3yUOUy.zAaFTzghgxsY7WnpZB7R7.b5qDlwO/K', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 956993830)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 11', 'user-11@example.com', '$2a$04$.Yrcc0NuaSei5dOxeedtPezkan/aVh3Z2yQYVcBrPJ2VJOsjwFmc6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 235774389)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 12', 'user-12@example.com', '$2a$04$6hMAZ6uXeFiSQ0K1/dZQme7Bt9/RFz6e68PhTyp928SUwdMdlvS92', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 386199561)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 13', 'user-13@example.com', '$2a$04$wNJTcPyuSD8jDKZPCW9gieGaFMnMG2L7eaCDgIEK723hDHBgWmFVi', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 537116830)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 14', 'user-14@example.com', '$2a$04$CGJbn/MZnwyUZD6x8jeRUuv5D2Xba0ZDhtigSYAGtK74d2E8Wqt/m', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1046959423)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 15', 'user-15@example.com', '$2a$04$gzdqgpuTpQz1SZTc/KqzWOwM8Idm0D58or2SGfKoOxxEiJo8gYzPC', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 157312430)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 16', 'user-16@example.com', '$2a$04$.54mnr7bwQ87asjkRl0ZEOBvZBzHaGujiI7HTCTACca6voICkREoi', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 275330066)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 17', 'user-17@example.com', '$2a$04$EtKHwkual2zfgxS7qbbWMuFzEC/AucZh7NbO4vwmwsqhVLpQpSZzi', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 661521543)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 18', 'user-18@example.com', '$2a$04$w3iG9JxuT91TO8tPTIGZoevwlcxS2JMJP/riMLnLcKojahUXzqcMC', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 936450328)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 19', 'user-19@example.com', '$2a$04$iwlGyhsj5sapVj5A3rLpw.yBiLQ1Gzq1ibAsQHtkvpgOXpC.Phf1W', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 14035331)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 20', 'user-20@example.com', '$2a$04$tMFPCxH7fO4JvR6Jnd38yOp/3Pq27RwNtZfRkOUMhDCtg0oca6Tj6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 304595689)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 21', 'user-21@example.com', '$2a$04$kZtCA8OEFU3IMnWJyuUzO.MAEoQJF33WsnEHz/sdDVRUw5vCnycPu', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 622916212)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 22', 'user-22@example.com', '$2a$04$igVepf76MHrJpHN7Um4mi.GwRy.etuzWWdPgD/cSUca5wtnrKltO.', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1009361868)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 23', 'user-23@example.com', '$2a$04$DrefzUyhdLKabhEy20sII.ybpNRm04jFWosOFcqY9NLxcb.DtgctO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 187601757)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 24', 'user-24@example.com', '$2a$04$pxLHUmIAeZT0sDA6cAp41.5MVh.zn8y.Q8ERMMs8Ep9WUYtaSp2XW', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 357172992)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 25', 'user-25@example.com', '$2a$04$1ELI.LKzcBjgd7XkOLXpYOmI.qYlPU4nDdULrizFuh5qA2qLRcvJ6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 575485547)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 26', 'user-26@example.com', '$2a$04$b97RuVGugGT3/b4zdV1sruo8RtoTnSt2OLoC5UrerII3L6kPwHzx6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 994338771)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 27', 'user-27@example.com', '$2a$04$YKyg0nGnfUxAmBiHBT8R2.mUhZYso2J/86L0bynAU4u1nMvhJOUS6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 205739844)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 28', 'user-28@example.com', '$2a$04$rUHwm.dy04md3RvR0wyYY.W897.R1GFEEi4rvaF32SyXPi4iQuG1m', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 486296279)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 29', 'user-29@example.com', '$2a$04$FwO2DJGu.fHRxYZU.TxoRODjcZPh3/24CzGTrmH/lKsj6HGsHlDSC', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 737901126)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "widgets"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "gyms"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "courses"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "guides"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "admin", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$fYAhX52larA7JZork8oJ/uhgCy8JLfhSnKNeNcD7N8IzbCRDBlUsS', 't', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 762146111)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$Ob2F.yPDV5Mc0SXWBb2zEOG670BHZ38rF0xdw921niiFG/X2wnlVq', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 950961012)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Lana Kane', 'hands@example.gov', '$2a$04$iD2Uld2mJ8Cyzt1lVGDZb.nqQLm.jRtop8ncNErpUiytGKVQHwAey', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 409608538)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Malory Archer', 'boss@example.gov', '$2a$04$VzQn.SNVDaD3o6kMehR2FebcAN8f6n4n7LXfe/7bZsuN6CZpLpbCu', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 659682706)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 0', 'user-0@example.com', '$2a$04$f3q7BGQwRkSwyZmrCedB3eSAvthpV3lxtxYO3iCAGEIoSl0It6Zf.', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 338193910)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 1', 'user-1@example.com', '$2a$04$Z66RlikS1Busot0ZcnW1mOITdEoeE/1XesITLuCygnCL9f.9SPfdK', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 590306657)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 2', 'user-2@example.com', '$2a$04$oz2a7U43TNpEUBvz7eIRBOTMmgAWiv.oGg7LpHqc9T6mey2dMaKhS', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 975572189)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 3', 'user-3@example.com', '$2a$04$Zo3R8RtPAlgq1XlIghShAePoVmIbZK6WVZRKIGHfFTjvbFjCY1zHO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 220281934)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 4', 'user-4@example.com', '$2a$04$jv8LSM7VQy50v77KBSTkjuHuDrPgIWYCGV3gjHLezDib4oAp724V6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 323332591)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 5', 'user-5@example.com', '$2a$04$a16.w6Iu9hE/a/jZsrPFl.DswiHF.Z/OLiDOpsOewWyvDRbEOd792', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 608344442)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 6', 'user-6@example.com', '$2a$04$HGENL0W0VDVbZ7iHwfEFleeNrK9R33t9VxWV6YhLqgV.a9XWbRVDC', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1028376774)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 7', 'user-7@example.com', '$2a$04$Jy4gw0SpRtAgLXajK0nvQeQHjvx1GMpYuDV4Za56gxOE.dTrg4bOy', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 172816471)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 8', 'user-8@example.com', '$2a$04$QeT.ZuRi8lOVGdX1ULJyEuVtY31D/aFsGIMeB7ha.clWnA9fwHGuy', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 452191684)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 9', 'user-9@example.com', '$2a$04$EOrs5eFGX.4yrHbY89a.N.CwaswNyVVt4Fl74ywYafITpUch3EOhS', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 771020115)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 10', 'user-10@example.com', '$2a$04$9kU48Q9AoEfthVJFBFT6FufAbAd1em4.5NMVaSxJGTpWD.0ccfmrW', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 956993830)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 11', 'user-11@example.com', '$2a$04$wpOCOboxK9U99txkAAP2muXvDgYvtwq6iA7yu5t4H2.z3dOnl63je', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 235774389)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 12', 'user-12@example.com', '$2a$04$hHrgRdhubuU9gUx6H7VAZOLcrG4.iqzgx3Dyg0OHGeRdLfXMq0bgW', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 386199561)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 13', 'user-13@example.com', '$2a$04$Ac8YLsvnLYiclSY5qIT9duZk/jamvCY7UjJIsguasA8iKgI02EXKO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 537116830)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 14', 'user-14@example.com', '$2a$04$UlA2iMVlsPH4Ww4gvqZze.2wgh.Ys6PVFIHY9lZQrrnNfvUxAmpqO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1046959423)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 15', 'user-15@example.com', '$2a$04$lpxA8LM1AZXC6Gvl6apal.Y3xgjKi1aE4Nu.Mcdi/Bv.C0KY3qPMC', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 157312430)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 16', 'user-16@example.com', '$2a$04$3xeMzDFmw8gy7dgTqWpKieGi3BYUcd7APYtyvWHb2kYCQ36NKsRoW', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 275330066)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 17', 'user-17@example.com', '$2a$04$KapY0bVeu2AdKaLERuoreuDAsxTqDp/EikNAD20JOQZcbNHMl2v5i', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 661521543)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 18', 'user-18@example.com', '$2a$04$HhqLDZ8NtvjKAeohY9/fUuJ09duxaVkk6o.ux.FsraYI7G//6iRFi', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 936450328)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 19', 'user-19@example.com', '$2a$04$CBse43Hdf.djrrNhz2lEDOsY/UNFHEquN3LoUNtTG8ESAEP1rAdvW', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 14035331)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 20', 'user-20@example.com', '$2a$04$xVPLBp/tRohahO55TeCrDu9bOvxph8RXcwHHjH422TUEa39EbBZsu', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 304595689)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 21', 'user-21@example.com', '$2a$04$NLk8apx4LTa2d8Dy//pR6.es4nsI7ALQ1JrnEo8gc77J2Wa5MH8WO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 622916212)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 22', 'user-22@example.com', '$2a$04$bhkauL/fdnUfBmsh3LCvG.NLkIps3l/3GRbHw4m1ZBgJjWPpQMxam', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1009361868)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 23', 'user-23@example.com', '$2a$04$6XZCTZDoWbJzFJSxUkWr..BpFn36Lgg6fIsMEv3OOhv7oaBEmS92y', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 187601757)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 24', 'user-24@example.com', '$2a$04$iYZsvziGQ9VL4C1mX5Y9iubGG7AjM6GomxYB52KHWXYk9oXZOhXuq', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 357172992)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 25', 'user-25@example.com', '$2a$04$So0YTR..R8gKq8sWiqXK0u9Bql47bsm4flJTovpfTonO0YRx9Cuzu', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 575485547)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 26', 'user-26@example.com', '$2a$04$Zg6FcXEwlW1jlw4/c3DceeRTMEJWZ3XQREG6A0Y6qRirbIcAoLmpC', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 994338771)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 27', 'user-27@example.com', '$2a$04$BCKdmw2I8Hl8ui0Cc7fqIOiY9jy7USXVEnjR0c08M7ZvwvAGT1GgS', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 205739844)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 28', 'user-28@example.com', '$2a$04$emTuuukAiiITSw91bqJze.5r3NVSxWeY3lNPyy02gA5oe5GGcZ4Fe', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 486296279)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 29', 'user-29@example.com', '$2a$04$u4c4TYqWj7rX/SFBd8eZH.TkEP1Ls7QgTfTzcr8NJvJph9EnFvV7m', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 737901126)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "widgets"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "gyms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "courses"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "guides"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "admin", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$BscHYl.VHNWwI7QUTFD1Bekum58TB8jUmb61hkt0xYyKZoc/fa1n6', 't', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 762146111)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$ronyPSY/J9u70.RyFjzOZOssOhtUInWz2hbBC9b72ctzS.xfXVPMG', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 950961012)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Lana Kane', 'hands@example.gov', '$2a$04$Dlj7vTRSGDntBp.U5Ix2Q.zJBY7.tex00CsnnuKLAo/lrgASMbWUy', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 409608538)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Malory Archer', 'boss@example.gov', '$2a$04$CT41VCpvNMH9QRecMlpWlOhjQkPbTM8F9lSGaQFAsnTCPJK9b0FOu', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 659682706)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 0', 'user-0@example.com', '$2a$04$eXOTDTklY/8dPu6zr15AROsF2idTQzc.HBOEbHJqpy2etE5RFhXPm', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 338193910)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 1', 'user-1@example.com', '$2a$04$Ehso7H95e.y6txLeyp4bxe4TyBB8y/Q3FdYvV4LiEPMpxBL1NwG6K', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 590306657)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 2', 'user-2@example.com', '$2a$04$tNKcur.GpIdqpsI4gpD0uO.7Iy2Vdy1lGM9z9EhdmqpzE05QCj/tC', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 975572189)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 3', 'user-3@example.com', '$2a$04$BlczUiUOaqJnz7StZiTkL.xzZq/Bi5asYKjgmaPZEx6S/5wtmJSwS', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 220281934)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 4', 'user-4@example.com', '$2a$04$s0q0MCIE0vxjJ03MiP7uRu0/6o5xPuHwhZ7W7ClZYmRMY9BlppEee', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 323332591)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 5', 'user-5@example.com', '$2a$04$lqokWljr5LDU3SufqoLKI.naDY34Pki/k89S.7vc8d6J7xUJT2476', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 608344442)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 6', 'user-6@example.com', '$2a$04$0nrLBWskpiNk3bhPABgsh.twJXTsldAkHmxqPY6O.aacnEGZPGzRm', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1028376774)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 7', 'user-7@example.com', '$2a$04$8QLj7kw9SaL1clGrVcVwgekMVtNLDA5UN5CZzhdvpNO8wSSSQsC3K', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 172816471)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 8', 'user-8@example.com', '$2a$04$3MdCYvYkMaqPs4r4yK1lzOuLBm4kI8F8zoPvs/tj17R91yvW2fbpW', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 452191684)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 9', 'user-9@example.com', '$2a$04$jBSUHK2ViY3uSZnTK4NE3OipnPtBsDiQhUjlb8fRuiVhSSAcN0OPi', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 771020115)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 10', 'user-10@example.com', '$2a$04$dOm1F4wvyC7tYqU.qvzPL.7JUvE1NyrGrvvOD7OfCYdo4AnooUFa.', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 956993830)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 11', 'user-11@example.com', '$2a$04$/yywH2yzCg2WWuB/mdhsg.ektyMoKs111P15brCj6.nsyPXiZHrsu', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 235774389)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 12', 'user-12@example.com', '$2a$04$1AMev8s9Je1zTRyuSqjSSuU9cvfnkMhKVNU1d2F4EI4W1U54Kz8BS', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 386199561)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 13', 'user-13@example.com', '$2a$04$4/KUcU8M70efFW2aHKYSUOB1ABUTnROvYOGITQgOfSquWZyxrr0PG', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 537116830)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 14', 'user-14@example.com', '$2a$04$TGPBvO/dgy4dQNeX5CV/i.CelRd3eWrcyF4w7okbcXme0Uuv8cB.O', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1046959423)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 15', 'user-15@example.com', '$2a$04$BMzjFISLpU5Y.aDdnGhW5uZC5eTeyCwf771uMs/5IuMmT51vmCZ/q', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 157312430)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 16', 'user-16@example.com', '$2a$04$FPCFTZB/pUCXRwi/5wJQkeaEhTCEt70lvioJ2W6QPJRLVauTKbZYi', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 275330066)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 17', 'user-17@example.com', '$2a$04$CYMErhh3/EN9EzxJJ6OhSOf040ZNlsFdWRE/43vlxohLO6695j0yK', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 661521543)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 18', 'user-18@example.com', '$2a$04$as4REz/YqbTBknF8FwTDye1ZYXfFBxRaB/KpN8sC/7HgOBcvV/teG', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 936450328)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 19', 'user-19@example.com', '$2a$04$phtmjYEtXclE1figoAQRoOrqh48tBAy67D5hWaFnQ19IA78cfP1Ua', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 14035331)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 20', 'user-20@example.com', '$2a$04$zl.hmj/ABsNaddEyHu77JukwtPK9pSU8Bzk6CkP.ti/IHI.9k8mQ2', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 304595689)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 21', 'user-21@example.com', '$2a$04$BYTT0TPomFE59TW15M448.FU0Rs3JuqdOCOLoGGs1op9fqOm8WUzy', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 622916212)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 22', 'user-22@example.com', '$2a$04$1/a0e/jyoIlHxqIzmotXL.owv78OpAACTEz5Z9FxlqztTJsej1z0W', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1009361868)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 23', 'user-23@example.com', '$2a$04$5hHi3gVR/BUkvXXr3u44vez.8W/nn1JvAsiDhm3oubATljMeCud06', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 187601757)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 24', 'user-24@example.com', '$2a$04$h.6Js1k4rLynfUsOfy9pk.ITgX9oJCtra56Eb0RfKIR/L6fFroDLi', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 357172992)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 25', 'user-25@example.com', '$2a$04$5MI82.Ubxst7/o0pmpZqO.udb1Workyhfs9cbLzQ.Aeek876sMOP.', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 575485547)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 26', 'user-26@example.com', '$2a$04$vS3Jn5jop0euLIK2pKO34.gTZHGC1QQ7Zs7CIHPw8hYijH.aVVUqW', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 994338771)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 27', 'user-27@example.com', '$2a$04$mlvitmSkzs9sgANgf7WPpe0topSSYMzI.30d.6L7VWyFOWxsDGUN2', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 205739844)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 28', 'user-28@example.com', '$2a$04$ZZOkIO0sFEWIp6pwuP0guedwJXhQ/NtwFHB9Efc1j5VCzCor3laFG', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 486296279)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 29', 'user-29@example.com', '$2a$04$1dVoMKA888I/uFfan25wm.1tbjafRQRXT0TorEilPdK/aGjhv7iyO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 737901126)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "widgets"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "gyms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "courses"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "guides"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "admin", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$5p3Hiu1I2h9Q7LUYOu8yOelQO80wGEFSGCxEqL2W4g7WdGmOSu1oC', 't', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 762146111)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$kGllDSerMouLhL/FK65jqOSo.RSagvYAMbgB5axjTBul/n2khTbxa', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 950961012)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Lana Kane', 'hands@example.gov', '$2a$04$uWCr/L9upSZiDDZMm3s7aeVyTajM4Zi7hc4XHV399WtlW.Dd3h1yW', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 409608538)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Malory Archer', 'boss@example.gov', '$2a$04$0lzHefjRwM7nW./9xJivHe3dZEehGvZlJLWwwEu8WM86FAQFMl8wi', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 659682706)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 0', 'user-0@example.com', '$2a$04$vlAC7lq5096SJ8inrW5uTuMu9JoZhs2LmLdxNyFIjPLITgKVUXF.e', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 338193910)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 1', 'user-1@example.com', '$2a$04$0TBgZo8DtR.5A6X8FnFo7.XWS/XuqxEZ4lInrZiNroKqzOyvMJ1o2', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 590306657)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 2', 'user-2@example.com', '$2a$04$n/vf4gPP5p/5DXrU597Tfez0D/aPYOriWg0l6ug1aupkt8xLbI28y', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 975572189)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 3', 'user-3@example.com', '$2a$04$75z5x366XEgecmjZ4q52ye8FbFhT6M6ipsnV52j8MGoV52SyyjrCO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 220281934)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 4', 'user-4@example.com', '$2a$04$Qsl9BFQ3Jalthck8Rn50V.1vpv5AmLeUZH5LnZ1bgzNVpifDdjOZy', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 323332591)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 5', 'user-5@example.com', '$2a$04$CXSgTXLhzQTlbhRNcbqVn.XZp9NiljkNhcTZ4sPXJHlv2geum8mzO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 608344442)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 6', 'user-6@example.com', '$2a$04$3UyQR78oPXN6vMFL8QzamueTPuzUn6WWFNBYggg8o8Cg.ydF6S5Fy', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1028376774)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 7', 'user-7@example.com', '$2a$04$Cb9C.YRAuz5jbCmywAvTBOWBuQ9Oivwu1D1OrS9FWV.w7wbkikPOu', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 172816471)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 8', 'user-8@example.com', '$2a$04$WvLOeTe93ZxbIX0W6.NX3e4PJRbXDwGrjvtZ4MplscvGtqz4ScrTC', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 452191684)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 9', 'user-9@example.com', '$2a$04$1Q9sLkCfajXcpherPk/yLeOCMMwgKpQS4MEbZEMjGLftF56tWqEMq', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 771020115)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 10', 'user-10@example.com', '$2a$04$gWYCcfJGYyEmODnxrb7aQOYZyD55xuynKRGjDkzUSHPV7sUHZizU.', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 956993830)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 11', 'user-11@example.com', '$2a$04$vGcQ0FNHp4TTpCh44F7qruQJsJr4DiPhQIu2IaPOrNkrMquRcKrNi', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 235774389)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 12', 'user-12@example.com', '$2a$04$v8Z8uBNyH73WAf88fZG8HePsg6y3idjIffe93i/IUVXvRF9OVegyC', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 386199561)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 13', 'user-13@example.com', '$2a$04$QxOdq5ikTrNIFizsQaivXOjxhyhn2TgyPN3XeznyYwx4tTG.QLrM.', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 537116830)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 14', 'user-14@example.com', '$2a$04$V/cZX8HkEIX02bSWpo3raOr1vnXJX4S1EbmSnTS0Y/ewckDNp7NzS', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1046959423)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 15', 'user-15@example.com', '$2a$04$pF9fJUbyLFBXXH/dUL8rPOlAUC64F3wSNbzBIDYNKJ3nhP8rMAeQO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 157312430)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 16', 'user-16@example.com', '$2a$04$qyi/Z.SoVqAfn//i59.3g.pT4nZj532u5gzv30RGnWsyrptvgN8WS', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 275330066)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 17', 'user-17@example.com', '$2a$04$WmZFAb/7jfYW9UYJOE4.KuEzFMzeyqjAuI30qJRnNjKFXsFnGGpFq', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 661521543)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 18', 'user-18@example.com', '$2a$04$5p75xpgUeIKCNWPVlhaCGe4r0jF52kuk1nM4C73hUZDV9Wi2qhjS6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 936450328)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 19', 'user-19@example.com', '$2a$04$/xE/y4IXdFCLOM2.qIKwLOfn4pJaPxqCrewjofaBbxbfuWTIsKkau', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 14035331)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 20', 'user-20@example.com', '$2a$04$7uVhadbY/Oxxr.z68WvC0.eHd9bDp84iBhFIcPxFQs2z9L/YA8sDa', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 304595689)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 21', 'user-21@example.com', '$2a$04$Q8rmM5RVDWhKTTnqOBI78ubd0FAORffRn.E1rSd.vmt7NJcXUPflq', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 622916212)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 22', 'user-22@example.com', '$2a$04$pSSbrljCs8F1vaQyWFhilOlNProNqb7kNYYdJ.6U4FMnv8DOXg9B6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1009361868)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 23', 'user-23@example.com', '$2a$04$5JAcb29jEMHsDCPoZRro1uWbJaQPvxcFQvT1nEtJRaf2WAp1XE83y', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 187601757)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 24', 'user-24@example.com', '$2a$04$9M2TWvOitL6uCsyaf.d4quYQ5KS3gM3WUutbSXdxz6dC6meZuWUla', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 357172992)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 25', 'user-25@example.com', '$2a$04$Wp1jT2ksaq1D3.1gry0yK.caysjWQPTUvkm4SoRMwvNJo.s8d/WbC', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 575485547)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 26', 'user-26@example.com', '$2a$04$GN6wYzDdJdAn03g6FP1sxORpGpY8bFtX6tcz741M52VTNieHlUg/i', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 994338771)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 27', 'user-27@example.com', '$2a$04$QdPMEeW5ZWsHDFMrfYDXQOm/jmMs5TCPT6Kb0sh0D3uu8Pc29FVpe', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 205739844)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 28', 'user-28@example.com', '$2a$04$zojn5SjBdebUZf0mL6EKEuVs2a7aTHN2tXqMz7IAjXfuT3Hf5EJje', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 486296279)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 29', 'user-29@example.com', '$2a$04$8P6GnoZzuyuG0V6H4eqWSev2bzumzGp5w6OQhoUuG/46vx/smAatK', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 737901126)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "widgets"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "gyms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "courses"[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "guides"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "admin", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$1H.w1iZXHFqfOxJ9wTE2zOw7.7KSxunkFwfnJ0Pem4hiNuOYRqOTK', 't', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 762146111)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$OIxDWMWXwlT67JZLbkfkaeEaw156sTD4M7uRn6W20HLdRuywaCfuy', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 950961012)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Lana Kane', 'hands@example.gov', '$2a$04$2demmeAcj7EBiaPCg9RNMeVF0/WXPaNQDdnv/eXgH4hhYHcN7RQcm', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 409608538)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Malory Archer', 'boss@example.gov', '$2a$04$6Fh9LlfIq5JgAJ4amOrtqe5NF03rt6VwCFEGQaloTIw473Z0zR.Om', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 659682706)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 0', 'user-0@example.com', '$2a$04$0LgPbc/pRdui4MpGvKY88ORfVTXlrgQccTNZRGPMcmlsjh0NHi6YG', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 338193910)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 1', 'user-1@example.com', '$2a$04$Ha6s.6GSG4Ospfb3hp5obeEalGccFFiX47B6LajNfqM2T6QWJaMsG', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 590306657)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 2', 'user-2@example.com', '$2a$04$Pa.WE3dG8RheiuZhNioYXO/P8SC4projfeMlj1ihl1CigBanOniYO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 975572189)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 3', 'user-3@example.com', '$2a$04$K8eFAdyoZh9hIPt4DcvfQ.Oi3vKbU.aNvgBxA8VQWF4R3kh.wfwjq', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 220281934)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 4', 'user-4@example.com', '$2a$04$ZfUmnt89hzg1d47b8ofyLOXIGPqlfRDBoRdL1/pMITQUfOQEJXE/S', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 323332591)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 5', 'user-5@example.com', '$2a$04$arl88mcZGcNQ/B4KMCB3tOszksy4fq0UoEPSiRcf/37IHWSn0Wou2', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 608344442)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 6', 'user-6@example.com', '$2a$04$ACo5QiEGcfkPdj3reniZX.NVVR1uZeBqJ2JpVXS7URmHvlfkuNEja', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1028376774)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 7', 'user-7@example.com', '$2a$04$7SUpusVH1cOWnbxk3upZz.qodp70b7ng6xh0f.RE.z.cTY9eXJnzO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 172816471)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 8', 'user-8@example.com', '$2a$04$fPVqEyyvDQ5HDcC3HLCO3.1Sr8iwJWsSdLR7J1D8RW8e9HHDxHFHK', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 452191684)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 9', 'user-9@example.com', '$2a$04$.CAa8jzk7SnXL/Kn7VCeJOdYnfxkMUTw1GDA66N1WuSAL3GrM5Cdi', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 771020115)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 10', 'user-10@example.com', '$2a$04$lCQKp1O040onUxrcFIvCy.dwZy5Q03R2rNPPZwXQ/WIvn0iSuaNBq', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 956993830)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 11', 'user-11@example.com', '$2a$04$C4p8tRF65jYYmHAJVGJvMO5BXfKUbsLmXp1iNXkICtETTFynGbacm', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 235774389)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 12', 'user-12@example.com', '$2a$04$yZxaZj0WW1xGShdtY97Dy.F904EFIQ6wwyCsOo12Z3gk/say3R4G6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 386199561)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 13', 'user-13@example.com', '$2a$04$2mkI6pDKRxzAYDPAHcPKTOEIWwbKzElOP8xDVsuHR61UBDHYmZNUK', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 537116830)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 14', 'user-14@example.com', '$2a$04$pNayzLPUxQ2TV3lgryeboOnY/2h/Oks/uzN0Dur5BAUgjG5TaHte6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1046959423)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 15', 'user-15@example.com', '$2a$04$V88a4N/SiAaaNHhooWPN7usu7D/GhZsGvgEjeSZ4aT2XfNG.LnKZK', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 157312430)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 16', 'user-16@example.com', '$2a$04$kZBVumfU249.57q.CB9ubukSNK2N1etqyuLr3C8/UmevXwbTkxe4e', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 275330066)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 17', 'user-17@example.com', '$2a$04$z594FZO8yZB0egPhn/m5POsmlhXT4wV3tQS8aBVc.f2h11Cyr9EsK', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 661521543)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 18', 'user-18@example.com', '$2a$04$t4zv7gMeFi/SF288WYOSPOjjigpdgPgWLB0LQr3RCO4wnDDWSoUsK', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 936450328)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 19', 'user-19@example.com', '$2a$04$Owg1XrKneT6xUmpqBStUwu6yp/oBViNn8ZwXcvseng4ACsqG28HnO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 14035331)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 20', 'user-20@example.com', '$2a$04$gDzK5nKbdmED9dmOzxK/KOFurebObAsZXVrjOHsAR2J2UvyZiLIM6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 304595689)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 21', 'user-21@example.com', '$2a$04$ddb6irGJCFAiqZo3bu2PFOgnF1CJflWgkB1WF/k8nuPj06wZQV4S.', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 622916212)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 22', 'user-22@example.com', '$2a$04$O8tmebR2YSPxi5k86EkhheSNeKuXG47tu8PGRbaJi1uBMbQKbETyG', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1009361868)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 23', 'user-23@example.com', '$2a$04$0yY0FhrbG7hHukjWa.8PWuhdvq5r9KrKiUnydbmmOkLagE7L3FzUm', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 187601757)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 24', 'user-24@example.com', '$2a$04$bw0ZssyXn5YPLwBofVL3KuHErkjYYLhNOHMAs7rNcLUXTTHJNmRlK', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 357172992)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 25', 'user-25@example.com', '$2a$04$bSDZX4IHsWYEtBvAgsrxFeRMALglMBBm0V8lU4h.q6ZsQO7QJIRhW', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 575485547)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 26', 'user-26@example.com', '$2a$04$hAZ3V4Bxkd1bAukskZGpo.G6C7w9D64ng7AJ0ojKyqb7KDUvFA6Lu', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 994338771)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 27', 'user-27@example.com', '$2a$04$rVby.PUEjtZec.WwBvnb3u7h5mQDgjEyj0KbbNhX/Xw19AfCSubRS', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 205739844)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 28', 'user-28@example.com', '$2a$04$LCtJx3xg4UUCZ4P0qOvjZ.P15iahd14.887DU1HsSyeMEXQ7QD9Be', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 486296279)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 29', 'user-29@example.com', '$2a$04$mOCgmS.8SgrY3JXWL0TyZugHcfM.XDDaiiEZRNA7pFwW13LiE7Kaa', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 737901126)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "widgets"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "gyms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "courses"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "guides"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "admin", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$5cfbSzCUhC4h7tzAZRyFi.V3JUKJIjmQKedTt6WF3qSyD.OSDTLwC', 't', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 762146111)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$uzUDTXoAosOUmOI/GFTcUOptgrLCxBSFMKYZ8G3rC/Ul3zVroqZLC', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 950961012)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Lana Kane', 'hands@example.gov', '$2a$04$Gfbt7ueh73YBrUt.5.4G1OGT.KRWBX7CpPe2E96UB1g1VEnK8.YAS', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 409608538)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Malory Archer', 'boss@example.gov', '$2a$04$M4vAAYxWityVMoxHkE./h.3S00iK51wkOAfFAqdfAgMmZVToGLpAK', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 659682706)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 0', 'user-0@example.com', '$2a$04$Z8QZ6rgOh0slHjOjB83yYecJAlKwbSMvDMCf8W8uKJv9SCfB3t0cW', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 338193910)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 1', 'user-1@example.com', '$2a$04$aDplZv7hOE0QuAnShvWGRu8l5E9EygdJCuIyYqQENRGqJgAHUULOe', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 590306657)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 2', 'user-2@example.com', '$2a$04$/lTKXFZ8WEwWqhYi4vOjfOsgBNuh8JMlP7tbW00c318ltcVZm2Ef2', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 975572189)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 3', 'user-3@example.com', '$2a$04$sMgzZjSrLAm5XxRoWMGEd.3CKcewB3INFEBmPfww4Uuky8Wd4xj5C', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 220281934)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 4', 'user-4@example.com', '$2a$04$/tfSfqkYwdM8uhgF91bvQujWLFXcJSCw6b5EOrDYut3jkr8pssKpi', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 323332591)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 5', 'user-5@example.com', '$2a$04$dR.O83DLmw2kC0SkpONHYekdkBLdVuldBkwybd7k7yPnfezhS8Lfy', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 608344442)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 6', 'user-6@example.com', '$2a$04$xOC09N3oKhRu0MpIDFStgeAZe4Dvy49/pZ1tpJvhpk08xFr3RAGYC', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1028376774)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 7', 'user-7@example.com', '$2a$04$sUixwYwvUTgPa39Kl73BLeQ1KApmh54VTpgF0UybUA0YTnx/UaN5.', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 172816471)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 8', 'user-8@example.com', '$2a$04$CnrIJPCQ6T7ZGCJBkpskuOpsaEdEp9RAnRhgp1nbNXdErBRgDUFci', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 452191684)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 9', 'user-9@example.com', '$2a$04$Olj4LbdIA6g8aBzEtXXuh.kcB7/degrBGjDMnyn66O4pKHwTOqPUK', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 771020115)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 10', 'user-10@example.com', '$2a$04$ZXtLSdvjAxdOwefJ/T0mXur3RUvywzVoCH5J3B1e7ioGAshonTCJO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 956993830)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 11', 'user-11@example.com', '$2a$04$Rmocy4stVwzKrKEbhR8K/uvu.3xRkOGmw15FGE7XLgFXVkdCQQ1QC', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 235774389)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 12', 'user-12@example.com', '$2a$04$7Cm/S2ngchxUUbyAGiylM.zuQvwLH6MbTMhwShMzm9htDXOlpwVlK', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 386199561)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 13', 'user-13@example.com', '$2a$04$EJV7vnOroGJivslo1VZEIulzkvLb4UM4NVpHBShl6umYcuzwEOuQO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 537116830)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 14', 'user-14@example.com', '$2a$04$WRPDtN7QJS8ZD2IaZrLr6.K/0nyQUrI8UwNzb.b6J/yzA1KQe60b6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1046959423)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 15', 'user-15@example.com', '$2a$04$A8Qh.YmvHO4Nt6Gv0gOEDuzuXGZw08KQD0t1QQPTrA0KxLKOQQQ.i', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 157312430)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 16', 'user-16@example.com', '$2a$04$mCYTdFoIPeBr304P3YrK9.wXokKpYoTntxhxu1vdBNxkz8Kl48lS.', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 275330066)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 17', 'user-17@example.com', '$2a$04$lXtqcFigS1Eyj5ePXea45OF0RmffdDa0E78duNykFf2aGSGhoe9qO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 661521543)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 18', 'user-18@example.com', '$2a$04$KV49/z9bxqySMVg1y0d/DemVnIHiJKJhPMCSZx66WuUbazeh4Row2', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 936450328)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 19', 'user-19@example.com', '$2a$04$J.xFZIMuvafTi9l8tH.rRuXGyvv3ncBMw217WzukfQGLvqf8sftDK', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 14035331)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 20', 'user-20@example.com', '$2a$04$LmbwSxG4.D/G6a4w8VxP9.w3voUuPR0lzKMG6zFICEu6JsttMKYy2', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 304595689)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 21', 'user-21@example.com', '$2a$04$.na3g.Y8uSjtK8aTk23TjONzdTAmYDfB1tioQYf4pEjEjP2yFW78e', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 622916212)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 22', 'user-22@example.com', '$2a$04$uhuo6TrfEKNmsPNzztawfuuiKgsCHRIlKj3o4qoTVTZUsG8aYSdOC', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1009361868)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 23', 'user-23@example.com', '$2a$04$WZX0DuRMLZ/BZhZNKTgfoemXcsp4dq3X9xSZxVZL5TYauKJvgIwbG', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 187601757)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 24', 'user-24@example.com', '$2a$04$uxG.NV7Npq7OPKchFwdOO.eBdbtcbTjLEumBWgjhX3OXPOk.5xsuG', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 357172992)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 25', 'user-25@example.com', '$2a$04$VEgFISI9r6H4RDaluWxpAegLxBUa.5vJyVL3bk3UKdsVNSBvN6L.G', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 575485547)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 26', 'user-26@example.com', '$2a$04$DSXoAMJWXNwmGy0h0I7gkO017Xm4p7pXh7c3QBXBAW530GMuWjnzy', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 994338771)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 27', 'user-27@example.com', '$2a$04$V4EMiYEE2SuiQ.g0xlOiBe0/F/8IHf60dONCYW9dtq/zpYs.kAtjG', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 205739844)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 28', 'user-28@example.com', '$2a$04$mhgjC59npNUvv89S7GOIpOGt48JdL183vuvWA7R2oo/1DDYe2elWG', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 486296279)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 29', 'user-29@example.com', '$2a$04$odfqMh.XnxNDAzWAHztpSu0mYCgOQbtdZlkUxTXs2xtI6EmyLzkoq', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 737901126)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "widgets"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "gyms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "courses"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "guides"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "admin", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$igxiQFM.SrXTQnTe91Kc3..fZia4I3ET6yFvMwGDLNMaYDFNMNU.y', 't', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 762146111)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$eyU6cuZJbtd58PW6tzYSWuVYvv8wtDXajtK20VvTNXBqxLNFl333u', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 950961012)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Lana Kane', 'hands@example.gov', '$2a$04$vRky7XpB3DUFTc7XR9.sp.GNCcUHosUekmYr9DGO3o07teGuEamvK', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 409608538)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Malory Archer', 'boss@example.gov', '$2a$04$uhp0FLScN6dMAeQCxRRT0u7nl0MpLoZD5iAtsdHhy7H95JwFCHQJC', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 659682706)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 0', 'user-0@example.com', '$2a$04$mHw4mRZ9/wxjuzie4aYAA.3/DaY50OO.1g46FnR/e3rRSw/YKxMXe', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 338193910)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 1', 'user-1@example.com', '$2a$04$gIfZzd77A1tt9X.uRr4kDeouvk0OMszFPT0OLucezDzo1R4VVJcFa', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 590306657)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 2', 'user-2@example.com', '$2a$04$/ZkeAyxGj60PPAGtDpJfUuuyFRxL6AR3emIUwuhoDOJopdSZeGh.C', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 975572189)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 3', 'user-3@example.com', '$2a$04$tAGUNJ/2bb4u/l7/K2AbRuN.BLJAJ3VbVgaCkt/tqs.xTb/Fx063K', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 220281934)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 4', 'user-4@example.com', '$2a$04$NPsnGl4QEaDFdVX0WHxNDurWisJfRAyERZo4c8/dn0YklXM0HRgI.', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 323332591)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 5', 'user-5@example.com', '$2a$04$LCOMxw2EeUihEA4HC2XboeN55BpmLksXS30v.WpSmalheZ/AOm1hG', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 608344442)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 6', 'user-6@example.com', '$2a$04$LXoYa0yzl4S3LygUmH9GBe1UoInslgZELrW/d1pYiEmBI03V.SV2a', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1028376774)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 7', 'user-7@example.com', '$2a$04$HrZddbM52sDLMKXhrsEEo.GZSIkhJam5CuIDlAf29YuRA2mrWCJD.', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 172816471)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 8', 'user-8@example.com', '$2a$04$LY2xXTj5oBOiuiotGgbukON4g3ANmsUM7n9ozHTpJcwzpxPoQ0uI.', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 452191684)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 9', 'user-9@example.com', '$2a$04$fooPcJeL.HOKCOEikT.huudq4OVFhjd95ZEMUcHyax.rbeQlllhZi', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 771020115)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 10', 'user-10@example.com', '$2a$04$jAi1KRGm1lFVUimI1B7nZex9fXzuVGlQKX8mgxYHAWK.ehbY29RXq', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 956993830)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 11', 'user-11@example.com', '$2a$04$3tVSJ65k2zDof7g86lNb7uTOPxnfTpW8hWF1pkHRY352riPNGPYIG', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 235774389)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 12', 'user-12@example.com', '$2a$04$B4wHx85XSvI/7QFGImnD4O5G0g9MumfKn9gPftYNJseaf2zSvhU5u', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 386199561)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 13', 'user-13@example.com', '$2a$04$ykMab91axHJ7wXAO5fVyPu9.qogVlmqPeFTpJfZ.nwuDayv3J/hAW', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 537116830)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 14', 'user-14@example.com', '$2a$04$.h1SidrwuvRSa.to1/xAuOpPRlRyqwi8a.8kit6sqxohb.s95c5f6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1046959423)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 15', 'user-15@example.com', '$2a$04$6bOOMPEdrGHm6hhNg9gaOecwjkO94o7zjRvrtjxOyV9pB8OduoMmm', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 157312430)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 16', 'user-16@example.com', '$2a$04$.VTN2zoXk09LqKHB3kCnaOFKlxoLl69h9/.xe9Fy37/d4LmJ1byh2', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 275330066)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 17', 'user-17@example.com', '$2a$04$uazIxUgFUcKC0O2IdPVFRu8v5MJotOY3UPK3Drqy5Edj5Li2T66eG', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 661521543)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 18', 'user-18@example.com', '$2a$04$dnuiur.ewJ/J2i0/wY8MtO8WCTacsvacTFwHr.7IR5DrM5LQz3gre', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 936450328)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 19', 'user-19@example.com', '$2a$04$Bh0v1AiwYfPpDuIjY/XxvOfFAeTmoVLmV0d3GVEnoiUGKBNkiScCu', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 14035331)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 20', 'user-20@example.com', '$2a$04$xVLij0XSWAw/tzUeIgVevudR3yn0oWOs57AQuDjxmB5a6EMTqpBVq', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 304595689)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 21', 'user-21@example.com', '$2a$04$PQgvYSUpS2GqE9S.PQFdQOsBL/MIsQ3Z0OMiB9XaG4AUa3fqh54lK', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 622916212)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 22', 'user-22@example.com', '$2a$04$.nVGHni8LCo9m3TB7mWUXu4tQOADE6AYIwBsPoBmL3x0qBvXs6s3a', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1009361868)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 23', 'user-23@example.com', '$2a$04$kXdHpOZQjENoRJAXmBJo3uPwTI6Do.48ZnalUFWMNpXaXNT.Neeaa', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 187601757)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 24', 'user-24@example.com', '$2a$04$2w7OrfudGc3EfyEZeUwfmeTm8lwfSjPUPKdtdZvCrSnYLcWs1lJG2', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 357172992)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 25', 'user-25@example.com', '$2a$04$QELWXyav7KY9x2snFftRK.UK68Wwdtvu5KNq4uV0yuFeMpWWp7K5m', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 575485547)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 26', 'user-26@example.com', '$2a$04$GyCzL5qk3NMPmcegWoOKAOVDYWLZ2hDCqvayq0lh1Arv2RVT1uewO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 994338771)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 27', 'user-27@example.com', '$2a$04$YBq8b0cTcxcYU0i0sRRSI.aswrLW2Q3l77ZyXTD80aILTTcnAqgWC', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 205739844)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 28', 'user-28@example.com', '$2a$04$cLDdavB4zEInADBwHSq0Jupc25JAPWseFe8cgUR2LovmsexWQklDW', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 486296279)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 29', 'user-29@example.com', '$2a$04$oby4Zh5KUcCa0PSX5bHObeBxO5SKDUrJo4JmQ.dZ8zR9ua/9TBssu', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 737901126)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "widgets"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "gyms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "courses"[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "guides"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "admin", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$zh6CCaUfASjF6EglW4hmYO5sXhhPSMfHJac95jFMIE4XHbZE3xWH2', 't', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 762146111)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$Uk5xsHY9gQK3nCqXGTi.Q.cTeWhB.oCviHVoFLIHZt/DICRCdQRV6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 950961012)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Lana Kane', 'hands@example.gov', '$2a$04$CJ2notSkhactVqeAPmoo2e7hFX41LIvlJJUePXNq32xr0p4mDWX82', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 409608538)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Malory Archer', 'boss@example.gov', '$2a$04$Ox7/AdbiolTlNNu00WiZ9.CHkLHfqjtuunHEePDk/sFh85K9pAi7K', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 659682706)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 0', 'user-0@example.com', '$2a$04$6kLbEdHRpSP2piF/Rz2dKu5XrLxbI5uualp/FIHCkysvNYT1cJLCm', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 338193910)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 1', 'user-1@example.com', '$2a$04$lr09E3pnu9mx5TrXSk7Og.wfgDlFkJ/yx5vK/Xf0pBnMuQIBxCirS', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 590306657)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 2', 'user-2@example.com', '$2a$04$LiSeBA.E1WG1SnJnb8IcfOmaJqfJoYhUmPTeETKbuh3UEzZIXzLmy', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 975572189)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 3', 'user-3@example.com', '$2a$04$AFzmmmdktqmggI.H27Urm.hwtmTLCU8dhpnuarGfGXlFeHyS3znh6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 220281934)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 4', 'user-4@example.com', '$2a$04$XH9u5teCycAXpTunH5.aDuUxtpZesBHwNJgToQVQ9Po.7bMgiPKNa', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 323332591)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 5', 'user-5@example.com', '$2a$04$dRQp7dbf7fJdeqbOuiI8D.unY5mPDhQE162jLWqXoHRWDs5dqcsXG', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 608344442)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 6', 'user-6@example.com', '$2a$04$wBXNUfIIL8A4NLgcUhI...kfn4a/tTtHYDyP63oFdcpuVjOZsRYzW', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1028376774)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 7', 'user-7@example.com', '$2a$04$cjlKp1y2VrUqs.vWqKnhTOi/fLYkaLWZsjmIpdZtifR2cn.YLMo0q', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 172816471)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 8', 'user-8@example.com', '$2a$04$61rsigV2e9NEQXGu5DQfwe6MSrOxYzOz/BrJU3DMublZuQRU4yBp6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 452191684)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 9', 'user-9@example.com', '$2a$04$Halth6RYKADzM78jyY0HWumiq.OVFD/KFWfzKL05Xv6pZaGBCzJyO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 771020115)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 10', 'user-10@example.com', '$2a$04$PIkpO.OyQHyoez9nIkRXaebaVuPi1P7zs4w6UrpMMeL1deAeeVH7m', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 956993830)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 11', 'user-11@example.com', '$2a$04$mBxGSUyMlOFJXJ/6Z6NzAuuW0fsJdRqzgj5lHu21evxquBXpIJcMm', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 235774389)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 12', 'user-12@example.com', '$2a$04$1SNFvge8gYmsjfvaHDupmuoReNfRtiqPRHLqRoGIW0QnWTu0E9Oca', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 386199561)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 13', 'user-13@example.com', '$2a$04$AXKg84LrJDOpAT4LKkilgeA91X.oQb9XsGCKrPOuRwvC.JRvfeqJi', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 537116830)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 14', 'user-14@example.com', '$2a$04$CqO3Fx/CidReo2U97UW5HOZ20sxx7m1Gh7nKnaCeyux.SsHVZp.mW', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1046959423)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 15', 'user-15@example.com', '$2a$04$7HoTvoL6J4QK2Eovou3ysevzyBuxTkGb/T2MKRqwC3Lx4YDFzRozy', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 157312430)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 16', 'user-16@example.com', '$2a$04$aBdmrMH2LlQSvfSfr4TtMeTJUrB9Zl1b/U.SjpB4QYwlBEVMBI8xW', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 275330066)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 17', 'user-17@example.com', '$2a$04$ddHhCEHJNFwUZCWQUqINye6Nw86oYc23RUF..Hjks7X3Y3IEFpTkO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 661521543)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 18', 'user-18@example.com', '$2a$04$Lzz3chJo4UER4ldOq1ij2uymFegjIw1Bj/RIc9sKsL6Eu6rJf1SFC', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 936450328)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 19', 'user-19@example.com', '$2a$04$ooA1dslwRGlPaTBLNKGrMuLN8AEy9P/66JGO6JtEj5SiAWXejkMbu', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 14035331)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 20', 'user-20@example.com', '$2a$04$T.NXbyu.EgKa40YXlQKbSu1biNIaI.zhNjyCebBb9xCh0wbEOWt/y', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 304595689)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 21', 'user-21@example.com', '$2a$04$m7p53phQwamtdss/kB5OOes0Sb46BH1KXHiXOlU5raHzCgHtGgn8K', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 622916212)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 22', 'user-22@example.com', '$2a$04$j7sflkjVJqeVAP5d/lYK5eIuTlpjvFINyupt2i/49SRmifkZ8sj4.', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 1009361868)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 23', 'user-23@example.com', '$2a$04$4g1NntvvrSXN6cXGIzJg/uNFMrUbIh7zXIi0SDFzZDXIh4ZtMhzbi', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 187601757)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 24', 'user-24@example.com', '$2a$04$jWStSAFbGz9o6k8ZLCSHQedtOC3irqJbP34tQOuhJT.Oz0nSxWfwm', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 357172992)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 25', 'user-25@example.com', '$2a$04$bdFV0kWJOEL7b72Rf/VcE.M6.uirOtNsFUH4Yf6sMOCQlozMe60l6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 575485547)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 26', 'user-26@example.com', '$2a$04$4QKZWoaPDS2OjIVNmx.sp.zSNRDjIBuDjMK8KQSAKAs.pJaPGXFh6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 994338771)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 27', 'user-27@example.com', '$2a$04$VZI7GQN9P.lFdpNFh.B6JebgaUNp5pmXdJcExY8mBXVbidkVr2Ai6', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 205739844)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 28', 'user-28@example.com', '$2a$04$uLM8bKG/qvIrET254GISWex8M.K0VtAnLdMSpNdKc7bg57a5rTVqO', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 486296279)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 29', 'user-29@example.com', '$2a$04$WxvJ0LKm6MgMKObWezY1kurjZs6rgt5d7JzqoW93/cxt8L9SsCwYK', '2017-11-29 06:55:39', '2017-11-29 06:55:39', 737901126)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "widgets"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "gyms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:55:39', '2017-11-29 06:55:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:55:39', '2017-11-29 06:55:39', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "courses"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "guides"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:56:36', '2017-11-29 06:56:36', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:56:36', '2017-11-29 06:56:36', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "admin", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$sNg.qIMP6rTePlNOpKzIVei1msdxYVYHDpFhtyuxmsegSh/GZgIu2', 't', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 762146111)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$ZxsO7ReQhU7fmIEz0R8/XOromwGZ/GSZrU2gUfwRfX8I8KEqFNdy6', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 950961012)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Lana Kane', 'hands@example.gov', '$2a$04$RNSfH4ynH7rGardzpLAYNex8c7pFNR1WWLQhB.kds5VMCybC2cS2u', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 409608538)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Malory Archer', 'boss@example.gov', '$2a$04$rkIOITGmb8v4wg15HrPwHePz8EhD0nK5TE6MNKeXUO2ShFrywqEw.', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 659682706)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 0', 'user-0@example.com', '$2a$04$qukP.fnV6z1hHEixp1ZOneHfgnl5KijRGjzpWa1B5u6GF9D6CNkFO', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 338193910)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 1', 'user-1@example.com', '$2a$04$axY6ryb4HAwxSdQ94NKVWe4Q8ljyuIe2kWQShRiLU6fAMG4MsKzz6', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 590306657)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 2', 'user-2@example.com', '$2a$04$CFlaMAU13ZnMHhI./kvIUOnoDYFqG/cP2Pl2QaN4VybbpHuPP0np2', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 975572189)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 3', 'user-3@example.com', '$2a$04$kcGgSjEPGaLlXaXEYuQmmeAdasalqXvozBWcPerhpr2.H2sOVfF1q', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 220281934)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 4', 'user-4@example.com', '$2a$04$f8EmdxJvekckelgV9Rpcf.KL6tiKpRhAP0v6k/P4VDgp5peeMDAhy', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 323332591)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 5', 'user-5@example.com', '$2a$04$9zlspwF11oaEYnSxm8gdIeooVFUL0uZuv3TjEnbk57S7je5BFl1AS', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 608344442)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 6', 'user-6@example.com', '$2a$04$XIFrTZWfDHcbbLbuG/lsHuezKxJqeRbUf9.po3ENelaRgFTqo/A12', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 1028376774)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 7', 'user-7@example.com', '$2a$04$By2e.33rUoNnhBhQyDtZYeU7T.lEX0ZM89k7ldcWtKGFAS2zlmSGO', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 172816471)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 8', 'user-8@example.com', '$2a$04$q6zP2e.5BUwYET5UgautDubIfyve4YwsRnIknMwTTYCqPMD8HEgwi', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 452191684)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 9', 'user-9@example.com', '$2a$04$xpBetB./i6g7P/2cLyy3eOUBQe/pKnEWeuNmVzkTncQR3.shFEzQG', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 771020115)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 10', 'user-10@example.com', '$2a$04$T5LqrpHLJ9me7D.ncpTZOO78s57r9doPbiiC9phX7nV5dGmDSXJnW', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 956993830)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 11', 'user-11@example.com', '$2a$04$1KkIplPJbSRLAMGVNHCRAughj4vgAV3AUTiUf..W0K.8lIa8MHliy', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 235774389)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 12', 'user-12@example.com', '$2a$04$QkT.NHh.NfJBytDFTnaym.jVp4NScrMlHIGFSeu8GMHzCPOrnqQeW', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 386199561)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 13', 'user-13@example.com', '$2a$04$A9zNW4M7B80KedhNNtMRS.L/zYl6Pkx5PizxptjjEqmOMb9CazrWG', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 537116830)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 14', 'user-14@example.com', '$2a$04$5/iofjXks5kIIUtjPPf2IeLKK4B4pxIOOb7C2OQ3VCUv57uHqdUnq', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 1046959423)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 15', 'user-15@example.com', '$2a$04$53oCjcLCwql5gXwJ9tiPr.HUMSvCyYKjwUTvBBnT/d/y.k.PxmLie', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 157312430)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 16', 'user-16@example.com', '$2a$04$sysHlLbw9qTWpfpQCStD4OCNy2J89cARqqe2qwxMVFLJEx/jS7EEy', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 275330066)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 17', 'user-17@example.com', '$2a$04$8fH4OTn1wktg4RAm38i6T.bU/dmkY9.8.TnN2Mp34.1tTJKFsowmG', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 661521543)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 18', 'user-18@example.com', '$2a$04$5ezsIyrDkvLhKgZND4Bgv.6cdUwb31mPsF.v5xGHCx1iE2Wg.SctK', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 936450328)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 19', 'user-19@example.com', '$2a$04$.KDzovesq0Xb2ze4yOqzSeeoMougQInk50HLIeA5Em8QHtwpeF17K', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 14035331)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 20', 'user-20@example.com', '$2a$04$zymAIno4CDmgBgQFinjIreVTagJT98CCPRc/3zaLQLtlToyt59KTa', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 304595689)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 21', 'user-21@example.com', '$2a$04$ZvygBTqRJALs/j8p0L85heeQQHI/4nxwjoDQbZXqui5huMDLp1cBi', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 622916212)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 22', 'user-22@example.com', '$2a$04$QcszXVfvqwNTYxnZkKR0c.9/lE6FCXVS5xJ5PqWp5htKCMtkQ/5Li', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 1009361868)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 23', 'user-23@example.com', '$2a$04$w4bL1YXJK3F4iwZTq8LaeOvcklqPnzHYJjGoZaUd.xsBBMceiwMDO', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 187601757)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 24', 'user-24@example.com', '$2a$04$i5ofnY1Uyoc2Y/nKg8pfru9v9SISJfXg1CT.wqoOlxe3r64X4w4SC', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 357172992)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 25', 'user-25@example.com', '$2a$04$z814FNBOEjDt.yj8FihQ8ehB60FQeYMknirxaWrk6g24Ms59.0eTK', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 575485547)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 26', 'user-26@example.com', '$2a$04$jh92FXS2zdX2nLTciw0UG.AbRBqMZrVxHcrQWYswZHzlejRggb572', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 994338771)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 27', 'user-27@example.com', '$2a$04$APc9R1OIntRjQtFWeOPSV..OsAtvwIXyGPqCyxPlBZdWVTslQIP3W', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 205739844)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 28', 'user-28@example.com', '$2a$04$ODcLFwrnWdjo/3skjQsuUeGA78X00Si0oEI5POlEhrhlOUXMiuNiW', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 486296279)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 29', 'user-29@example.com', '$2a$04$2l23b7N6lq6s0iintA1aB.S4AvOX/8lEFakJGsBGd9cNp47jNQKha', '2017-11-29 06:56:36', '2017-11-29 06:56:36', 737901126)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "widgets"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:56:36', '2017-11-29 06:56:36', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:56:36', '2017-11-29 06:56:36', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "gyms"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:56:36', '2017-11-29 06:56:36', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:56:36', '2017-11-29 06:56:36', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "calculators"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "calculators" ("calories", "user_id", "created_at", "updated_at", "id") VALUES (1, 1, '2017-11-29 06:56:36', '2017-11-29 06:56:36', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "calculators" ("calories", "user_id", "created_at", "updated_at", "id") VALUES (1, 1, '2017-11-29 06:56:36', '2017-11-29 06:56:36', 298486374)[0m
+  [1m[35m (13.8ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------
+UserTest: test_authenticated?_should_return_false_for_a_user_with_nil_digest
+----------------------------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------
+UserTest: test_email_addresses_should_be_saved_as_lower-case
+------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('Foo@ExAMPle.CoM') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "foo@example.com"], ["password_digest", "$2a$04$OuetJG8Dptx2RTshi3Wkqe2sAyRRy2.d1M20VEVrIW8SBZmXTX1CC"], ["created_at", "2017-11-29 06:56:36.281589"], ["updated_at", "2017-11-29 06:56:36.281589"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1046959424]]
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Example User"], ["email", "user@example.com"], ["password_digest", "$2a$04$JFufD4fxBF4cJdBhi9jRcuAA9RO8KGvX9pfqOzIthJItcUYQHTBHG"], ["created_at", "2017-11-29 06:56:36.301476"], ["updated_at", "2017-11-29 06:56:36.301476"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.7ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@EXAMPLE.COM') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------
+UserTest: test_email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('     ') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------------
+UserTest: test_email_validation_should_accept_only_valid_addresses
+------------------------------------------------------------------
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@foo.COM') LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('A_US-ER@foo.bar.org') LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('first.last@foo.jp') LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('alice+bob@baz.cn') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------------------------
+UserTest: test_email_validation_should_reject_invalid_addresses
+---------------------------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example,com') LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user_at_foo.org') LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user.name@example.') LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('foo@bar_baz.com') LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('foo@bar+baz.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_be_present_(nonblank)
+----------------------------------------------------
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------
+UserTest: test_password_should_have_a_minimum_length
+----------------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "cities" DISABLE TRIGGER ALL;ALTER TABLE "triplaces" DISABLE TRIGGER ALL;ALTER TABLE "calculators" DISABLE TRIGGER ALL;ALTER TABLE "guides" DISABLE TRIGGER ALL;ALTER TABLE "gyms" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "guides"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:56:54', '2017-11-29 06:56:54', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "guides" ("title", "content", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:56:54', '2017-11-29 06:56:54', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "images" ("image_id", "image_filename", "image_size", "image_content_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "admin", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$wjab0UffQtAFpy5bV8aJw.ngM2SxCZgYP.6I2wmW7jXyDZ8.A8g2C', 't', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 762146111)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$hL/c4zNpGYlMX.MrycdARuSi7pMzg.abEHdXQiRcA4idXn9PDBlDy', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 950961012)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Lana Kane', 'hands@example.gov', '$2a$04$GXsGajc0CVfDaXgxqEz3Z.HQ7syl9c6I6AtwD/kSbs8vyPNzEUljm', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 409608538)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Malory Archer', 'boss@example.gov', '$2a$04$eNg6bRAgxS9AWAdXzVEyEezebc9W36sSTXw7MmGR9zQ5TXTrEf.S2', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 659682706)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 0', 'user-0@example.com', '$2a$04$FDKaDn7nMmoxVuLZMBLxV.vMS8OOzwiTKGKyxyyWU86uB2/rvCDKy', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 338193910)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 1', 'user-1@example.com', '$2a$04$EvY/C9KZUZAGQBs2bq8skugP1XaH0DL95A7dhXKBbs.2MDzISnaWW', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 590306657)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 2', 'user-2@example.com', '$2a$04$NGIO7f5hAzA7i4YJ7ARxWOMOgvz/aHkfZ29lGKVAk7Q84HiAXx8Ge', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 975572189)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 3', 'user-3@example.com', '$2a$04$qmENgTweRe7Q0txMOVjcg.alB3BlrToz8SXnrn1EchckUHZ2Uttpa', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 220281934)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 4', 'user-4@example.com', '$2a$04$EMLP.ZVaHPFrMVwx4vDaPOL.R0Hvzd7hiE3Z1yFMFDcbEIsCrMhjW', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 323332591)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 5', 'user-5@example.com', '$2a$04$BC32YnA3rczggGnhnNanVu0ZdXx4/PTIIk5Z53hPGG8hFq9vtaB36', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 608344442)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 6', 'user-6@example.com', '$2a$04$vOD4AWkgdMtYjUR7exosDO65LjaAz/V13RqLSkBIJIn94Yk5H9g32', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 1028376774)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 7', 'user-7@example.com', '$2a$04$Ci/XOiwUFVHIl4ftECt18u4.xmzFa5wZ8DJYYHM31dxt1qSzMg7wO', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 172816471)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 8', 'user-8@example.com', '$2a$04$8RGxcV9mfgkmkQVFYiq8OOox7Pgl7xX9ckV./K8FzAqdwmaWlPPlu', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 452191684)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 9', 'user-9@example.com', '$2a$04$fi0EVsU3D1a7jcmSQ5OSR.4k8U3n3.9JeHU7qc5zzAYWNWu3.JL8m', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 771020115)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 10', 'user-10@example.com', '$2a$04$rH8GvIhcy.rQMfP2v7s79eqZlz4E8eFkAwmgWKy8u8w/VwFIcg7R6', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 956993830)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 11', 'user-11@example.com', '$2a$04$.fKNbCxuB.Eo8Dwzx5HXruW6202jsHuWNI2uDWCoHzEMvlMds/x0y', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 235774389)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 12', 'user-12@example.com', '$2a$04$p88bgHFP9hs8FxgdXBVFWuOiaZOKzuEO9h.mDMGl4n2pDgmNF4fS2', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 386199561)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 13', 'user-13@example.com', '$2a$04$kJJhh8vh1hyasOQLOMsFP.ryC5GI7Di1kSCErXh8Ls6u7LG8TmgHa', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 537116830)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 14', 'user-14@example.com', '$2a$04$DSqwPHecaVBuM67VqvU9uus0ALPThbVtUShIz/ylxZbjIkrTe0jgu', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 1046959423)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 15', 'user-15@example.com', '$2a$04$gGx7odUauVlLBh.7A9/xuu6CymFc3HPEF6OSKTgWzr.2yCC0vIXJm', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 157312430)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 16', 'user-16@example.com', '$2a$04$2Ue5BxrAVii5S5OpNrtTKOjFuhBXVk3KsT/QAMs0xXMTypCc1eZwS', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 275330066)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 17', 'user-17@example.com', '$2a$04$ItjtXqZ5FR9NVye/VNP5H.ecbOd3nsqKChcuWNCLrwx9e5IRqrAMK', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 661521543)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 18', 'user-18@example.com', '$2a$04$FK2D48fDeXn2Ef.X5CeRXudvNeqW25rL34LOXGXHxUD7BwPySkNvq', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 936450328)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 19', 'user-19@example.com', '$2a$04$Y6LE0DD2qj4XwFbfkiKtzuO9OK2PiqH5p52sWQHyAJVrlt2XX59ki', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 14035331)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 20', 'user-20@example.com', '$2a$04$KA.RDTYBJgf657FlCtsdSOTYGmZvo0MOQDJytv1yLHuYd/1CENXhq', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 304595689)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 21', 'user-21@example.com', '$2a$04$wSTU9.wlWHxTKA/yZ0GD7uojCrGAjuUcyJDzPl5zAgU9/MlygTe0q', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 622916212)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 22', 'user-22@example.com', '$2a$04$1eN2bClHhVK1FY8z2MjAGuTo0K0ppR6Bfof47KsShuObKOoPwLpS6', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 1009361868)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 23', 'user-23@example.com', '$2a$04$FwkJnlSsadkVoGQY5ESUY.L.P3fK3vBt45E1J/43r9iax1AcTbhLS', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 187601757)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 24', 'user-24@example.com', '$2a$04$9EouZawQZ7Nbi.XG1n.Do.i1wpa65T1YH.SMVteLsmO.ImuzWTo82', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 357172992)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 25', 'user-25@example.com', '$2a$04$5zZD6CwmHAtFk5KCzXMN1eztFXrKHP.TIZZPEr.jMJyoruH8oWl1W', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 575485547)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 26', 'user-26@example.com', '$2a$04$8PJAKqHr/A.gW64MLEj1E.PfHq2BT4MnRRhTjm0DXlZO/Fby8Vezm', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 994338771)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 27', 'user-27@example.com', '$2a$04$qZfyPOtEMSmT2iOdn81z6.s8zOHVwk129zHTVwhpnRUG5AZ.N/3i6', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 205739844)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 28', 'user-28@example.com', '$2a$04$W.GJf29X7JnTEFY9lN03VOnXWc84NT7KQsUVfIvh5aLxXz8BEYgSe', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 486296279)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('User 29', 'user-29@example.com', '$2a$04$U59dXgvvoU6x4FC7Em.W6O1sfgK6aTL/5vbco0.Hfn0hW5GrE1NoO', '2017-11-29 06:56:54', '2017-11-29 06:56:54', 737901126)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "widgets"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:56:54', '2017-11-29 06:56:54', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-11-29 06:56:54', '2017-11-29 06:56:54', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "gyms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:56:54', '2017-11-29 06:56:54', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "gyms" ("created_at", "updated_at", "id") VALUES ('2017-11-29 06:56:54', '2017-11-29 06:56:54', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "calculators"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "calculators" ("calories", "user_id", "created_at", "updated_at", "id") VALUES (1, 1, '2017-11-29 06:56:54', '2017-11-29 06:56:54', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "calculators" ("calories", "user_id", "created_at", "updated_at", "id") VALUES (1, 1, '2017-11-29 06:56:54', '2017-11-29 06:56:54', 298486374)[0m
+  [1m[35m (14.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "cities" ENABLE TRIGGER ALL;ALTER TABLE "triplaces" ENABLE TRIGGER ALL;ALTER TABLE "calculators" ENABLE TRIGGER ALL;ALTER TABLE "guides" ENABLE TRIGGER ALL;ALTER TABLE "gyms" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------------------------------
+UsersIndexTest: test_index_as_admin_including_pagination_and_delete_links
+-------------------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 762146111]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 950961012]]
+Started POST "/login" for 127.0.0.1 at 2017-11-28 22:56:54 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "michael@example.com"]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_digest", "$2a$04$TjuztrirvKiBAv05gXb4kuRZUuWvHOssFcB1Y.e2lbKgsekTv5ZxK"], ["updated_at", "2017-11-29 06:56:55.497777"], ["id", 762146111]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 762146111]]
+Redirected to http://www.example.com/users
+Completed 302 Found in 140ms (ActiveRecord: 0.9ms)
+Started GET "/users" for 127.0.0.1 at 2017-11-28 22:56:55 -0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 762146111]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_user.html.erb (1.2ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (162.7ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 68127ms (Views: 68125.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------
+UsersIndexTest: test_index_as_non-admin
+---------------------------------------
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 762146111]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 950961012]]
+Started POST "/login" for 127.0.0.1 at 2017-11-28 22:58:03 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"duchess@example.gov", "password"=>"[FILTERED]", "remember_me"=>"1"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "duchess@example.gov"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["remember_digest", "$2a$04$rPXabry9Mbjitjytef484eAuxOG64ZBDf8ayrUyCkBj7r.hp2sFEe"], ["updated_at", "2017-11-29 06:58:03.679196"], ["id", 950961012]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 950961012]]
+Redirected to http://www.example.com/users/950961012
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+Started GET "/users" for 127.0.0.1 at 2017-11-28 22:58:03 -0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 950961012]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_user.html.erb (0.3ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/_user.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------
+UsersSignupTest: test_invalid_signup_information
+------------------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-11-28 22:58:03 -0800
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (116.5ms)
+  Rendered users/new.html.erb within layouts/application (770.8ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 924ms (Views: 924.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2017-11-28 22:58:04 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>" ", "email"=>"user@invalid", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@invalid') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered shared/_error_messages.html.erb (1.5ms)
+  Rendered users/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 65ms (Views: 5.0ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------
+UsersSignupTest: test_valid_signup_information
+----------------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-11-28 22:58:04 -0800
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+Started POST "/users" for 127.0.0.1 at 2017-11-28 22:58:04 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>"Example User", "email"=>"user@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["password_digest", "$2a$04$y1mdV0PPeppEVxm0mvJ2keM6YXT4/1Y57KC9rwAIoipHL1sShJwdK"], ["created_at", "2017-11-29 06:58:04.730424"], ["updated_at", "2017-11-29 06:58:04.730424"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users/1046959424
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Started GET "/users/1046959424" for 127.0.0.1 at 2017-11-28 22:58:04 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1046959424"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1046959424]]
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1046959424]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 191ms (Views: 189.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 762146111]]
+Started GET "/login" for 127.0.0.1 at 2017-11-28 22:58:04 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (94.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 434ms (Views: 434.0ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2017-11-28 22:58:05 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", ""]]
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2017-11-28 22:58:05 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+UsersLoginTest: test_login_with_remembering
+-------------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 762146111]]
+Started POST "/login" for 127.0.0.1 at 2017-11-28 22:58:05 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "michael@example.com"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_digest", "$2a$04$9fseS/qT13CbQ6H4lZPwMO7urRBiQmDhEF0ZM/jnquVT5eP5mooFS"], ["updated_at", "2017-11-29 06:58:05.419675"], ["id", 762146111]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 762146111]]
+Redirected to http://www.example.com/users
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------
+UsersLoginTest: test_login_with_valid_information_followed_by_logout
+--------------------------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 762146111]]
+Started GET "/login" for 127.0.0.1 at 2017-11-28 22:58:05 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2017-11-28 22:58:05 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "michael@example.com"]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 762146111]]
+Redirected to http://www.example.com/users
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------
+UsersLoginTest: test_login_without_remembering
+----------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 762146111]]
+Started POST "/login" for 127.0.0.1 at 2017-11-28 22:58:05 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "michael@example.com"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["remember_digest", "$2a$04$/E5tQf1KMqROJtES23MP0./niUf8dxc6IoEkhZzsZQKsomQTo//Bq"], ["updated_at", "2017-11-29 06:58:05.452911"], ["id", 762146111]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 762146111]]
+Redirected to http://www.example.com/users
+Completed 302 Found in 8ms (ActiveRecord: 1.0ms)
+Started POST "/login" for 127.0.0.1 at 2017-11-28 22:58:05 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 762146111]]
+Redirected to http://www.example.com/users
+Filter chain halted as :redirect_if_logged_in rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------
+UsersEditTest: test_should_redirect_index_when_not_logged_in
+------------------------------------------------------------
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 950961012]]
+Started GET "/users" for 127.0.0.1 at 2017-11-28 22:58:05 -0800
+Processing by UsersController#index as HTML
+Redirected to http://www.example.com/login
+Filter chain halted as :logged_in_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------
+UsersEditTest: test_successful_edit_with_friendly_forwarding
+------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 950961012]]
+Started GET "/users/950961012/edit" for 127.0.0.1 at 2017-11-28 22:58:05 -0800
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"950961012"}
+Redirected to http://www.example.com/login
+Filter chain halted as :logged_in_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2017-11-28 22:58:05 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"duchess@example.gov", "password"=>"[FILTERED]", "remember_me"=>"1"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "duchess@example.gov"]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["remember_digest", "$2a$04$f6ZYaQhT1I5e4SXuArvvKuWU3w09Ff9i9Mzd6kRnTro9nLilxqc1y"], ["updated_at", "2017-11-29 06:58:05.491166"], ["id", 950961012]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 950961012]]
+Redirected to http://www.example.com/users/950961012
+Completed 302 Found in 6ms (ActiveRecord: 0.9ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------
+UsersEditTest: test_unsuccessful_edit
+-------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 950961012]]
+Started POST "/login" for 127.0.0.1 at 2017-11-28 22:58:05 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"duchess@example.gov", "password"=>"[FILTERED]", "remember_me"=>"1"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "duchess@example.gov"]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.8ms)[0m  UPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["remember_digest", "$2a$04$SDg.LcLSb9iJynzMeTLiC.Rvegjlejfog4yU/Wp/YkX6SYyN5Vgsm"], ["updated_at", "2017-11-29 06:58:05.503762"], ["id", 950961012]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 950961012]]
+Redirected to http://www.example.com/users/950961012
+Completed 302 Found in 10ms (ActiveRecord: 2.6ms)
+Started GET "/users/950961012/edit" for 127.0.0.1 at 2017-11-28 22:58:05 -0800
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"950961012"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 950961012]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 950961012]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "950961012"]]
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/edit.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 155ms (Views: 152.5ms | ActiveRecord: 0.4ms)
+Started PATCH "/users/950961012" for 127.0.0.1 at 2017-11-28 22:58:05 -0800
+Processing by UsersController#update as HTML
+  Parameters: {"params"=>{"user"=>{"name"=>"", "email"=>"foo@invalid", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}, "id"=>"950961012"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 950961012]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 950961012]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "950961012"]]
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m

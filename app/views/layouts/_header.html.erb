@@ -1,17 +1,9 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
         <% if logged_in? %>
-<<<<<<< HEAD
           <%= link_to "GoFit", current_user, id: "logo" %>
           <nav>
             <ul class="nav navbar-nav navbar-right">
-=======
-
-          <%= link_to "GoFit", current_user, id: "logo" %>
-          <nav>
-            <ul class="nav navbar-nav navbar-right">
-
->>>>>>> e7629e842362b2a3c50fe57c5ff68ca01c3f3242
               <li><%= link_to "Profile", current_user %></li>
               <li><%= link_to "Users", users_path %></li>
               <li><%= link_to "Health Guides", guides_path %></li>

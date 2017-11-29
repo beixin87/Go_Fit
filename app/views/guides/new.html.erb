@@ -1,9 +1,7 @@
 
 
 <% provide(:title, 'Guide') %>
-<<<<<<< HEAD
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
+
 <h1>Guide</h1>
 
 <div class="container">
@@ -18,21 +16,3 @@
     </div>
   <% end %>
 </div>
-=======
-
-<h1>Guide</h1>
-
-<div class="container">  
-  <%= simple_form_for(@guide) do |f| %>     
-    <div class="form-inputs">
-      <%= f.input :title %></br>
-      <%= f.input :content, as: :summernote %></br>
-    </div> 
-      
-    <div class-"form-actions">
-      <%= f.button :submit,'Create my guide', class: "btn btn-primary" %>
-    </div>  
-  <% end %>
-</div>
-  
->>>>>>> e7629e842362b2a3c50fe57c5ff68ca01c3f3242

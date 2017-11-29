@@ -11,11 +11,7 @@ User.create!(name:  "Admin",
              password_confirmation: "admin1",
              height: "99",
              weight: "99",
-<<<<<<< HEAD
              date_of_birth: "2005/12/12",
-=======
-             date_of_birth: "05/12/12",
->>>>>>> e7629e842362b2a3c50fe57c5ff68ca01c3f3242
              description: "I am Admin.",
              admin: true)
 

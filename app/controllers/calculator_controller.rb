@@ -13,8 +13,4 @@ private
     age
   end
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e7629e842362b2a3c50fe57c5ff68ca01c3f3242
 end
