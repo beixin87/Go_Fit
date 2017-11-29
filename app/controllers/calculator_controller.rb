@@ -1,4 +1,5 @@
 class CalculatorController < ApplicationController
+
   def show
     @user = current_user
     @age = age(@user.date_of_birth)

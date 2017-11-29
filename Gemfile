@@ -57,3 +57,6 @@ gem 'font-awesome-rails'
 gem 'summernote-rails'
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
+
+# Date validator
+gem 'date_validator'
