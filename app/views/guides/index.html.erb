@@ -47,7 +47,7 @@
   <p>There are <%= @guides.total_entries %> guide(s) containing the term <%= params[:search] %>.</p>
   
   <br>
-  <br>
+  
   <%= link_to 'Back', guides_path, class: "btn btn-primary" %> 
   <%= will_paginate @guides %>
 
