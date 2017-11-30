@@ -3,7 +3,7 @@
 
 <div class="container">
   
-  <p> Guides Count : <%= @guides.total_entries %></p>	  
+  <p> Guides Count : <%= @guides.total_entries %> </p>	  
 
   <table class="table table-hover">
     <thead>
@@ -48,7 +48,7 @@
   
   <br>
   <br>
-  
+  <%= link_to 'Back', guides_path, class: "btn btn-primary" %> 
   <%= will_paginate @guides %>
 
 <%else%>
