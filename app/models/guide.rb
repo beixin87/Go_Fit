@@ -3,10 +3,9 @@ class Guide < ActiveRecord::Base
   has_many :images
   validates :title, presence: true
   validates :content, presence: true
-  def self.search(search)
-  	where("title ILIKE ?", "%#{search}%") 
-  	where("user_name ILIKE ?", "%#{search}%")
-  	where("content ILIKE ?", "%#{search}%")
-  	where("user_name ILIKE ?", "%#{search}%")
-  end
+def self.search(search)
+  where("title LIKE ?", "%#{search}%") 
+  where("content LIKE ?", "%#{search}%")
+  where("guide.user_name LIKE ?", "%#{search}%")
+end
 end
