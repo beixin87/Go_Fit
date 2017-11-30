@@ -1,5 +1,5 @@
-<% provide(:title, 'All guides') %>
-<h1>All guides</h1>
+<% provide(:title, 'Health guides') %>
+<h1>Health guides</h1>
 
 <div class="container">
   
@@ -37,9 +37,11 @@
 
 <%= form_tag(guides_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search Guides" %>
-<%= submit_tag "Search" %>
+<%= submit_tag "Search", new_guide_path %>
 <% end %>
-
+<% if !@guides.present? %>
+  <p>There are no guides containing the term(s) <%= params[:search] %>.</p>
+<% end %>
 <%= will_paginate @guides %>
  
 </div>

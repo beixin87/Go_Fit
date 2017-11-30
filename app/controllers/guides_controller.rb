@@ -25,6 +25,9 @@ class GuidesController < ApplicationController
     @guide = Guide.new
   end
   
+  def search
+  end 
+
   def edit
     @guide = Guide.find(params[:id])
   end
