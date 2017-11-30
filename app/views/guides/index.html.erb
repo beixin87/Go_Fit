@@ -43,7 +43,7 @@
 <% if !@guides.present? %>
   <p>There are no guides containing the term(s) <%= params[:search] %>.</p>
 
-<%else%>
+<% if else @guides.present? %>
   <p><%= @guides.total_entries %> guide(s) found</p>
   <%= link_to 'Back', guides_path, class: "btn btn-primary" %>  
   
