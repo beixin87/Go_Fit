@@ -25,9 +25,7 @@ class GuidesController < ApplicationController
     @guide = Guide.new
   end
   
-  def search
-    @guides = Guide.search(params[:search]).order('id DESC').paginate(page: params[:page], per_page: 5)
-  end 
+ 
 
   def edit
     @guide = Guide.find(params[:id])
