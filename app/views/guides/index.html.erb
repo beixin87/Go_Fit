@@ -45,6 +45,11 @@
 <% end %>
 <% if params[:search] && !params[:search].blank?%>
   <p>There are <%= @guides.total_entries %> guide(s) containing the term <%= params[:search] %>.</p>
+  
+  <br>
+  <br>
+  
+  <%= will_paginate @guides %>
 
 <%else%>
   <p> Displaying newest guides.</p>
@@ -88,7 +93,7 @@
 </div>
 <% end %>
 
-<%= will_paginate @guides %>
+
  
 </div>
 
