@@ -3,4 +3,8 @@ class Guide < ActiveRecord::Base
   has_many :images
   validates :title, presence: true
   validates :content, presence: true
+  def self.search(search)
+  	where("title ILIKE ?", "%#{search}%") 
+  	where("content ILIKE ?", "%#{search}%")
+  end
 end
