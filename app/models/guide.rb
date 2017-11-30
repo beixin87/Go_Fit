@@ -4,7 +4,6 @@ class Guide < ActiveRecord::Base
   validates :title, presence: true
   validates :content, presence: true	 
   def self.search(search)
-  	where("content ILIKE ?", "%#{search}%")
-  	where("title ILIKE ?", "%#{search}%")
+  	where("content || title ILIKE ?", "%#{search}%")
   end 
 end
