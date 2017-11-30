@@ -42,10 +42,10 @@
 
 <% if !@guides.present? %>
   <p>There are no guides containing the term(s) <%= params[:search] %>.</p>
-<% end %>
+
 <%if else params[:search] && !params[:search].blank?%>
   <p>There are <%= @guides.total_entries %> guide(s) containing the term <%= params[:search] %>.</p>
-<% end %>
+
 <%else%>
   <p> Displaying newest guides %>.</p>
   <h1>Popular Guides</h1>
@@ -66,7 +66,7 @@
     </thead>
 
     <tbody>   
-      <% @pop.each do |guide| %>       
+      <% @pops.each do |guide| %>       
         <tr>
           <td><a href="guides/<%=guide.id%>"><%= guide.id %></a></td>
           <td><a href="guides/<%=guide.id%>"><%= guide.title %></a></td>
@@ -79,10 +79,7 @@
   </table>
   
 
-<br>
-<br>
-
-<%= will_paginate @guides %>
+<%= will_paginate @pop %>
  
 </div>
 <% end %>
