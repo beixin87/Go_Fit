@@ -24,8 +24,7 @@ class GuidesController < ApplicationController
   def new  	
     @guide = Guide.new
   end
-  
- 
+   
 
   def edit
     @guide = Guide.find(params[:id])
