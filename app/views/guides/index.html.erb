@@ -42,8 +42,8 @@
 
 <% if !@guides.present? %>
   <p>There are no guides containing the term(s) <%= params[:search] %>.</p>
-
-<%if else params[:search] && !params[:search].blank?%>
+<% end %>
+<% if params[:search] && !params[:search].blank?%>
   <p>There are <%= @guides.total_entries %> guide(s) containing the term <%= params[:search] %>.</p>
 
 <%else%>
