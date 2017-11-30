@@ -1,6 +1,6 @@
 <% provide(:title, 'All users') %>
 <h1>All users</h1>
- <p> User Count : <%= @users.userCnt %></p>
+<p> User Count : <%= @userCnt %></p>
 <ul class="users">
   <% @users.select {|u| !u.admin }.each do |user| %>
     <%= render user %>
