@@ -7,5 +7,6 @@ class Guide < ActiveRecord::Base
   	where("title ILIKE ?", "%#{search}%") 
   	where("user_name ILIKE ?", "%#{search}%")
   	where("content ILIKE ?", "%#{search}%")
+  	where("user_name ILIKE ?", "%#{search}%")
   end
 end
