@@ -32,14 +32,14 @@
 <%= link_to 'New', new_guide_path, class: "btn btn-success" %> 
 <%= link_to 'Home', root_path, class: "btn btn-primary" %>  
 
+<br>
+
 <%= form_tag(guides_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search Guides" %>
 <%= submit_tag "Search" %>
 <% end %>
 <% if @guides.present? %>
   <%= render @guides %>
-<% else %>
-  <p>There are no guides containing the term(s) <%= params[:search] %>.</p>
 <% end %>
 <%= will_paginate @guides %>
  
