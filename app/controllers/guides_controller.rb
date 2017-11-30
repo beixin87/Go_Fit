@@ -1,5 +1,5 @@
 class GuidesController < ApplicationController
-   before_action :logged_in_user, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+   before_action :logged_in_user, only: [:index, :show, :new, :search :create, :edit, :update, :destroy]
 
 
   def index         
@@ -26,6 +26,7 @@ class GuidesController < ApplicationController
   end
   
   def search
+    @guides = Guide.search(params[:search]).order('id DESC').paginate(page: params[:page], per_page: 5)
   end 
 
   def edit
