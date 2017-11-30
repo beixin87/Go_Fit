@@ -1,5 +1,5 @@
 class GuidesController < ApplicationController
-   before_action :logged_in_user, only: [:index, :show, :new, :search :create, :edit, :update, :destroy]
+   before_action :logged_in_user, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
 
   def index         
