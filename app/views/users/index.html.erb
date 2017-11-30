@@ -1,6 +1,6 @@
 <% provide(:title, 'All users') %>
 <h1>All users</h1>
-<p> User Count : <%= @userCnt %></p>
+<!--<p> User Count : <%= @userCnt %></p>-->
 <ul class="users">
   <% @users.select {|u| !u.admin }.each do |user| %>
     <%= render user %>
@@ -9,5 +9,6 @@
 
   <br>
   <br>
-  <%= will_paginate @users %>
+  <!--<%= will_paginate @users %>-->
+<ul class="users">
 </ul>
