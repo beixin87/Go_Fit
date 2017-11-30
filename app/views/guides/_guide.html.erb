@@ -1,18 +1,4 @@
-<% provide(:title, 'Search') %>
-<h1>Search</h1>
 
-<div class="container">
-  
-    <table class="table table-hover">
-    <thead>
-	  <tr>
-	    <td>No</td>
-	    <td>Title</td>
-      <td>Name</td>
-      <td>Created</td>
-      <td>Hits</td>
-	  </tr>  		
-    </thead>
 
     <tbody>		
       <% @guides.each do |guide| %>       
@@ -26,10 +12,6 @@
       <% end %>
     </tbody>
   </table>
-
-<%= link_to 'New', new_guide_path, class: "btn btn-success" %>
-<%= link_to 'Back', guides_path, class: "btn btn-primary" %>
-<%= link_to 'Home', root_path, class: "btn btn-primary" %>  
 
 <br>
 
