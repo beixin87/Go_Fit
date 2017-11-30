@@ -34,6 +34,7 @@
 
 <br>
 <br>
+
 <%= form_tag(guides_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search Guides" %>
 <%= submit_tag "Search"%>
@@ -42,7 +43,51 @@
 <% if !@guides.present? %>
   <p>There are no guides containing the term(s) <%= params[:search] %>.</p>
 <% end %>
+<%if else params[:search] && !params[:search].blank?%>
+  <p>There are <%= @guides.total_entries %> guide(s) containing the term <%= params[:search] %>.</p>
+<% end %>
+<%else%>
+  <p> Displaying newest guides %>.</p>
+  <h1>Popular Guides</h1>
+
+<div class="container">
+  
+ 
+
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <td>No</td>
+      <td>Title</td>
+      <td>Name</td>
+      <td>Created</td>
+      <td>Hits</td>
+    </tr>     
+    </thead>
+
+    <tbody>   
+      <% @pop.each do |guide| %>       
+        <tr>
+          <td><a href="guides/<%=guide.id%>"><%= guide.id %></a></td>
+          <td><a href="guides/<%=guide.id%>"><%= guide.title %></a></td>
+          <td><%= guide.user_name %></td>
+          <td><%= guide.created_at %></td>
+          <td><%= guide.hits %></td>
+        </tr>  
+      <% end %>
+    </tbody>
+  </table>
+  
+
+<br>
+<br>
 
 <%= will_paginate @guides %>
  
 </div>
+<% end %>
+
+<%= will_paginate @guides %>
+ 
+</div>
+

@@ -4,11 +4,12 @@ class GuidesController < ApplicationController
 
   def index         
       @totalCnt = Guide.all.count 
-      @guides = Guide.all
       if params[:search]
         @guides = Guide.search(params[:search]).order('id DESC').paginate(page: params[:page], per_page: 5) 
       else
         @guides = Guide.order('id DESC').paginate(page: params[:page], per_page: 5) 
+      @pop = Guide.order('hits DESC').paginate(page: params[:page], per_page: 5)
+      @new = Guide.order('created_at DESC').paginate(page: params[:page], per_page: 5)
       end              
   end
 
