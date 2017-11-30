@@ -34,7 +34,6 @@
 
 <br>
 <br>
-<%= guide.content %>
 <%= form_tag(guides_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search Guides" %>
 <%= submit_tag "Search"%>
