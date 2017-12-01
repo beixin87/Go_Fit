@@ -55,17 +55,17 @@
     </tr>
     <% end %>
   </tb>
-  <%if @course.can_add_student?(@course.id)%>
+  <%if @course.can_add_student?(current_user.id)%>
     <%= link_to 'Add to my Courses', user_courses_path(user: current_user, course_id: @course.id),
              class: 'btn btn-xs btn-success', method: :post  %> |
   <%else%>
     <span class="label label-default">
       Student cannot be added because you have already added
-      <%if !@course.under_course_limit?(@course.id)%>
+      <%if !@course.under_course_limit?%>
       <%= @course.limit %> students
       <%end %>
 
-      <%if @course.student_already_added?(ucurrent_user.id )%>
+      <%if @course.student_already_added?(current_user.id )%>
       this student
       <%end%>
   <%end%>

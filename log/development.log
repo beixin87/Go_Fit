@@ -5249,3 +5249,102 @@ Processing by CoursesController#show as HTML
   Rendered layouts/_header.html.erb (1.8ms)
   Rendered layouts/_footer.html.erb (0.1ms)
 Completed 200 OK in 158ms (Views: 122.3ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/courses/6" for ::1 at 2017-11-30 17:51:09 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mCourse Load (1.6ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 44]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM "user_courses" WHERE "user_courses"."course_id" = $1[0m  [["course_id", 6]]
+  [1m[35mUserCourse Load (0.7ms)[0m  SELECT "user_courses".* FROM "user_courses" WHERE "user_courses"."course_id" = $1  [["course_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_courses" WHERE "user_courses"."course_id" = $1[0m  [["course_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 44]]
+  [1m[36mUserCourse Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "user_courses" WHERE "user_courses"."course_id" = $1 AND "user_courses"."user_id" = $2 LIMIT 1[0m  [["course_id", 6], ["user_id", 44]]
+  Rendered courses/show.html.erb within layouts/application (42.0ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 804ms (Views: 633.3ms | ActiveRecord: 18.4ms)
+
+
+Started POST "/user_courses?course_id=6&user=1" for ::1 at 2017-11-30 17:51:33 -0800
+Processing by UserCoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"RyfNRI9VxSyKIROp+jpY4uN9aQAR+KZHrSZWTnN5dSa60lq0lMqiNj0rvcql4192JmtvxocrZN5v0C7SBPOv7Q==", "course_id"=>"6", "user"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.2ms)[0m  INSERT INTO "user_courses" ("user_id", "course_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["course_id", 6], ["created_at", "2017-12-01 01:51:33.655186"], ["updated_at", "2017-12-01 01:51:33.655186"]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "user_courses" WHERE "user_courses"."course_id" = $1[0m  [["course_id", 6]]
+Redirected to http://localhost:3000/courses/6
+Completed 302 Found in 14ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/courses/6" for ::1 at 2017-11-30 17:51:33 -0800
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 44]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "user_courses" WHERE "user_courses"."course_id" = $1[0m  [["course_id", 6]]
+  [1m[35mUserCourse Load (0.4ms)[0m  SELECT "user_courses".* FROM "user_courses" WHERE "user_courses"."course_id" = $1  [["course_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "user_courses" WHERE "user_courses"."course_id" = $1  [["course_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 44]]
+  [1m[35mUserCourse Exists (0.3ms)[0m  SELECT  1 AS one FROM "user_courses" WHERE "user_courses"."course_id" = $1 AND "user_courses"."user_id" = $2 LIMIT 1  [["course_id", 6], ["user_id", 44]]
+  Rendered courses/show.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 173ms (Views: 165.7ms | ActiveRecord: 3.1ms)
+
+
+Started DELETE "/user_courses/20" for ::1 at 2017-11-30 18:25:45 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserCoursesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IQAYAJ29BLMjD2yx1/qFMypDQP8dg2k+I7bUCSvD1vrc9Y/whiJjqZQFwtKII4Kn71VGOYtQq6fhQKyVXEkMMQ==", "id"=>"20"}
+  [1m[35mUserCourse Load (0.4ms)[0m  SELECT  "user_courses".* FROM "user_courses" WHERE "user_courses"."id" = $1 LIMIT 1  [["id", 20]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "user_courses" WHERE "user_courses"."id" = $1  [["id", 20]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/courses/6
+Completed 302 Found in 42ms (ActiveRecord: 10.8ms)
+
+
+Started GET "/courses/6" for ::1 at 2017-11-30 18:25:45 -0800
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mCourse Load (3.5ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 44]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "user_courses" WHERE "user_courses"."course_id" = $1[0m  [["course_id", 6]]
+  [1m[35mUserCourse Load (0.2ms)[0m  SELECT "user_courses".* FROM "user_courses" WHERE "user_courses"."course_id" = $1  [["course_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "user_courses" WHERE "user_courses"."course_id" = $1  [["course_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserCourse Exists (0.2ms)[0m  SELECT  1 AS one FROM "user_courses" WHERE "user_courses"."course_id" = $1 AND "user_courses"."user_id" = $2 LIMIT 1  [["course_id", 6], ["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_courses" WHERE "user_courses"."course_id" = $1[0m  [["course_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUserCourse Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "user_courses" WHERE "user_courses"."course_id" = $1 AND "user_courses"."user_id" = $2 LIMIT 1[0m  [["course_id", 6], ["user_id", 1]]
+  Rendered courses/show.html.erb within layouts/application (19.3ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 513ms (Views: 419.1ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/courses" for ::1 at 2017-11-30 18:27:02 -0800
+Processing by CoursesController#index as HTML
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 44]]
+  Rendered courses/index.html.erb within layouts/application (10.1ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 143ms (Views: 140.5ms | ActiveRecord: 1.6ms)
