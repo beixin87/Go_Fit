@@ -23,13 +23,12 @@ $ ->
       contentType: false
       processData: false
 
-  
+
   document.addEventListener 'turbolinks:load', ->
     $('[data-provider="summernote"]').each ->
-      $(this).summernote 
-
+      $(this).summernote
         height: 360
-        callbacks: 
+        callbacks:
           onImageUpload: (files) ->
             img = sendFile(this, files[0])
           onMediaDelete: (target, editor, editable) ->

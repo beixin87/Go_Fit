@@ -1,9 +1,15 @@
 class GuidesController < ApplicationController
+   before_action :logged_in_user, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
 
   def index         
       @totalCnt = Guide.all.count 
-      @guides = Guide.order('id DESC').paginate(page: params[:page], per_page: 5)                  
+      if params[:search]
+        @guides = Guide.search(params[:search]).order('id DESC').paginate(page: params[:page], per_page: 5) 
+      else
+        @guides = Guide.order('id DESC').paginate(page: params[:page], per_page: 5) 
+      @pops = Guide.order('hits DESC').paginate(page: params[:page], per_page: 5)
+      end              
   end
 
 
@@ -18,7 +24,8 @@ class GuidesController < ApplicationController
   def new  	
     @guide = Guide.new
   end
-  
+   
+
   def edit
     @guide = Guide.find(params[:id])
   end
@@ -59,4 +66,10 @@ class GuidesController < ApplicationController
       params.require(:guide).permit(:title, :content)
     end
      
+     def logged_in_user
+        unless logged_in?
+          flash[:danger] = "Please log in."
+          redirect_to login_url
+        end
+      end
 end

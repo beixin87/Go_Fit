@@ -1,9 +1,10 @@
-equire 'test_helper'
+require 'test_helper'
 
 class UsersEditTest < ActionDispatch::IntegrationTest
 
   def setup
-    @user = users(:michael)
+
+    @user = users(:archer)
   end
 
   test "unsuccessful edit" do
@@ -14,7 +15,6 @@ class UsersEditTest < ActionDispatch::IntegrationTest
                                               email: "foo@invalid",
                                               password:              "foo",
                                               password_confirmation: "bar" } }
-
     assert_template 'users/edit'
   end
 
@@ -29,8 +29,8 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     email = "foo@bar.com"
     patch user_path(@user), params: { user: { name:  name,
                                               email: email,
-                                              password:              "",
-                                              password_confirmation: "" } }
+                                              password:              "123456",
+                                              password_confirmation: "123456" } }
     assert_not flash.empty?
     assert_redirected_to @user
     @user.reload
