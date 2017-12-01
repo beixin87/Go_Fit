@@ -1,9 +1,9 @@
-<% provide(:title, 'All guides') %>
-<h1>All guides</h1>
+<% provide(:title, 'Health guides') %>
+<h1>Health guides</h1>
 
 <div class="container">
   
-  <p> Total Guides Count : <%= @totalCnt %></p>	  
+  <p> Guides Count : <%= @guides.total_entries %> </p>	  
 
   <table class="table table-hover">
     <thead>
@@ -32,6 +32,68 @@
 <%= link_to 'New', new_guide_path, class: "btn btn-success" %> 
 <%= link_to 'Home', root_path, class: "btn btn-primary" %>  
 
-<%= will_paginate @guides %>
+<br>
+<br>
+
+<%= form_tag(guides_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Guides" %>
+<%= submit_tag "Search"%>
+<% end %>
+
+<% if !@guides.present? %>
+  <p>There are no guides containing the term(s) <%= params[:search] %>.</p>
+<% end %>
+<% if params[:search] && !params[:search].blank?%>
+  <p>There are <%= @guides.total_entries %> guide(s) containing the term <%= params[:search] %>.</p>
+  
+  <br>
+  
+  <%= link_to 'Back', guides_path, class: "btn btn-primary" %> 
+  <%= will_paginate @guides %>
+
+<%else%>
+  <p> Displaying newest guides.</p>
+
+<br>
+<br>
+
+<h1>Popular Guides</h1>
+
+<div class="container">
+  
+ 
+
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <td>No</td>
+      <td>Title</td>
+      <td>Name</td>
+      <td>Created</td>
+      <td>Hits</td>
+    </tr>     
+    </thead>
+
+    <tbody>   
+      <% @pops.each do |guide| %>       
+        <tr>
+          <td><a href="guides/<%=guide.id%>"><%= guide.id %></a></td>
+          <td><a href="guides/<%=guide.id%>"><%= guide.title %></a></td>
+          <td><%= guide.user_name %></td>
+          <td><%= guide.created_at %></td>
+          <td><%= guide.hits %></td>
+        </tr>  
+      <% end %>
+    </tbody>
+  </table>
+  
+
+<%= will_paginate @pop %>
  
 </div>
+<% end %>
+
+
+ 
+</div>
+

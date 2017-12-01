@@ -13,5 +13,4 @@ private
     age
   end
 
-
 end

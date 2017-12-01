@@ -25,6 +25,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
+# For datepicker
+gem 'jquery-ui-rails', '5.0.5'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -52,8 +54,11 @@ gem 'bootstrap-sass', '3.3.6'
 
 # For wysiwyg
 gem 'simple_form'
+
 gem 'jquery-turbolinks'
 gem 'font-awesome-rails'
 gem 'summernote-rails'
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
+# Date validator
+gem 'date_validator'

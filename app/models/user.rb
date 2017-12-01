@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   #attr_accessor :name, :email (causes nil attributes)
   attr_accessor :remember_token
 
+
   has_many :guides
   has_one :calculator
 
@@ -14,9 +15,27 @@ class User < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 50}  #Used to check empty
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence:true, length: { maximum:255 },
+  validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
+
+  validates :height, numericality: { greater_than: 60,
+                     less_than: 300,
+                     :allow_nil => true}
+  validates :weight, numericality: {greater_than: 0,
+                     less_than: 700,
+                     :allow_nil => true}
+  validates :date_of_birth, :date => {:after => Proc.new { Time.now - 120.years},
+                                      :before => Proc.new { Time.now},
+                                      :allow_blank => true}
+  validates :type, inclusion: { in: %w(student, instructor, manager),
+                                message: "%{value} is not a valid type" },
+                                allow_nil: true
+  has_secure_password
+  validates :password, presence: true, length: { minimum: 6 }
+
+  has_many :guides
+  has_one :calculator
   def initialize(attributes = {}) #Call when we execute User.new
     super
     @name  = attributes[:name]
@@ -31,9 +50,6 @@ class User < ActiveRecord::Base
   def formatted_email
     "#{@name} <#{@email}>"
   end
-
-  has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
 
   # Returns the hash digest of the given string.
   def User.digest(string)
