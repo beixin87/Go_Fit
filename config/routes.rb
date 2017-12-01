@@ -15,7 +15,12 @@ Rails.application.routes.draw do
   resources :calculator
   resources :map
   resources :images, only: [:create, :destroy]
+  
+  resources :user_courses, except: [:show, :edit, :update]
+  resources :courses
+  
   resources :gyms
+
 
 end
 

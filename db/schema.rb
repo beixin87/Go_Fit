@@ -16,12 +16,6 @@ ActiveRecord::Schema.define(version: 20171129085545) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "ar_internal_metadata", primary_key: "key", force: :cascade do |t|
-    t.string   "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "calculators", force: :cascade do |t|
     t.integer  "calories"
     t.integer  "user_id"
@@ -29,11 +23,19 @@ ActiveRecord::Schema.define(version: 20171129085545) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "cities", id: :bigserial, force: :cascade do |t|
+  create_table "courses", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "limit"
+    t.decimal  "fee"
+    t.integer  "numberofenrolled"
+    t.datetime "start"
+    t.datetime "end"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
+
+  add_index "courses", ["user_id"], name: "index_courses_on_user_id", using: :btree
 
   create_table "guides", force: :cascade do |t|
     t.string   "title"
@@ -65,18 +67,9 @@ ActiveRecord::Schema.define(version: 20171129085545) do
     t.datetime "updated_at",         null: false
   end
 
-  create_table "triplaces", id: :bigserial, force: :cascade do |t|
-    t.string   "title"
-    t.decimal  "price"
-    t.string   "photoURL"
-    t.string   "description"
-    t.integer  "city_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "userinfos", id: :bigserial, force: :cascade do |t|
-    t.string   "realname"
+  create_table "user_courses", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -106,4 +99,5 @@ ActiveRecord::Schema.define(version: 20171129085545) do
     t.datetime "updated_at"
   end
 
+  add_foreign_key "courses", "users"
 end
