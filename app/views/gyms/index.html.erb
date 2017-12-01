@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Gyms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+            <th colspan="5"></th>
+      <th>Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @gyms.each do |gym| %>
+      <%= render gym %>
+    <% end %>
+</tbody>
+</table>
+<br>
+<%= link_to 'New gym', new_gym_path %>
