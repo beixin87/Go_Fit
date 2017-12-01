@@ -1,41 +1,9 @@
-
-
 <% provide(:title, 'Sign up') %>
+<% provide(:button_text, 'Sign up') %>
 <h1>Sign up</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages' %>
-
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
-
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-      <h2>----Optional----</h2>
-
-      <%= f.label :height %> (cm)
-      <%= f.number_field :height, class: 'form-control' %>
-
-      <%= f.label :weight %> (kg)
-      <%= f.number_field :weight, class: 'form-control' %>
-
-      <%= f.label :description %>
-      <%= f.text_field :description, class: 'form-control' %>
-
-      <%= f.label :date_of_birth %> (m/d/y)
-      <%= f.date_field :date_of_birth, class: 'form-control' %>
-
-
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
-    <% end %>
+    <%= render 'form' %>
   </div>
 </div>
