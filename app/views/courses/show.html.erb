@@ -43,7 +43,7 @@
     <% @user_courses.each do |user_course| %>
     <tr>
       <%student = User.find(user_course.user_id)%>
-      <td><%= student.name %></td>
+      <td><%= link_to student.name, student %></td>
 
       <td>
         <%= link_to 'Delete', user_course_path(user_course),
