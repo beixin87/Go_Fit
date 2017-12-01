@@ -4,9 +4,9 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
 
   def index
-       @userCnt = User.all.count 
+       @userCnt = User.all.count
       #@users = User.order('id DESC').paginate(page: params[:page], per_page: 10)
-      @users =User.all
+      @users = User.all
   end
 
 
@@ -78,5 +78,13 @@ class UsersController < ApplicationController
       # Confirms an admin user.
       def admin_user
         redirect_to(root_url) unless current_user.admin?
+      end
+
+      def manager_user
+        redirect_to(root_url) unless current_user.type == "manager"
+      end
+
+      def instructor_user
+        redirect_to(root_url) unless current_user.type == "instructor"
       end
 end
