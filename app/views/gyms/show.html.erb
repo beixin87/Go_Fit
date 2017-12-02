@@ -1,6 +1,24 @@
 
 <% provide(:title, @gym.name) %>
 
+<script type='text/javascript'>
+
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem( 'firstLoad' ) )
+    {
+      localStorage[ 'firstLoad' ] = true;
+      window.location.reload();
+    }
+    else
+      localStorage.removeItem( 'firstLoad' );
+  }
+})();
+
+</script>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -17,6 +35,8 @@
   <strong>Description:</strong>
   <%= @gym.description %>
 </p>
+<% if @gym.user_id == current_user.id %>
+<%= link_to 'Edit', edit_gym_path(@gym) %>
+<% end %>
 
-<%= link_to 'Edit', edit_gym_path(@gym) %> |
 <%= link_to 'Back', gyms_path %>

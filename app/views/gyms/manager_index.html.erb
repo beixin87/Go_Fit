@@ -1,0 +1,23 @@
+<% provide(:title, 'My Gym') %>
+
+<h1>My Gyms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+            <th colspan="5"></th>
+      <th>Address</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @gyms.each do |gym| %>
+      <%= render gym %>
+    <% end %>
+</tbody>
+</table>
+<br>
+<% if current_user.admin? %>
+  <%= link_to 'Create New Gym', new_gym_path %>
+<% end %>

@@ -2,12 +2,8 @@ class User < ActiveRecord::Base
   #attr_accessor :name, :email (causes nil attributes)
   attr_accessor :remember_token
 
-
   has_many :guides
   has_one :calculator
-
-  has_many :guides
-
   has_many :user_courses
   has_many :courses, through: :user_courses
 
@@ -28,14 +24,12 @@ class User < ActiveRecord::Base
   validates :date_of_birth, :date => {:after => Proc.new { Time.now - 120.years},
                                       :before => Proc.new { Time.now},
                                       :allow_blank => true}
-  validates :type, inclusion: { in: %w(student, instructor, manager),
+  validates :type, inclusion: { in: %w(Student, Instructor, Manager),
                                 message: "%{value} is not a valid type" },
                                 allow_nil: true
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
 
-  has_many :guides
-  has_one :calculator
   def initialize(attributes = {}) #Call when we execute User.new
     super
     @name  = attributes[:name]
