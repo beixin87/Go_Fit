@@ -4,4 +4,10 @@
   <th><%= link_to gym.name, gym %></th>
       <th colspan="5"></th>
   <th><%= gym.address %></th>
+  <th>
+    <% if current_user.admin? %>
+      | <%= link_to "delete", gym, method: :delete,
+                                    data: { confirm: "You sure?" } %>
+    <% end %>
+  </th>
 </tr>

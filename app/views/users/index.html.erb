@@ -2,8 +2,21 @@
 <h1>All users</h1>
 <!--<p> User Count : <%= @userCnt %></p>-->
 <ul class="users">
-  <% @users.select {|u| !u.admin }.each do |user| %>
-    <%= render user %>
+<h2>Managers</h2>
+  <% @users.select {|u| u.type == 'Manager' }.each do |user| %>
+    <%= render partial: 'users/user', object: user %>
+
+  <% end %>
+  
+<h2>Instructors</h2>
+  <% @users.select {|u| u.type == 'Instructor' }.each do |user| %>
+    <%= render partial: 'users/user', object: user %>
+
+  <% end %>
+
+<h2>Normal Users</h2>
+  <% @users.select {|u| u.type == nil && !u.admin}.each do |user| %>
+    <%= render partial: 'users/user', object: user %>
 
   <% end %>
 </ul>

@@ -1,9 +1,11 @@
 class GymsController < ApplicationController
+  before_action :logged_in_user, only: [:index, :edit, :new, :create, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update]
+  before_action :admin_user, only: [:new, :create, :destroy]
 
     def index
         @gyms = Gym.all
     end
-
 
     def show
       @gym = Gym.find(params[:id])
@@ -15,10 +17,12 @@ class GymsController < ApplicationController
     end
 
     def create
-      @gym = Gym.new(gym_params)    # Not the final implementation!
+      @gym = Gym.new(gym_params)
       if @gym.save
         # Handle a successful save.
         flash[:success] = "Gym was successfully created."
+        @manager = User.find(@gym.user_id)
+        @manager.gym << @gym
         redirect_to @gym
       else
         render 'new'
@@ -28,7 +32,6 @@ class GymsController < ApplicationController
     def edit
       @gym = Gym.find(params[:id])
     end
-
 
     def update
       @gym = Gym.find(params[:id])
@@ -50,7 +53,28 @@ class GymsController < ApplicationController
     private
 
         def gym_params
-          params.require(:gym).permit(:name, :address, :description)
+          params.require(:gym).permit(:name, :address, :description, :user_id)
+        end
+
+        def correct_user
+          @gym = Gym.find(params[:id])
+          @user = User.find(@gym.user_id)
+          redirect_to root_url unless @user == current_user
+        end
+
+        def logged_in_user
+          unless logged_in?
+            flash[:danger] = "Please log in."
+            redirect_to login_url
+          end
+        end
+
+        def manager_user
+          redirect_to(root_url) unless current_user.type == "Manager"
+        end
+
+        def admin_user
+          redirect_to(root_url) unless current_user.admin?
         end
 
 end

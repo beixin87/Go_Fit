@@ -5,7 +5,8 @@
           <nav>
             <ul class="nav navbar-nav navbar-right">
               <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Users", users_path %></li>
+              <li><%= link_to "Gyms", gyms_path %></li>
+              <% if current_user.admin? %> <li><%= link_to "Users", users_path %></li> <% end %>
               <li><%= link_to "Courses", courses_path %></li>
               <li><%= link_to "Health Guides", guides_path %></li>
               <li><%= link_to "Map", map_index_url %></li>

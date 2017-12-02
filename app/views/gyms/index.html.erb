@@ -1,6 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, 'All Gym') %>
 
-<h1>Listing Gyms</h1>
+<h1>All Gyms</h1>
 
 <table>
   <thead>
@@ -8,6 +8,7 @@
       <th>Name</th>
             <th colspan="5"></th>
       <th>Address</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -17,4 +18,6 @@
 </tbody>
 </table>
 <br>
-<%= link_to 'New gym', new_gym_path %>
+<% if current_user.admin? %>
+  <%= link_to 'Create New Gym', new_gym_path %>
+<% end %>

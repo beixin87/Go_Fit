@@ -1,10 +1,31 @@
 <% provide(:title, @user.name) %>
+<script type='text/javascript'>
+
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem( 'firstLoad' ) )
+    {
+      localStorage[ 'firstLoad' ] = true;
+      window.location.reload();
+    }
+    else
+      localStorage.removeItem( 'firstLoad' );
+  }
+})();
+
+</script>
+
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
-        <%= @user.name %>
+        <%= @user.name %><br>
+        <% if current_user.admin? %>
+          id: <%= @user.id %>
+        <% end %>
       </h1>
     </section>
   </aside>
