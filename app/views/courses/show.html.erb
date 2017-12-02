@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p><%= notice %></p>
 
 <p>
   <strong>Name:</strong>
@@ -39,7 +39,7 @@
     </tr>
   </th>
   <tb>
-
+<div>
     <% @user_courses.each do |user_course| %>
     <tr>
       <%student = User.find(user_course.user_id)%>
@@ -54,7 +54,12 @@
 
     </tr>
     <% end %>
+  </div>
+
+
   </tb>
+</table >
+
   <%if @course.can_add_student?(current_user.id)%>
     <%= link_to 'Add to my Courses', user_courses_path(user: current_user, course_id: @course.id),
              class: 'btn btn-xs btn-success', method: :post  %> |
@@ -68,6 +73,7 @@
       <%if @course.student_already_added?(current_user.id )%>
       this student
       <%end%>
+    </span>
   <%end%>
   <%= link_to 'Edit', edit_course_path(@course) %> |
   <%= link_to 'Back', courses_path %>
