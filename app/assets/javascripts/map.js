@@ -21,7 +21,7 @@ function initMap(){
         location: map.getCenter(),
         rankBy: google.maps.places.RankBy.DISTANCE,
         keyword: 'gym'
-       }, callback)
+       }, processResults)
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
@@ -153,10 +153,25 @@ function initMap(){
 
 }
 
-function callback(results, status) {
+function processResults(results, status,pagination) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
+
     for (var i = 0; i < results.length; i++) {
+      
       createMarker(results[i]);
+
+    }
+
+
+    if (pagination.hasNextPage) {
+      var moreButton = document.getElementById('more');
+
+      moreButton.disabled = false;
+
+      moreButton.addEventListener('click', function() {
+        moreButton.disabled = true;
+        pagination.nextPage();
+      });
     }
   }
 }
@@ -175,6 +190,13 @@ function createMarker(place) {
   //   infowindow.open(map, this);
   // });
   var service = new google.maps.places.PlacesService(map);
+
+  var placesList = document.getElementById('places');
+
+  placesList.innerHTML += '<li>' + place.name + '</li>';
+
+
+
 
   service.getDetails({
     placeId: place.place_id
@@ -198,6 +220,7 @@ function createMarker(place) {
       });
     }
   });
+
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
