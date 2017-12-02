@@ -12,7 +12,18 @@
     </tr>
   </thead>
   <tbody>
-    <% @gyms.each do |gym| %>
+    <% if current_user.type == 'Manager' %>
+      <% @gyms.select {|g| current_user.id == g.user_id}.each do |gym| %>
+        <%= render gym %>
+      <% end %>
+      <tr>
+        <th>----------</th>
+        <th colspan="5"></th>
+        <th>---------------</th>
+        <th>----</th>
+      </tr>
+    <% end %>
+    <% @gyms.select {|g| current_user.id != g.user_id}.each do |gym| %>
       <%= render gym %>
     <% end %>
 </tbody>

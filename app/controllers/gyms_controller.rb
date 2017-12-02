@@ -1,5 +1,5 @@
 class GymsController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :new, :create, :update, :destroy]
+  before_action :logged_in_user, only: [:index]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: [:new, :create, :destroy]
 
@@ -18,13 +18,22 @@ class GymsController < ApplicationController
 
     def create
       @gym = Gym.new(gym_params)
-      if @gym.save
-        # Handle a successful save.
-        flash[:success] = "Gym was successfully created."
+      if User.where(:id => @gym.user_id).present?
         @manager = User.find(@gym.user_id)
-        @manager.gym << @gym
-        redirect_to @gym
+        if @manager.type == 'Manager'
+          # Handle a successful save.
+          if @gym.save
+            flash[:success] = "Gym was successfully created."
+            @manager = User.find(@gym.user_id)
+            @manager.gyms << @gym
+            redirect_to @gym
+          end
+        else
+          flash[:danger] = "Assigned user is not a Manager."
+          render 'new'
+        end
       else
+        flash[:danger] = "Assigned user does not exist."
         render 'new'
       end
     end
@@ -35,31 +44,53 @@ class GymsController < ApplicationController
 
     def update
       @gym = Gym.find(params[:id])
-      if @gym.update(gym_params)
-        # Handle a successful update.
-        flash[:success] = "Gym was successfully updated."
-        redirect_to @gym
+      if current_user.admin?
+        if User.where(:id => gym_params[:user_id]).present?
+          @manager = User.find(gym_params[:user_id])
+          if @manager.type == 'Manager'
+            if @gym.update(gym_params)
+              # Handle a successful update.
+              flash[:success] = "Gym was successfully updated."
+              redirect_to @gym
+            end
+          else
+            flash[:danger] = "Assigned user is not a Manager."
+            render 'edit'
+          end
+        else
+          flash[:danger] = "Assigned user does not exist."
+          render 'edit'
+        end
       else
-        render 'edit'
+        if @gym.update(gym_params)
+          # Handle a successful update.
+          flash[:success] = "Gym was successfully updated."
+          redirect_to @gym
+        end
       end
     end
 
     def destroy
       Gym.find(params[:id]).destroy
       flash[:success] = "Gym deleted"
-      redirect_to courses_url
+      redirect_to gyms_url
     end
 
     private
 
         def gym_params
-          params.require(:gym).permit(:name, :address, :description, :user_id)
+          if(current_user.admin?)
+            params.require(:gym).permit(:name, :address, :description, :user_id)
+
+          else
+            params.require(:gym).permit(:name, :address, :description)
+          end
         end
 
         def correct_user
           @gym = Gym.find(params[:id])
           @user = User.find(@gym.user_id)
-          redirect_to root_url unless @user == current_user
+          redirect_to root_url unless (@user == current_user || current_user.admin?)
         end
 
         def logged_in_user

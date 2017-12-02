@@ -35,7 +35,9 @@
   <strong>Description:</strong>
   <%= @gym.description %>
 </p>
-<% if @gym.user_id == current_user.id %>
+
+
+<% if @gym.user_id == current_user.id || current_user.admin %>
 <%= link_to 'Edit', edit_gym_path(@gym) %>
 <% end %>
 
