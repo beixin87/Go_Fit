@@ -10,8 +10,10 @@
   <%= f.label :description %>
   <%= f.text_field :description, class: 'form-control' %>
 
-  <%= f.label :user_id, 'Assigned Manager ID' %>
-  <%= f.number_field :user_id, class: 'form-control' %>
-
+  <% if current_user.admin %>
+    <%= f.label :user_id, 'Assigned Manager ID' %>
+    <%= f.number_field :user_id, class: 'form-control' %>
+  <% end %>
+  
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

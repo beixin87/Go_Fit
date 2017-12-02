@@ -16,15 +16,32 @@ User.create!(name:  "Admin",
              date_of_birth: "2005/12/12",
              description: "I am Admin.",
              admin: true)
-#Manager
-Manager.create!(name: "Manager",
-                email: "manager@example.com",
-                password: "manager1",
-                password_confirmation: "manager1",
-                height: "99",
-                weight: "99",
-                date_of_birth: "2000/11/11",
-                description: "I am Manager")
+
+#Fake Manager
+5.times do |n|
+  name  = Faker::Name.name
+  email = "manager#{n+1}@example.com"
+  password = "manager1"
+  @manager = Manager.create!(name:  name,
+               email: email,
+               password:              password,
+               password_confirmation: password,
+               height: "100",
+               weight: "100",
+               date_of_birth: "2000/11/11",
+               description: "I am a fake manager."
+              )
+  #Fake Gym
+  2.times do |i|
+  name = "Gym#{n+10*i+1}"
+  address = "Fake Street #{n+10*i+1}"
+  @manager.gyms.create!(name: name,
+              address: address,
+              description: "Fake Gym.",
+              user_id: @manager.id
+              )
+  end
+end
 
 #Fake users
 99.times do |n|
@@ -37,6 +54,7 @@ Manager.create!(name: "Manager",
                password_confirmation: password,
                height: "99",
                weight: "99",
+               date_of_birth: "2001/12/12",
                description: "I am a fake user."
               )
 end

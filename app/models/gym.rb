@@ -5,7 +5,7 @@ class Gym < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :name, presence: true
-  validates :address, presence: true
+  validates :address, presence: true, uniqueness: { case_sensitive: false }
 
   def initialize(attributes = {}) #Call when we execute User.new
     super
@@ -13,6 +13,7 @@ class Gym < ActiveRecord::Base
     @email = attributes[:address]
     @description = attributes[:description]
   end
+
 
 
 end
