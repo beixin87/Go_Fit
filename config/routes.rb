@@ -18,6 +18,12 @@ Rails.application.routes.draw do
 
   resources :user_courses, except: [:show, :edit, :update]
   resources :courses
+<<<<<<< HEAD
+=======
+
+  resources :gyms
+
+>>>>>>> 65fa40c16d380be95a2dfd3f7fbf56ccfb9b823c
 
   resources :gyms
   resources :managers, :controller => "users"
