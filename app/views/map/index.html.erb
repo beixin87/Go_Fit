@@ -1,12 +1,31 @@
-
 <h3>Getting started from gyms nearby!</h3>
+<input id="origin-input" class="controls" type="text"
+    placeholder="Enter an origin location">
+
+<input id="destination-input" class="controls" type="text"
+    placeholder="Enter a destination location">
+
+<div id="mode-selector" class="controls">
+  <input type="radio" name="type" id="changemode-walking" checked="checked">
+  <label for="changemode-walking">Walking</label>
+
+  <input type="radio" name="type" id="changemode-transit">
+  <label for="changemode-transit">Transit</label>
+
+  <input type="radio" name="type" id="changemode-driving">
+  <label for="changemode-driving">Driving</label>
+</div>
+
+
+
+
 <div id="map"></div>
  <!-- Replace the value of the key parameter with your own API key. -->
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh8Dk8RH7pFNXd98RGLeXnylM5D8GOhYY&libraries=places&callback=initMap">
 </script>
 <div id="right-panel">
-  <h2>Gym</h2>
+  <h2>List of Gyms (by DISTANCE)</h2>
   <ul id="places"></ul>
   <button id="more">More</button>
 </div>
