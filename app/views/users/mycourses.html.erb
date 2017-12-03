@@ -1,0 +1,18 @@
+<h1>My courses listing</h1>
+
+<div>
+    <% @user_courses.each do |user_course| %>
+    <tr>
+      <%mycourse = Course.find(user_course.course_id)%>
+      <td><%= link_to mycourse.name, mycourse %></td>
+
+      <td>
+        <%= link_to 'Delete', user_course_path(user_course),
+                                :method => :delete,
+                                :data => { :confirm => "Are you sure?" },
+                                :class => "btn btn-xs btn-danger" %>
+      </td>
+
+    </tr>
+    <% end %>
+</div>

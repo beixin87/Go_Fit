@@ -6,7 +6,7 @@ class Course < ActiveRecord::Base
   validates :user_id, presence: true
   validates :limit, presence: true
   validates :fee, presence: true
-  validates :numberofenrolled, presence: true
+
   validates :start, presence: true
   validates :end, presence: true
 
