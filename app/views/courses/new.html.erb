@@ -2,4 +2,21 @@
 
 <%= render 'form' %>
 
+<h1>instructors and id</h1>
+<div>
+    <% @instructors.each do |instructor| %>
+    <tr>
+      <td><%= instructor.id%> | <%= instructor.name%></td>
+    </tr>
+    <% end %>
+</div>
+
+<h1>gyms and id</h1>
+<div>
+    <% @gyms.each do |gym| %>
+    <tr>
+      <td><%= gym.id%> | <%= gym.name%></td>
+    </tr>
+    <% end %>
+</div>
 <%= link_to 'Back', courses_path %>

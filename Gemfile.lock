@@ -201,6 +201,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   jquery-ui-rails (= 5.0.5)
+  momentjs-rails
   pg
   puma
   rails (= 4.2.8)

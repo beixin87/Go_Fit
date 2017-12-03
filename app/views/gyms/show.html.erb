@@ -36,6 +36,21 @@
   <%= @gym.description %>
 </p>
 
+<p>gym courses list</p>
+
+<div>
+  <% @courses.each do |gym_course| %>
+    <tr>
+      <td>
+        <%if gym_course%>
+        <%= link_to gym_course.name , gym_course%>
+        <%end%>
+      </td>
+
+    </tr>
+  <% end %>
+</div>
+
 
 <% if @gym.user_id == current_user.id || current_user.admin %>
 <%= link_to 'Edit', edit_gym_path(@gym) %>

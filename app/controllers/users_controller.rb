@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :mycourses]
-  before_action :correct_user,   only: [:edit, :update, :mycourses]
+  #before_action :correct_user,   only: [:edit, :update, :mycourses]
   before_action :admin_user,     only: [:index, :destroy]
 
   def index
@@ -64,7 +64,7 @@ class UsersController < ApplicationController
       def user_params
         params.require(:user).permit(:name, :email, :password,
                                      :password_confirmation, :height,
-                                     :weight, :description, :date_of_birth)
+                                     :weight, :description, :date_of_birth , :type)
       end
 
       # Confirms a logged-in user.

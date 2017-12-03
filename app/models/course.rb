@@ -1,7 +1,7 @@
 class Course < ActiveRecord::Base
   has_many :user_courses
   has_many :users, through: :user_courses
-
+  belongs_to :gym
   validates :name, presence: true
   validates :user_id, presence: true
   validates :limit, presence: true
