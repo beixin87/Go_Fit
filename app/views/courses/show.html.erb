@@ -9,6 +9,10 @@
   <%= @instrutor.name %>
 </p>
 <p>
+  <strong>Gym:</strong>
+  <%= @gym.name %>
+</p>
+<p>
   <strong>Limit:</strong>
   <%= @course.limit %>
 </p>
@@ -46,10 +50,12 @@
       <td><%= link_to student.name, student %></td>
 
       <td>
+        <% if current_user.admin? %>
         <%= link_to 'Delete', user_course_path(user_course),
                                 :method => :delete,
                                 :data => { :confirm => "Are you sure?" },
                                 :class => "btn btn-xs btn-danger" %>
+        <% end %>
       </td>
 
     </tr>
