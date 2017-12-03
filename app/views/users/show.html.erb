@@ -39,7 +39,9 @@
       <%= @user.date_of_birth %><br>
       Description<br>
       <%= @user.description %>
+      <%= link_to "Edit", edit_user_path(@user) %>
 </div>
+
 
 
 <h1>My courses listing</h1>
@@ -61,4 +63,16 @@
 
     </tr>
     <% end %>
+</div>
+
+<div id="calendar">
+  <% @user_courses.each do |user_course| %>
+  <tr>
+    <%mycourse = Course.find(user_course.course_id)%>
+    <td><%= link_to mycourse.name, mycourse %></td>
+    <td><%=  mycourse.start %></td>
+
+  </tr>
+  <% end %>
+
 </div>
