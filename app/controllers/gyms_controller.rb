@@ -9,11 +9,13 @@ class GymsController < ApplicationController
 
     def show
       @gym = Gym.find(params[:id])
+      @courses = Course.where(gym_id: @gym.id)
       # debugger  << uncomment to see debug in terminal
     end
 
     def new
       @gym = Gym.new
+      @managers = User.where(type:'manager').all
     end
 
     def create

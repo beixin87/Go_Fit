@@ -7,7 +7,7 @@
     <%= render partial: 'users/user', object: user %>
 
   <% end %>
-  
+
 <h2>Instructors</h2>
   <% @users.select {|u| u.type == 'Instructor' }.each do |user| %>
     <%= render partial: 'users/user', object: user %>
