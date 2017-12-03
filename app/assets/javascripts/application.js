@@ -17,6 +17,7 @@
 //= require summernote
 //= require_tree .
 //= require turbolinks
+//= require fullcalendar
 
 $(function() {
   $("#user_date_of_birth").datepicker({
