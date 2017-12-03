@@ -1,5 +1,6 @@
 #map {
   height: 400px;
+  width: 900px;
   border-radius: 16px 16px;
   border-color: #fff;
   border-style: solid;
@@ -7,4 +8,83 @@
   margin-top: 25px;
   border-width: 7px;
 }
-/* Optional: Makes the sample page fill the window. */
+
+#right-panel {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  right: 10px;
+  top: 21%;
+  //margin-top: -195px;
+  height: 380px;
+  width: 320px;
+  padding: 5px;
+  z-index: 5;
+  //border: 1px solid #999;
+  //background: #fcfcfc;
+  overflow-y: scroll;
+}
+#right-panel select, #right-panel input {
+  font-size: 10px;
+}
+
+#right-panel select {
+  width: 100%;
+}
+
+#right-panel i {
+  font-size: 12px;
+}
+
+
+h2 {
+  font-size: 22px;
+  margin: 0 0 5px 0;
+}
+
+#more {
+  width: 100%;
+  margin: 0 0 0 0;
+}
+
+.controls {
+  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#origin-input,
+#destination-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 200px;
+}
+
+#origin-input,
+#destination-input:focus {
+  border-color: #4d90fe;
+}
+
+#mode-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  margin-left: 12px;
+  padding: 5px 11px 0px 11px;
+  height: 120px;
+  width: 70px;
+}
+
+#mode-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
