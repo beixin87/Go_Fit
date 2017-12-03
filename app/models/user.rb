@@ -2,7 +2,11 @@ class User < ActiveRecord::Base
   #attr_accessor :name, :email (causes nil attributes)
   attr_accessor :remember_token
 
-  has_many :guides
+  has_many :guides, :dependent => :destroy
+  has_many :likeps, :dependent => :destroy
+  has_many :likens, :dependent => :destroy
+  has_many :favorites, :dependent => :destroy
+  has_one :calculator
   has_one :calculator
   has_many :user_courses
   has_many :courses, through: :user_courses
