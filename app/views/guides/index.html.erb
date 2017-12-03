@@ -18,15 +18,15 @@
 
     <p> Guides Count : <%= @guides.total_entries %> 
     <%if @index_type == 'hits' %>
-       (Displaying hits order)
+       (Displaying by hits)
     <%elsif @index_type == 'like' %>
-       (Displaying likes order)  
+       (Displaying by likes)  
     <%elsif @index_type == 'favo' %>
        (Displaying Your favorite guides) 
     <%elsif @index_type == 'mine' %>
-       (Displaying Your all guides)          
+       (Displaying all Your guides)          
     <%else%>
-       (Displaying newest order)
+       (Displaying newest Guides)
     <% end %></p>
 
     <table class="table table-hover">
