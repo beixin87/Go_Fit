@@ -1,17 +1,3 @@
-$ ->
-  document.addEventListener 'turbolinks:load', ->
-    $('[data-provider="summernote"]').each ->
-      $(this).summernote({
-        height: 360
-
-        maximumImageFileSize: 5242880    # 5242880=5M, 3145728=3M, 1048576=1M 
-      	callbacks: {
-          onImageUploadError: -> 
-           alert('Image file size limit 5MB');          
-        }
-
-
-      });
-       
-        
-  
+// Place all the styles related to the guides controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/

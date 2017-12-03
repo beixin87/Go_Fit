@@ -1,99 +1,146 @@
 <% provide(:title, 'Health guides') %>
-<h1>Health guides</h1>
 
-<div class="container">
+<style>
+.table {
+  table-layout:fixed;
+}
+.table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;  
+}
+</style>
+
+<div class="row">  
   
-  <p> Guides Count : <%= @guides.total_entries %> </p>	  
+  <div class="col-md-9">
+    <h1>Health guides</h1>
 
-  <table class="table table-hover">
-    <thead>
-	  <tr>
-	    <td>No</td>
-	    <td>Title</td>
-      <td>Name</td>
-      <td>Created</td>
-      <td>Hits</td>
-	  </tr>  		
-    </thead>
+    <p> Guides Count : <%= @guides.total_entries %> 
+    <%if @index_type == 'hits' %>
+       (Displaying hits order)
+    <%elsif @index_type == 'like' %>
+       (Displaying likes order)  
+    <%elsif @index_type == 'favo' %>
+       (Displaying Your favorite guides) 
+    <%elsif @index_type == 'mine' %>
+       (Displaying Your all guides)          
+    <%else%>
+       (Displaying newest order)
+    <% end %></p>
 
-    <tbody>		
-      <% @guides.each do |guide| %>       
+    <table class="table table-hover">
+      <thead>
         <tr>
-        	<td><a href="guides/<%=guide.id%>"><%= guide.id %></a></td>
-          <td><a href="guides/<%=guide.id%>"><%= guide.title %></a></td>
-          <td><%= guide.user_name %></td>
-          <td><%= guide.created_at %></td>
-          <td><%= guide.hits %></td>
-        </tr>  
-      <% end %>
-    </tbody>
-  </table>
+          <td class="col-md-1"><strong>No</strong></td>
+          <td class="col-md-5"><strong>Title</strong></td>
+          <td class="col-md-2"><strong>Name</strong></td>
+          <td class="col-md-2" align="center"><strong>Created</strong></td>
+          <td class="col-md-1" align="right"><strong>Hits</strong></td>
+          <td class="col-md-1" align="right"><strong>Likes</strong></td>
+        </tr>     
+      </thead>
+
+      <tbody>   
+        <% @guides.each do |guide| %>       
+          <tr>
+            <td><a href="guides/<%=guide.id%>" style="color:black"><%= guide.id %></a></td>
+            <td><a href="guides/<%=guide.id%>" style="color:black" data-toggle="tooltip" title="<%= guide.title%>"><%= guide.title %></a></td>
+            <td><%= guide.user_name %></td>
+            <td><%= guide.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+            <td align="right"><%= guide.hits %></td>
+            <td align="right"><%= guide.likeps.count %></td>
+          </tr>  
+        <% end %>
+      </tbody>
+    </table>
+
 
 <%= link_to 'New', new_guide_path, class: "btn btn-success" %> 
-<%= link_to 'Home', root_path, class: "btn btn-primary" %>  
+<%= link_to 'Home', root_path, class: "btn btn-danger" %>  
 
-<br>
-<br>
-
-<%= form_tag(guides_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Guides" %>
-<%= submit_tag "Search"%>
+<%if @index_type != 'norm'%>
+  <%= link_to 'Back', guides_path, class: "btn btn-primary" %>
 <% end %>
 
-<% if !@guides.present? %>
+<br>
+<br>
+<%if @index_type == 'norm' %>
+  <div class="input-group" align="center"> 
+  <div class="form-inline">
+    <%= form_tag(guides_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], options={style:"width:400px;", placeholder: "Search Guides"} %>
+    <%= button_tag(type: "submit", class: "btn" ) do%>
+      <i class="glyphicon glyphicon-search" style="font-size:20px;"></i>
+      Search
+      <% end %>
+    <% end %>
+  </div>
+  </div>
+<% end %>
+
+<% if !@guides.present? && params[:search] && !params[:search].blank? %>
   <p>There are no guides containing the term(s) <%= params[:search] %>.</p>
-<% end %>
-<% if params[:search] && !params[:search].blank?%>
+<%end%>
+
+<% if @guides.present? && params[:search] && !params[:search].blank?%>
   <p>There are <%= @guides.total_entries %> guide(s) containing the term <%= params[:search] %>.</p>
   
   <br>
   
-  <%= link_to 'Back', guides_path, class: "btn btn-primary" %> 
-  <%= will_paginate @guides %>
+  <%= link_to 'Back', guides_path, class: "btn btn-primary" %>   
+<%end%>
+<%= will_paginate @guides %>
 
-<%else%>
-  <p> Displaying newest guides.</p>
+<% if !@guides.present? && params[:search].blank? %>
+  <p>There are no guides to show .</p>
+<%end%>
 
-<br>
-<br>
-
-<h1>Popular Guides</h1>
-
-<div class="container">
-  
- 
-
-  <table class="table table-hover">
-    <thead>
-    <tr>
-      <td>No</td>
-      <td>Title</td>
-      <td>Name</td>
-      <td>Created</td>
-      <td>Hits</td>
-    </tr>     
-    </thead>
-
-    <tbody>   
-      <% @pops.each do |guide| %>       
-        <tr>
-          <td><a href="guides/<%=guide.id%>"><%= guide.id %></a></td>
-          <td><a href="guides/<%=guide.id%>"><%= guide.title %></a></td>
-          <td><%= guide.user_name %></td>
-          <td><%= guide.created_at %></td>
-          <td><%= guide.hits %></td>
-        </tr>  
-      <% end %>
-    </tbody>
-  </table>
-  
-
-<%= will_paginate @pop %>
- 
 </div>
-<% end %>
 
+<div class="col-md-3">
+    <table class="table ">
+      <tr> 
+        <td><ol>             
+              <i><%= link_to 'Top Hits Guides', guides_path(:type => "hits"), {:class => "btn btn-danger btn-sm", :style=>'width:70%;'} %></i>
+              <i class="glyphicon glyphicon-eye-open text-danger" style="font-size:30px;"></i>
+              <% @guides_hi.each do |gh| %> 
+                <li><a href="guides/<%=gh.id%>" style="color:black" data-toggle="tooltip" data-placement="top" title="<%= gh.title%>"><%= gh.title %></a>(<%= gh.hits%>)</li>               
+              <% end %>
+        </ol></td>            
+      </tr>   
+       
+      <tr> 
+        <td><ol>
+              <i><%= link_to 'Top Likes Guides', guides_path(:type => "like"), {:class => "btn btn-primary btn-sm", :style=>'width:70%;'} %></i>  
+              <i class="glyphicon glyphicon-thumbs-up text-primary" style="font-size:30px;"></i>
+              <% @guides_li.each do |gl| %> 
+                <li><a href="guides/<%=gl.id%>" style="color:black" data-toggle="tooltip" data-placement="top" title="<%= gl.title%>"><%= gl.title %></a>(<%= gl.likeps.count %>)</li>       
+              <% end %>
+        </ol></td>            
+      </tr>   
 
- 
-</div>
+      <tr> 
+        <td><ol>   
+              <i><%= link_to 'My Favorite Guides', guides_path(:type => "favo"), {:class => "btn btn-warning btn-sm", :style=>'width:70%;'} %></i>  
+              <i class="glyphicon glyphicon-star text-warning" style="font-size:30px;"></i>
+              <% @guides_fa.each do |gf| %> 
+                <li><a href="guides/<%=gf.id%>" style="color:black" data-toggle="tooltip" data-placement="top" title="<%= gf.title%>"><%= gf.title %></a></li>       
+              <% end %>
+        </ol></td>            
+      </tr>   
+
+      <tr> 
+        <td><ol>
+              <i><%= link_to 'My Guides', guides_path(:type => "mine"), {:class => "btn btn-success btn-sm", :style=>'width:70%;'} %></i>              
+              <i class="glyphicon glyphicon-pencil text-success" style="font-size:30px;"></i>
+              <% @guides_my.each do |gm| %> 
+                <li><a href="guides/<%=gm.id%>" style="color:black" data-toggle="tooltip" data-placement="top" title="<%= gm.title%>"><%= gm.title %></a>(<%= gm.hits%>)</li>                    
+              <% end %>
+        </ol></td>            
+      </tr>   
+
+    </table>   
+  </div> 
+</div> 
 

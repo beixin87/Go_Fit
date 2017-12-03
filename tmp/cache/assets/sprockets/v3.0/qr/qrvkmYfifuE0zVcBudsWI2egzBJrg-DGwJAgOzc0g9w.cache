@@ -1,0 +1,19 @@
+I"Ô(function() {
+  $(function() {
+    return document.addEventListener('turbolinks:load', function() {
+      return $('[data-provider="summernote"]').each(function() {
+        return $(this).summernote({
+          height: 360,
+          maximumImageFileSize: 5242880,
+          callbacks: {
+            onImageUploadError: function() {
+              return alert('Image file size limit 5MB');
+            }
+          }
+        });
+      });
+    });
+  });
+
+}).call(this);
+:ET
