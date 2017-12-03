@@ -1,5 +1,7 @@
 <% provide(:title, "Calories Calculator") %>
+<html>
 <h1>Calories Calculator</h1>
+<br></br>
 
 <table>
 
@@ -15,7 +17,7 @@
 
       <tr>
         <td>
-          <select id = "level">
+          <select id = "level" class="btn btn-default dropdown-toggle">
             <option  value="1">Almost No Exercise</option>
             <option  value="2">1-3 times per Week</option>
             <option  value="3">3-5 times per Week</option>
@@ -31,7 +33,7 @@
 
       <tr>
         <td>
-          <select id = "gender">
+          <select id = "gender" class="btn btn-default">
             <option  value="1">Male</option>
             <option  value="0">Female</option>
           </select>
@@ -43,7 +45,7 @@
         <th>Age</th>
       </tr>
       <tr>
-        <th><input type="text" id="age" value = "<%=@age%>"></th>
+        <th><input type="text" id="age" value = "<%=@age%>" class="form-control input-sm"></th>
 
 
       </tr>
@@ -52,7 +54,7 @@
         <th>Height(cm)</th>
       </tr>
       <tr>
-        <th><input type="text" id="height" value = "<%=@user.height%>"></th>
+        <th><input type="text" id="height" value = "<%=@user.height%>" class="form-control input-sm"></th>
 
 
 
@@ -62,7 +64,7 @@
         <th>Weight(kg)</th>
       </tr>
       <tr>
-        <th><input type="text" id="weight" value = "<%=@user.weight%>"></th>
+        <th><input type="text" id="weight" value = "<%=@user.weight%>" class="form-control input-sm"></th>
 
       </tr>
 
@@ -70,20 +72,21 @@
         <th><br>Calories Demand(Calories/day)</br></th>
       </tr>
       <tr>
-        <th><span id="result"></span></th>
+        <th><span id="result" class="text-primary"></span></th>
       </tr>
 
       <tr>
         <th><br>Fat Loss(Calories/day)</br></th>
       </tr>
       <tr>
-        <th><span id="fat_loss_result"></span></th>
+        <th><span id="fat_loss_result" class="text-danger"></span></th>
       </tr>
 
 
       <tr>
-        <th><br><button type="button" onclick="cal()">Start</button></span></br></th>
+        <th><br><button type="button" onclick="cal()" class="btn btn-primary">Start</button></span></br></th>
       </tr>
 
   </tbody>
 </table>
+</html>

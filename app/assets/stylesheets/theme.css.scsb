@@ -6,11 +6,13 @@ $brand-language: #B01302;
   color: white;
   padding-bottom: 80px;
 
+
   .btn-primary {
     background: lighten($brand-primary, 20%);
     border-color: lighten($brand-primary, 20%);
     &:hover {
       background: lighten($brand-primary, 15%);
+
     }
   }
 
@@ -18,6 +20,7 @@ $brand-language: #B01302;
     color: lighten($brand-primary, 50%);
     max-width: 75%;
     margin: 1em auto 2em;
+
   }
 
   .navbar + & {
@@ -39,4 +42,3 @@ $brand-language: #B01302;
   }
 
 }
-

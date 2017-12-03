@@ -1,4 +1,5 @@
 <% provide(:title, @user.name) %>
+
 <script type='text/javascript'>
 
 (function()
@@ -31,20 +32,21 @@
   </aside>
 </div>
 <div class="row">
-      Height<br>
+      <h5>Height</h5>
       <%= @user.height %><br>
-      Weight<br>
+      <h5>Weight</h5>
       <%= @user.weight %><br>
-      Birthday<br>
+      <h5>Birthday</h5>
       <%= @user.date_of_birth %><br>
-      Description<br>
-      <%= @user.description %>
+      <h5>Description</h5>
+      <%= @user.description %><br>
 </div>
 
 
-<h1>My courses listing</h1>
+<h4>My courses listing</h4>
 
 <div>
+  <table class="table table-hover">
     <% @user_courses.each do |user_course| %>
     <tr>
       <%mycourse = Course.find(user_course.course_id)%>
@@ -61,4 +63,5 @@
 
     </tr>
     <% end %>
+  </table>
 </div>

@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Courses</h1>
-
-<table>
+courses count: <%= @courses.count%>
+<table class="table table-hover">
   <thead>
-    <tr>courses count: <%= @courses.count%></tr>
     <tr>
       <th>Name </th>
       <th>Instrutor </th>
@@ -13,7 +12,7 @@
       <th>Numberofenrolled </th>
       <th>Start </th>
       <th>End </th>
-      <th colspan="3"></th>
+      <th colspan="7"></th>
     </tr>
   </thead>
 
@@ -38,5 +37,6 @@
 </table>
 
 <br>
+</br>
 
 <%= link_to 'New Course', new_course_path %>
