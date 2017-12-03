@@ -12,7 +12,7 @@ courses count: <%= @courses.count%>
       <th>Numberofenrolled </th>
       <th>Start </th>
       <th>End </th>
-      <th colspan="7"></th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
@@ -29,10 +29,10 @@ courses count: <%= @courses.count%>
         <td><%= course.end %></td>
 
 
-        <% if current_user.type == "manager"%>
+        <!-- <% if current_user.type == "manager"%>
         <td><%= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <%end %>
+        <%end %> -->
       </tr>
     <% end %>
   </tbody>

@@ -19,7 +19,7 @@
 </script>
 
 <div class="row">
-  <aside class="col-md-4">
+  <div class="col-md-4 ">
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
@@ -29,9 +29,11 @@
         <% end %>
       </h1>
     </section>
-  </aside>
-</div>
-<div class="row">
+  </div>
+
+
+  <div class = "col-md-4">
+      <br>
       <h5>Height</h5>
       <%= @user.height %><br>
       <h5>Weight</h5>
@@ -40,19 +42,15 @@
       <%= @user.date_of_birth %><br>
       <h5>Description</h5>
       <%= @user.description %><br>
-</div>
+  </div>
 
-
-<h4>My courses listing</h4>
-
-<h1>My courses listing</h1>
-<h3>Name</h3>
-<div>
-  <table class="table table-hover">
+<div class = "col-lg-4">
+    <br>
+    <h4>My courses listing</h4>
     <% @user_courses.each do |user_course| %>
     <tr>
-      <%mycourse = Course.find(user_course.course_id)%>
-      <td><%= link_to mycourse.name, mycourse %></td>
+      <td><%mycourse = Course.find(user_course.course_id)%>
+      <%= link_to mycourse.name, mycourse %></td>
 
       <td>
         <% if current_user?(@user) %>
@@ -65,9 +63,8 @@
 
     </tr>
     <% end %>
-  </table>
-</div>
 
+<h4>Calendar</h4>
 <div id="calendar">
   <% @user_courses.each do |user_course| %>
   <tr>
@@ -77,5 +74,6 @@
 
   </tr>
   <% end %>
-
+</div>
+</div>
 </div>
