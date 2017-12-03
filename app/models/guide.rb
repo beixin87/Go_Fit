@@ -1,5 +1,8 @@
 class Guide < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user   
+  has_many :likeps, :dependent => :destroy
+  has_many :likens, :dependent => :destroy
+  has_many :favorites, :dependent => :destroy
   has_many :images
   validates :title, presence: true
   validates :content, presence: true	 
