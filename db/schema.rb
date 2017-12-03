@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20171129085545) do
     t.integer  "numberofenrolled"
     t.datetime "start"
     t.datetime "end"
+    t.integer  "gym_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
@@ -60,6 +61,7 @@ ActiveRecord::Schema.define(version: 20171129085545) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
+    t.integer  "course_id"
   end
 
   add_index "gyms", ["user_id"], name: "index_gyms_on_user_id", using: :btree

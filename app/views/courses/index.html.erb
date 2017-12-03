@@ -19,7 +19,7 @@ courses count: <%= @courses.count%>
   <tbody>
     <% @courses.each do |course| %>
       <tr>
-        <td><%= course.name %></td>
+        <td><%= link_to course.name, course %></td>
         <% instrutor=User.find(course.user_id) %>
         <td><%= instrutor.name %></td>
         <td><%= course.limit %></td>
@@ -28,9 +28,11 @@ courses count: <%= @courses.count%>
         <td><%= course.start %></td>
         <td><%= course.end %></td>
 
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
+
+        <% if current_user.type == "manager"%>
         <td><%= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_course_path(course) %></td>
+        <%end %>
       </tr>
     <% end %>
   </tbody>

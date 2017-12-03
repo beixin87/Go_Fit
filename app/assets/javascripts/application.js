@@ -18,6 +18,10 @@
 //= require_tree .
 //= require turbolinks
 //= require fullcalendar
+//= require moment
+
+
+$('#calendar').fullCalendar({});
 
 $(function() {
   $("#user_date_of_birth").datepicker({
