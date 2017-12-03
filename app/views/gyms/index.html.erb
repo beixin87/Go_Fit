@@ -3,29 +3,27 @@
 <h1>All Gyms</h1>
 
 <table class="table table-hover">
+
   <thead>
     <tr>
       <th>Name</th>
-      <th>Address</th>
       <th colspan="5"></th>
+      <th>Address</th>
     </tr>
   </thead>
+
   <tbody>
     <% if current_user.type == 'Manager' %>
       <% @gyms.select {|g| current_user.id == g.user_id}.each do |gym| %>
         <%= render gym %>
       <% end %>
-      <tr>
-        <th>----------</th>
-        <th colspan="5"></th>
-        <th>---------------</th>
-        <th>----</th>
-      </tr>
+
     <% end %>
     <% @gyms.select {|g| current_user.id != g.user_id}.each do |gym| %>
       <%= render gym %>
     <% end %>
 </tbody>
+
 </table>
 <br>
 <% if current_user.admin? %>

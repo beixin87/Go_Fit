@@ -2,17 +2,17 @@
 
 <h1>Listing Courses</h1>
 courses count: <%= @courses.count%>
+
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Name </th>
-      <th>Instrutor </th>
-      <th>Limit </th>
-      <th>Fee </th>
-      <th>Numberofenrolled </th>
-      <th>Start </th>
-      <th>End </th>
-      <th colspan="5"></th>
+      <th>&emsp;&emsp;&emsp;&emsp;Name</th>
+      <th>&emsp;Instrutor</th>
+      <th>&emsp;&emsp;&ensp;Limit</th>
+      <th>&emsp;Fee</th>
+      <th>Num before enrolled</th>
+      <th>&emsp;Start</th>
+      <th>&emsp;End</th>
     </tr>
   </thead>
 
@@ -27,15 +27,18 @@ courses count: <%= @courses.count%>
         <td><%= course.numberofenrolled %></td>
         <td><%= course.start %></td>
         <td><%= course.end %></td>
+        <td colspan="3"></td>
 
 
-        <!-- <% if current_user.type == "manager"%>
+        <% if current_user.type == "manager"%>
         <td><%= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <%end %> -->
+        <%end %>
+
       </tr>
     <% end %>
   </tbody>
+
 </table>
 
 <br>
