@@ -8,9 +8,13 @@ class CalculatorController < ApplicationController
 private
   def age(date_of_birth)
     today = Date.today
-    age = today.year - date_of_birth.year
-    age -= 1 if date_of_birth.strftime("%m%d").to_i > today.strftime("%m%d").to_i
-    age
+    if (defined?(today)).nil?
+      age = today.year - date_of_birth.year
+      age -= 1 if date_of_birth.strftime("%m%d").to_i > today.strftime("%m%d").to_i
+      age
+    else
+      age = nil
+    end
   end
 
 end
