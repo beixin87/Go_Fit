@@ -1,0 +1,41 @@
+<% provide(:title, 'Delete info') %>
+
+<h1>Deleted Guide</h1>
+
+<style>
+[class*="col-md-12"]{
+  padding: 8px;
+  border: 1px solid gray;
+  text-align: left;
+}
+</style>
+
+<div class="container">  
+
+  <div class="row"> 
+
+  <table class="table">   
+      <thead>
+        <tr>
+          <td><strong> Deleted title </strong></td>
+        </tr>   
+        <tr>          
+        </tr>
+      </thead>  
+  </table>
+          
+  </div>    
+
+  <div class="row">       
+    <div class="col-md-12">
+     <p> Deleted content </p>    
+  </div>    
+  </div>    
+
+<br>
+
+<%= link_to 'Back', guides_path, class: "btn btn-primary" %>
+<%= link_to 'Home', root_path, class: "btn btn-danger" %>  
+
+</div>
+

@@ -1,7 +1,8 @@
+<body>
 <% provide(:title, 'All users') %>
-<h1>All users</h1>
-<!--<p> User Count : <%= @userCnt %></p>-->
 <ul class="users">
+<h2>All users</h2>
+<!--<p> User Count : <%= @userCnt %></p>-->
 <h2>Managers</h2>
   <% @users.select {|u| u.type == 'Manager' }.each do |user| %>
     <%= render partial: 'users/user', object: user %>
@@ -20,3 +21,4 @@
 
   <% end %>
 </ul>
+</body>
