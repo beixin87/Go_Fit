@@ -2,13 +2,25 @@ class Course < ActiveRecord::Base
   has_many :user_courses
   has_many :users, through: :user_courses
   belongs_to :gym
-  validates :name, presence: true
-  validates :user_id, presence: true
-  validates :limit, presence: true
-  validates :fee, presence: true
 
-  validates :start, presence: true
-  validates :end, presence: true
+  validates :name, presence: true, length: { maximum: 50}
+
+
+
+  validates :limit, presence: true,numericality: { greater_than: 5,
+                     less_than: 20,
+                     :allow_nil => false}
+
+  validates :fee, presence: true,numericality: { greater_than: 0,
+                     less_than: 10000,
+                     :allow_nil => false}
+
+  validates :start, presence: true, :date => {:after => Proc.new { Time.now },
+                                      :before => Proc.new { Time.now + 1.month}}
+
+  validates :class_hour, presence: true ,numericality: { greater_than: 1,
+                     less_than: 3,
+                     :allow_nil => false}
 
   def start_time
     start

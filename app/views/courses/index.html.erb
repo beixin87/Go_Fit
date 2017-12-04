@@ -12,7 +12,7 @@ courses count: <%= @courses.count%>
       <th>&emsp;Fee</th>
       <th>Num before enrolled</th>
       <th>&emsp;Start</th>
-      <th>&emsp;End</th>
+      <th>&emsp;Class hour</th>
     </tr>
   </thead>
 
@@ -20,13 +20,15 @@ courses count: <%= @courses.count%>
     <% @courses.each do |course| %>
       <tr>
         <td><%= link_to course.name, course %></td>
-        <% instrutor=User.find(course.user_id) %>
-        <td><%= instrutor.name %></td>
+        <%if course.user_id%>
+          <% instrutor=User.find(course.user_id) %>
+          <td><%= instrutor.name %></td>
+        <%end%>
         <td><%= course.limit %></td>
         <td><%= course.fee %></td>
         <td><%= course.numberofenrolled %></td>
         <td><%= course.start %></td>
-        <td><%= course.end %></td>
+        <td><%= course.class_hour %></td>
         <td colspan="3"></td>
 
 
@@ -43,5 +45,6 @@ courses count: <%= @courses.count%>
 
 <br>
 </br>
-
-<%= link_to 'New Course', new_course_path %>
+<% if current_user.admin?%>
+  <%= link_to 'New Course', new_course_path %>
+<%end%>

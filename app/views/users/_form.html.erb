@@ -14,7 +14,7 @@
 
     <%if current_user%>
       <% if current_user.admin? %>
-        <%= f.label :type %> (manager,instructor,student)
+        <%= f.label :type %> (Student,Instructor,Manager)
         <%= f.text_field :type, class: 'form-control' %>
       <% end %>
     <% end %>

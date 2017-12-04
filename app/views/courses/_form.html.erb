@@ -3,12 +3,21 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :user_id ,label:'Instrutor'%>
-    <%= f.input :gym_id , label:'Gymid' %>
+
+    <%= f.label "Instructor", class: "form-inputs"%>
+    <%= collection_select( :course, :user_id, User.where(type: 'instructor'), :id, :name, {}, {:multiple => false})%>
+
+
+
+    <%= f.label :gym_id, class: "form-inputs"%>
+    <%= collection_select( :course, :gym_id, Gym.all, :id, :name, {}, {:multiple => false})%>
+
+
+
     <%= f.input :limit %>
     <%= f.input :fee %>
     <%= f.input :start %>
-    <%= f.input :end %>
+    <%= f.input :class_hour, lable:'Class hour' %>
   </div>
 
   <div class="form-actions">

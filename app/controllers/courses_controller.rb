@@ -11,7 +11,9 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @instrutor = User.find(@course.user_id)
+    if @course.user_id
+      @instrutor = User.find(@course.user_id)
+    end
     @user_courses = @course.user_courses
     @user = current_user
     @gym = Gym.find(@course.gym_id)
@@ -83,6 +85,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:name, :user_id, :limit, :fee, :numberofenrolled, :start, :end, :gym_id)
+      params.require(:course).permit(:name, :user_id, :limit, :fee, :numberofenrolled, :start, :class_hour, :gym_id)
     end
 end

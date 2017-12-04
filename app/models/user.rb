@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   validates :date_of_birth, :date => {:after => Proc.new { Time.now - 120.years},
                                       :before => Proc.new { Time.now},
                                       :allow_blank => true}
-  validates :type, inclusion: { in: %w(Student, Instructor, Manager),
+  validates :type, inclusion: { in: %w(Student Instructor Manager),
                                 message: "%{value} is not a valid type" },
                                 allow_nil: true
   has_secure_password
