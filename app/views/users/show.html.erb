@@ -65,7 +65,7 @@
     <% end %>
 </div>
 
-<div id="calendar">
+<div >
   <% @user_courses.each do |user_course| %>
   <tr>
     <%mycourse = Course.find(user_course.course_id)%>
@@ -75,4 +75,17 @@
   </tr>
   <% end %>
 
+</div>
+
+
+<div>
+  <%= month_calendar events: @mycourses do |date, mcourses| %>
+    <%= date.day %>
+
+    <% mcourses.each do |mycourse|%>
+    <div>
+      <%= link_to mycourse.name, mycourse %>
+    </div>
+    <% end %>
+  <% end %>
 </div>

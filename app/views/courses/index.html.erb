@@ -30,10 +30,18 @@
         <td><%= course.end %></td>
 
 
-        <% if current_user.type == "manager"%>
-        <td><%= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <%end %>
+
+        <td>
+          <% if current_user.type == "manager"%>
+          <%= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%end %>
+        </td>
+        <td>
+          <% if current_user.type == "manager"%>
+          <%= link_to 'Edit', edit_course_path(course) %>
+          <%end %>
+        </td>
+
       </tr>
     <% end %>
   </tbody>

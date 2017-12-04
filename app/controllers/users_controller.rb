@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     # debugger  << uncomment to see debug in terminal
     @user_courses = @user.user_courses
+    @mycourses = @user.courses
   end
 
   def mycourses
