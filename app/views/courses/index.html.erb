@@ -40,11 +40,12 @@ courses count: <%= @courses.count%>
       </tr>
     <% end %>
   </tbody>
+  <%= link_to 'New Course', new_course_path %>
 
 </table>
 
 <br>
 </br>
-<% if current_user.admin?%>
-  <%= link_to 'New Course', new_course_path %>
-<%end%>
+
+
+<%= will_paginate @courses %>

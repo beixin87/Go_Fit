@@ -23,9 +23,12 @@
       <%= render gym %>
     <% end %>
 </tbody>
-
-</table>
-<br>
 <% if current_user.admin? %>
   <%= link_to 'Create New Gym', new_gym_path %>
 <% end %>
+
+</table>
+<br>
+
+
+<%= will_paginate @gyms %>

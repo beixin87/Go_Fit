@@ -3,10 +3,13 @@ class UsersController < ApplicationController
   #before_action :correct_user,   only: [:edit, :update, :mycourses]
   before_action :admin_user,     only: [:index, :destroy]
 
+
+
+
   def index
       @userCnt = User.all.count
       #@users = User.order('id DESC').paginate(page: params[:page], per_page: 10)
-      @users = User.all
+      @users = User.all.paginate(page: params[:page], per_page: 6)
   end
 
 

@@ -4,7 +4,7 @@ class GymsController < ApplicationController
   before_action :admin_user, only: [:new, :create, :destroy]
 
     def index
-        @gyms = Gym.all
+        @gyms = Gym.all.paginate(page: params[:page], per_page: 5)
     end
 
     def show
