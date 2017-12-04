@@ -11,15 +11,15 @@ Rails.application.routes.draw do
   delete  '/logout',  to: 'sessions#destroy'
   get     '/users/:id/mycourses', to:'users#mycourses'
   get     '/info',    to: 'guides#info'
-  
+
   resources :users
   resources :guides do
     member do
       put "like", to: "guides#like"
       put "dislike", to: "guides#dislike"
-      put "favorite", to: "guides#favorite"      
-    end  
-  end  
+      put "favorite", to: "guides#favorite"
+    end
+  end
   resources :calculator
   resources :map
   resources :images, only: [:create, :destroy]

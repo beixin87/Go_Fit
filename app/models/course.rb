@@ -10,6 +10,9 @@ class Course < ActiveRecord::Base
   validates :start, presence: true
   validates :end, presence: true
 
+  def start_time
+    start
+  end
 
   def student_already_added?(user_id)
     student = User.find(user_id)
