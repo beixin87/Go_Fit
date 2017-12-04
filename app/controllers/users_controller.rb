@@ -63,9 +63,17 @@ class UsersController < ApplicationController
   private
 
       def user_params
-        params.require(:user).permit(:name, :email, :password,
-                                     :password_confirmation, :height,
-                                     :weight, :description, :date_of_birth , :type)
+        if params.has_key? :manager
+          params[:user] = params.delete :manager
+        elsif params.has_key? :student
+          params[:user] = params.delete :student
+        elsif params.has_key? :instructor
+          params[:user] = params.delete :instructor
+        end
+            
+          params.require(:user).permit(:name, :email, :password,
+                                       :password_confirmation, :height,
+                                       :weight, :description, :date_of_birth , :type)
       end
 
       # Confirms a logged-in user.
