@@ -4,19 +4,23 @@
 
 <h1>instructors and id</h1>
 <div>
+  <%if @instructors%>
     <% @instructors.each do |instructor| %>
     <tr>
-      <td><%= instructor.id%> | <%= instructor.name%></td>
+      <td><%= instructor.name%> | <%= instructor.id%></td>
     </tr>
     <% end %>
+  <%end%>
 </div>
 
 <h1>gyms and id</h1>
 <div>
+  <%if @gyms%>
     <% @gyms.each do |gym| %>
     <tr>
-      <td><%= gym.id%> | <%= gym.name%></td>
+      <td><%= gym.name%> | <%= gym.id%></td>
     </tr>
     <% end %>
+  <%end%>
 </div>
 <%= link_to 'Back', courses_path %>

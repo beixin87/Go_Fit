@@ -7,12 +7,12 @@ class CreateCourses < ActiveRecord::Migration
       t.decimal :fee
       t.integer :numberofenrolled
       t.datetime :start
-      t.datetime :end
+      t.integer :class_hour
       t.integer :gym_id
 
       t.timestamps null: false
     end
     add_foreign_key :courses, :users
-    
+
   end
 end

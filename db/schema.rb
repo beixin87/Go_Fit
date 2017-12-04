@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20171203202807) do
     t.decimal  "fee"
     t.integer  "numberofenrolled"
     t.datetime "start"
-    t.datetime "end"
+    t.integer  "class_hour"
     t.integer  "gym_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false

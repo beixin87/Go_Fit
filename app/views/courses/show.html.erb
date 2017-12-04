@@ -6,7 +6,9 @@
 </p>
 <p>
   <strong>Instrutor:</strong>
-  <%= @instrutor.name %>
+  <%if @course.user_id%>
+    <%= @instrutor.name %>
+  <%end %>
 </p>
 <p>
   <strong>Gym:</strong>
@@ -33,13 +35,13 @@
 </p>
 
 <p>
-  <strong>End:</strong>
-  <%= @course.end %>
+  <strong>Class hour:</strong>
+  <%= @course.class_hour %>
 </p>
 <table >
   <th>
     <tr>
-      <th>Students</th>
+      <th>Students in this Course</th>
     </tr>
   </th>
   <tb>
