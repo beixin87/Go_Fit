@@ -25,13 +25,14 @@ class UserCoursesController < ApplicationController
   # POST /user_courses.json
   def create
 
-
+    @user = User.find(current_user.id)
     @user_course = UserCourse.new(user_id: current_user.id, course_id: params[:course_id] )
 
     respond_to do |format|
       if @user_course.save
         @course = Course.find(params[:course_id])
         @course.numberofenrolled = @course.user_courses.count
+        @user.update_attributes(type: "Student")
         format.html { redirect_to request.referrer, notice: 'Course was successfully added.' }
         format.json { render :show, status: :created, location: @user_course }
       else
