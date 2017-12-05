@@ -29,10 +29,9 @@ class User < ActiveRecord::Base
                                       :before => Proc.new { Time.now},
                                       :allow_blank => true}
   validates :type, inclusion: { in: %w(Student Instructor Manager),
-                                message: "%{value} is not a valid type" },
-                                allow_nil: true
+                                message: "%{value} is not a valid type" }, allow_nil: true
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   def initialize(attributes = {}) #Call when we execute User.new
     super

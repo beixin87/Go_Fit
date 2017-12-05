@@ -1,5 +1,9 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :correct_user, only: [:new, :create]
+  before_action :course_owner, only: [:edit, :update, :destroy]
+
 
   # GET /courses
   # GET /courses.json
@@ -83,8 +87,29 @@ class CoursesController < ApplicationController
       @course = Course.find(params[:id])
     end
 
+    # Confirms a logged-in user.
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
+
+    # Confirms the correct user.
+    def correct_user
+      redirect_to(root_url) unless current_user.type == "Manager" || current_user.admin?
+    end
+
+    def course_owner
+      redirect_to(root_url) unless set_course.user_id == current_user.id || current_user.admin?
+    end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
       params.require(:course).permit(:name, :user_id, :limit, :fee, :numberofenrolled, :start, :class_hour, :gym_id)
     end
+
+
+
+
 end
