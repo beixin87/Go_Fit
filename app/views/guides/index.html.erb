@@ -44,8 +44,8 @@
       <tbody>   
         <% @guides.each do |guide| %>       
           <tr>
-            <td><a href="guides/<%=guide.id%>" style="color:black"><%= guide.id %></a></td>
-            <td><a href="guides/<%=guide.id%>" style="color:black" data-toggle="tooltip" title="<%= guide.title%>"><%= guide.title %></a></td>
+            <td><a href="<%= url_for(@guide)/(guide.id)%> style="color:black"><%= guide.id %></a></td>
+            <td><a href="<%= url_for(@guide)/(guide.id) %>" style="color:black" data-toggle="tooltip" title="<%= guide.title%>"><%= guide.title %></a></td>
             <td><%= guide.user_name %></td>
             <td><%= guide.created_at.strftime("%Y-%m-%d %H:%M") %></td>
             <td align="right"><%= guide.hits %></td>
