@@ -6,12 +6,12 @@ courses count: <%= @courses.count%>
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>&emsp;&emsp;&emsp;&emsp;Name</th>
-      <th>&emsp;Instrutor</th>
-      <th>&emsp;&emsp;&ensp;Limit</th>
-      <th>&emsp;Fee</th>
-      <th>Num before enrolled</th>
-      <th>&emsp;Start</th>
+      <th>&emsp;&emsp;Name</th>
+      <th>&emsp;&emsp;&emsp;&emsp;Instrutor</th>
+      <th>&emsp;&ensp;Limit</th>
+      <th>&ensp;Fee</th>
+      <th>&emsp;&emsp;&emsp;&emsp;&emsp;Num before enrolled</th>
+      <th>&emsp;&emsp;&emsp;&emsp;&emsp;Start</th>
       <th>&emsp;Class hour</th>
     </tr>
   </thead>
@@ -29,7 +29,7 @@ courses count: <%= @courses.count%>
         <td><%= course.numberofenrolled %></td>
         <td><%= course.start %></td>
         <td><%= course.class_hour %></td>
-        <td colspan="3"></td>
+        <td colspan="1"></td>
 
 
         <% if current_user.type == "manager"%>
