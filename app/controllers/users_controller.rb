@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :mycourses]
-  #before_action :correct_user,   only: [:edit, :update, :mycourses]
+  before_action :correct_user,   only: [:edit, :update, :mycourses]
   before_action :admin_user,     only: [:index, :destroy]
 
 
@@ -74,10 +74,16 @@ class UsersController < ApplicationController
         elsif params.has_key? :instructor
           params[:user] = params.delete :instructor
         end
-            
+        if current_user.admin
           params.require(:user).permit(:name, :email, :password,
                                        :password_confirmation, :height,
-                                       :weight, :description, :date_of_birth , :type)
+                                       :weight, :description, :date_of_birth)
+
+        else
+          params.require(:user).permit(:name, :email, :password,
+                                       :password_confirmation, :height,
+                                       :weight, :description, :date_of_birth, :type)
+        end
       end
 
       # Confirms a logged-in user.
@@ -91,7 +97,7 @@ class UsersController < ApplicationController
       # Confirms the correct user.
       def correct_user
         @user = User.find(params[:id])
-        redirect_to(root_url) unless @user == current_user
+        redirect_to(root_url) unless @user == current_user || current_user.admin?
       end
 
       # Confirms an admin user.

@@ -58,11 +58,9 @@ end
                date_of_birth: "2001/12/12",
                description: "I am a fake user."
               )
-
-
 end
 
-
+#Fake Instructor
 15.times do |n|
   name  = Faker::Name.name
   email = "instructor#{n+1}@example.com"
@@ -76,7 +74,6 @@ end
                      date_of_birth: "2000/11/11",
                      description: "I am a fake instructor."
                     )
-
 end
 
 5.times do |n|

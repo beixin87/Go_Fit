@@ -14,14 +14,10 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require turbolinks
 //= require summernote
 //= require_tree .
-//= require turbolinks
-//= require fullcalendar
 //= require moment
-
-
-$('#calendar').fullCalendar({});
 
 $(function() {
   $("#user_date_of_birth").datepicker({

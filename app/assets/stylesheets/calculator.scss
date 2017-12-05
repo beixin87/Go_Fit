@@ -4,10 +4,6 @@ table {
   width: 8em;
 }
 
-span {
-  font-size: 200%;
-}
-
 th {
   font-size: 125%;
 }
@@ -19,4 +15,10 @@ button {
 #gender,
 #level {
   height :30px;
+}
+
+#result,
+#fat_loss_result
+{
+  font-size: 200%;
 }
