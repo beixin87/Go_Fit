@@ -22,8 +22,9 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
-    @instructors = User.where(type: 'instructor')
+    @instructors = User.where(type: 'Instructor')
     @gyms = Gym.all
+    
   end
 
   # GET /courses/1/edit

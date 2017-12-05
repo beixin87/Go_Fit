@@ -5,7 +5,7 @@
     <%= f.input :name %>
 
     <%= f.label "Instructor", class: "form-inputs"%>
-    <%= collection_select( :course, :user_id, User.where(type: 'instructor'), :id, :name, {}, {:multiple => false})%>
+    <%= collection_select( :course, :user_id, User.where(type: 'Instructor'), :id, :name, {}, {:multiple => false})%>
 
 
 
@@ -16,11 +16,12 @@
 
     <%= f.input :limit %>
     <%= f.input :fee %>
-    <%= f.input :start %>
+    <%= f.input :start, min: Date.today%>
     <%= f.input :class_hour, lable:'Class hour' %>
   </div>
 
+
   <div class="form-actions">
-    <%= f.button :submit %>
+    <button class = "btn btn-xs btn-primary"><%= f.button :submit ,:class => "btn btn-xs btn-primary"%></button>
   </div>
 <% end %>

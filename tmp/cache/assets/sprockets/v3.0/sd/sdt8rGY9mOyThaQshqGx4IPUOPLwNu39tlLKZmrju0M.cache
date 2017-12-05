@@ -1,5 +1,0 @@
-I"=(function() {
-  require(smart_listing);
-
-}).call(this);
-:ET

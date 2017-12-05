@@ -1,26 +1,12 @@
 <h1>New Course</h1>
 
-<%= render 'form' %>
-
-<h1>instructors and id</h1>
-<div>
-
-    <% @instructors.each do |instructor| %>
-    <tr>
-      <td><%= instructor.name%> | <%= instructor.id%></td>
-    </tr>
-    <% end %>
-  
+<div class = "col-md-3">
 </div>
 
-<h1>gyms and id</h1>
-<div>
-  <%if @gyms%>
-    <% @gyms.each do |gym| %>
-    <tr>
-      <td><%= gym.name%> | <%= gym.id%></td>
-    </tr>
-    <% end %>
-  <%end%>
+<div class="col-md-6">
+<%= render 'form' %><br></br>
+<%= link_to 'Back', courses_path ,:class => "btn btn-xs btn-danger" %>
 </div>
-<%= link_to 'Back', courses_path %>
+
+<div class = "col-md-3">
+</div>

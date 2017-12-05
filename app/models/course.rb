@@ -7,19 +7,19 @@ class Course < ActiveRecord::Base
 
 
 
-  validates :limit, presence: true,numericality: { greater_than: 5,
-                     less_than: 20,
+  validates :limit, presence: true,numericality: { greater_than: 4.9,
+                     less_than: 20.1,
                      :allow_nil => false}
 
-  validates :fee, presence: true,numericality: { greater_than: 0,
+  validates :fee, presence: true,numericality: { greater_or_equal_to: 0,
                      less_than: 10000,
                      :allow_nil => false}
 
   validates :start, presence: true, :date => {:after => Proc.new { Time.now },
                                       :before => Proc.new { Time.now + 1.month}}
 
-  validates :class_hour, presence: true ,numericality: { greater_than: 1,
-                     less_than: 3,
+  validates :class_hour, presence: true ,numericality: { greater_than: 0.9,
+                     less_than: 3.1,
                      :allow_nil => false}
 
   def start_time
