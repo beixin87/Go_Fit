@@ -6,7 +6,7 @@ courses count: <%= @courses.count%>
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>&emsp;&emsp;Name</th>
+      <th>&emsp;&ensp;Name</th>
       <th>&emsp;&emsp;&emsp;&emsp;Instrutor</th>
       <th>&emsp;&ensp;Limit</th>
       <th>&ensp;Fee</th>
@@ -35,8 +35,11 @@ courses count: <%= @courses.count%>
 
 
         <% if current_user.type == "manager"%>
-        <td><%= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
+          <td><%= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Edit', edit_course_path(course) %></td>
+        <%else%>
+          <td></td>
+          <td></td>
         <%end %>
 
       </tr>
