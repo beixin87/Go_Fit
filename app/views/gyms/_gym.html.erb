@@ -7,7 +7,7 @@
   <th>
     <% if current_user.admin? %>
       | <%= link_to "delete", gym, method: :delete,
-                                    data: { confirm: "You sure?" } %>
+                                    data: { confirm: "You sure?" } ,:class => "btn btn-xs btn-danger"%>
     <% end %>
   </th>
 </tr>

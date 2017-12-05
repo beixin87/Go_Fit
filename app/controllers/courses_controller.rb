@@ -26,7 +26,7 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
-    @instructors = User.where(type: 'instructor')
+    @instructors = User.where(type: 'Instructor')
     @gyms = Gym.all
   end
 
@@ -103,7 +103,7 @@ class CoursesController < ApplicationController
     def course_owner
       redirect_to(root_url) unless set_course.user_id == current_user.id || current_user.admin?
     end
-    
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
       params.require(:course).permit(:name, :user_id, :limit, :fee, :numberofenrolled, :start, :class_hour, :gym_id)
