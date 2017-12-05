@@ -10,7 +10,7 @@ courses count: <%= @courses.count%>
       <th>&emsp;&emsp;&emsp;&emsp;Instrutor</th>
       <th>&emsp;&ensp;Limit</th>
       <th>&ensp;Fee</th>
-      <th>&emsp;&emsp;&emsp;&emsp;&emsp;Num before enrolled</th>
+      <th>&emsp;&emsp;&emsp;&emsp;&emsp;Number of Students</th>
       <th>&emsp;&emsp;&emsp;&emsp;&emsp;Start</th>
       <th>&emsp;Class hour</th>
     </tr>
@@ -26,6 +26,7 @@ courses count: <%= @courses.count%>
 
         <td><%= course.limit %></td>
         <td><%= course.fee %></td>
+        <% course.numberofenrolled = course.user_courses.count %>
         <td><%= course.numberofenrolled %></td>
         <td><%= course.start %></td>
         <td><%= course.class_hour %></td>
