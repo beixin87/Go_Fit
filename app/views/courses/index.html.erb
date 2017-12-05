@@ -7,7 +7,8 @@ courses count: <%= @courses.count%>
   <thead>
     <tr>
       <th>&emsp;&ensp;Name</th>
-      <th>&emsp;&emsp;&emsp;&emsp;Instrutor</th>
+      <th>&emsp;&emsp;&emsp;Instrutor</th>
+      <th>&emsp;&emsp;Gym</th>
       <th>&emsp;&ensp;Limit</th>
       <th>&ensp;Fee</th>
       <th>&emsp;&emsp;&emsp;&emsp;&emsp;Number of Students</th>
@@ -16,14 +17,18 @@ courses count: <%= @courses.count%>
     </tr>
   </thead>
 
+
+
   <tbody>
     <% @courses.each do |course| %>
       <tr>
         <td><%= link_to course.name, course %></td>
 
         <% instrutor=User.find(course.user_id) %>
-        <td><%= instrutor.name %></td>
-
+        <td>  &emsp;&emsp;<%= instrutor.name %></td>
+ra
+        <% gym = Gym.find(course.gym_id)%>
+        <td>&emsp;&emsp;<%= gym.name %></td>
         <td><%= course.limit %></td>
         <td><%= course.fee %></td>
         <% course.numberofenrolled = course.user_courses.count %>

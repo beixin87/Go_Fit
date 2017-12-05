@@ -27,12 +27,13 @@ class UserCoursesController < ApplicationController
   def create
 
     @user = User.find(current_user.id)
+    @course = Course.find(params[:course_id])
     @user_course = UserCourse.new(user_id: current_user.id, course_id: params[:course_id] )
 
     respond_to do |format|
       if @user_course.save
         @course = Course.find(params[:course_id])
-        
+
         @user.update_attributes(type: "Student")
         format.html { redirect_to request.referrer, notice: 'Course was successfully added.' }
         format.json { render :show, status: :created, location: @user_course }
@@ -71,6 +72,11 @@ class UserCoursesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user_course
       @user_course = UserCourse.find(params[:id])
+    end
+
+    def student_already_added?(user_id)
+          @course = Course.find(params[:course_id])
+      @course.user_courses.where(user_id: current_user.id).exists?
     end
 
     def correct_user

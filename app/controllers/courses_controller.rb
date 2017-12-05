@@ -21,6 +21,7 @@ class CoursesController < ApplicationController
     @user_courses = @course.user_courses
     @user = current_user
     @gym = Gym.find(@course.gym_id)
+    @manager = User.find(@gym.user_id)
   end
 
   # GET /courses/new
@@ -28,7 +29,7 @@ class CoursesController < ApplicationController
     @course = Course.new
     @instructors = User.where(type: 'Instructor')
     @gyms = Gym.all
-    
+
   end
 
   # GET /courses/1/edit
@@ -102,7 +103,9 @@ class CoursesController < ApplicationController
     end
 
     def course_owner
-      redirect_to(root_url) unless set_course.user_id == current_user.id || current_user.admin?
+      @gym = Gym.find(set_course.gym_id)
+      @manager = User.find(@gym.user_id)
+      redirect_to(root_url) unless @manager == current_user || current_user.admin?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

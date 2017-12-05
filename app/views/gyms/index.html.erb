@@ -6,6 +6,9 @@
 
   <thead>
     <tr>
+      <th>My Gyms</th>
+    </tr>
+    <tr>
       <th>Name</th>
       <th colspan="5"></th>
       <th>Address</th>
@@ -18,16 +21,42 @@
         <%= render gym %>
       <% end %>
 
+</tbody>
+
+
+<% if current_user.admin? %>
+  <%= link_to 'Create New Gym', new_gym_path %>
+<% end %>
+
+</table>
+
+
+<table class="table table-hover">
+
+  <thead>
+    <tr>
+      <th>Other Gyms</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th colspan="5"></th>
+      <th>Address</th>
+    </tr>
+  </thead>
+
+  <tbody>
     <% end %>
     <% @gyms.select {|g| current_user.id != g.user_id}.each do |gym| %>
       <%= render gym %>
     <% end %>
 </tbody>
-<% if current_user.admin? %>
-  <%= link_to 'Create New Gym', new_gym_path,:class => "btn btn-xs btn-success" %>
-<% end %>
+
+
 
 </table>
+
+
+
 <br>
 
 
