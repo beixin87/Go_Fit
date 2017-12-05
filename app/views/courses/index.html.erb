@@ -26,7 +26,7 @@ courses count: <%= @courses.count%>
 
         <% instrutor=User.find(course.user_id) %>
         <td>  &emsp;&emsp;<%= instrutor.name %></td>
-ra
+
         <% gym = Gym.find(course.gym_id)%>
         <td>&emsp;&emsp;<%= gym.name %></td>
         <td><%= course.limit %></td>

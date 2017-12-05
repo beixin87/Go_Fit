@@ -1,7 +1,7 @@
 <% provide(:title, 'All Gym') %>
 
 <h1>All Gyms</h1>
-
+<% if current_user.type == 'Manager' %>
 <table class="table table-hover">
 
   <thead>
@@ -16,13 +16,13 @@
   </thead>
 
   <tbody>
-    <% if current_user.type == 'Manager' %>
+
       <% @gyms.select {|g| current_user.id == g.user_id}.each do |gym| %>
         <%= render gym %>
       <% end %>
 
 </tbody>
-
+<% end %>
 
 <% if current_user.admin? %>
   <%= link_to 'Create New Gym', new_gym_path %>
@@ -34,9 +34,7 @@
 <table class="table table-hover">
 
   <thead>
-    <tr>
-      <th>Other Gyms</th>
-    </tr>
+  
     <tr>
       <th>Name</th>
       <th colspan="5"></th>
@@ -45,7 +43,7 @@
   </thead>
 
   <tbody>
-    <% end %>
+
     <% @gyms.select {|g| current_user.id != g.user_id}.each do |gym| %>
       <%= render gym %>
     <% end %>
