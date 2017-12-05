@@ -235,7 +235,7 @@ AutocompleteDirectionsHandler.prototype.route = function() {
 
 
 
-function processResults(results, status,pagination) {
+function processResults(results, status, pagination) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
 
     for (var i = 0; i < results.length; i++) {
