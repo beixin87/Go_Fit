@@ -24,7 +24,7 @@
     <% end %>
 </tbody>
 <% if current_user.admin? %>
-  <%= link_to 'Create New Gym', new_gym_path %>
+  <%= link_to 'Create New Gym', new_gym_path,:class => "btn btn-xs btn-success" %>
 <% end %>
 
 </table>
