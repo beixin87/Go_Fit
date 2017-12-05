@@ -15,7 +15,7 @@
   right: 10px;
   top: 21%;
   //margin-top: -195px;
-  height: 380px;
+  height: 350px;
   width: 320px;
   padding: 5px;
   z-index: 5;
@@ -56,7 +56,19 @@ h2 {
   outline: none;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
-
+.pac-matched {
+  font-size: 15px;
+}
+.pac-item-query {
+  font-size: 10px;
+}
+.pac-container,
+.pac-item {
+  width: 200px;
+}
+span {
+  font-size: 100%;
+}
 #origin-input,
 #destination-input {
   background-color: #fff;
