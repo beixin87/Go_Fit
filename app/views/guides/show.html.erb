@@ -10,53 +10,53 @@
 }
 </style>
 
-<div class="container">  
+<div class="container">
 
-  <div class="row"> 
+  <div class="row">
 
-  <table class="table">   
+  <table class="table">
       <thead>
         <tr>
           <td><strong> <%= @guide.title %></strong></td>
-        </tr>   
+        </tr>
         <tr>
           <td><%= @guide.user_name %></td> <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
           <td>Created : <%= @guide.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
           <td>Hits : <%= @guide.hits %></td>
         </tr>
-      </thead>  
+      </thead>
   </table>
-          
-  </div>    
 
-  <div class="row">       
+  </div>
+
+  <div class="row">
     <div class="col-md-12">
-      <%=raw @guide.content %>    
-  </div>    
-  </div>    
+      <%=raw @guide.content %>
+  </div>
+  </div>
 
 <br>
 <% if  @guide.user_id == session[:user_id] %>
   <%= link_to ' Edit ', edit_guide_path(@guide), class: "btn btn-success" %>
-  <%= link_to 'Delete', guide_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> 
-<% elsif  current_user.admin? %>  
-  <%= link_to 'Admin Delete', guide_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> 
-<% end %>  
+  <%= link_to 'Delete', guide_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+<% elsif  current_user.admin? %>
+  <%= link_to 'Admin Delete', guide_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+<% end %>
 
 <%= link_to 'Back', guides_path, class: "btn btn-primary" %>
 
 
 <div style="float: right;">
   <% if  @now_favorites == 0 %>
-    <%= link_to favorite_guide_path(@guide), class: "btn btn-sm", method: :put, remote: true do %>    
-    <div id ="favo1"><i class="glyphicon glyphicon-star" style="color:white;background-color:gray;font-size:34px;" ></i> 
+    <%= link_to favorite_guide_path(@guide), class: "btn btn-sm", method: :put, remote: true do %>
+    <div id ="favo1"><i class="glyphicon glyphicon-star" style="color:white;background-color:gray;font-size:34px;" ></i>
        <div>Click to Favolite</div></div>
     <% end %>
   <%else%>
-     <%= link_to favorite_guide_path(@guide), class: "btn btn-sm", method: :put, remote: true do %>    
+     <%= link_to favorite_guide_path(@guide), class: "btn btn-sm", method: :put, remote: true do %>
     <div id ="favo1"><i class="glyphicon glyphicon-star-empty" style="color:yellow;background-color:green;font-size:34px;" ></i><div>Your Favorite</div></div>
     <% end %>
-  <% end %> 
+  <% end %>
 
   <%= link_to like_guide_path(@guide), class: "btn btn-primary btn-sm", method: :put, remote: true do %>
     <i class="glyphicon glyphicon-thumbs-up" style="font-size:20px;"></i>
@@ -67,7 +67,7 @@
     <i class="glyphicon glyphicon-thumbs-down" style="font-size:20px;"></i>
     <div id ="dislike-count"> <%= @now_dislikes %> users dislike this </div>
   <% end %>
-</div> 
+</div>
 
 
 </div>
