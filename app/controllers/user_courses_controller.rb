@@ -1,7 +1,8 @@
 class UserCoursesController < ApplicationController
   before_action :set_user_course, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:new, :create, :destroy]
 
-  # GET /user_courses
+    # GET /user_courses
   # GET /user_courses.json
   def index
     @user_courses = UserCourse.all
@@ -71,6 +72,12 @@ class UserCoursesController < ApplicationController
     def set_user_course
       @user_course = UserCourse.find(params[:id])
     end
+
+    def correct_user
+      redirect_to request.referrer unless current_user.admin || !student_already_added?(current_user.id)
+    end
+
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_course_params

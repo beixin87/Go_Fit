@@ -73,13 +73,12 @@
                  class: 'btn btn-xs btn-success', method: :post  %> |
       <%else%>
         <span class="label label-default">
-          Student cannot be added because you have already added
           <%if !@course.under_course_limit?%>
-          <%= @course.limit %> students
+          <%= @course.name %> is already full.
           <%end %>
 
           <%if @course.student_already_added?(current_user.id )%>
-          this student
+          You are already in this course.
           <%end%>
         </span>
       <%end%>
