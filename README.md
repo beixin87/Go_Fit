@@ -1,67 +1,17 @@
-# ruby-getting-started
+#GO FIT!
 
-A barebones Rails app, which can easily be deployed to Heroku.
 
-This application support the [Getting Started with Ruby on Heroku](https://devcenter.heroku.com/articles/getting-started-with-ruby) article - check it out.
+##Project Abstract
 
-## Running Locally
+GoFit is a health management system that connects all people who care about their own health around the world. Using the app, users can quickly gather information of fitness centers such as their location, facilities, and available coaches. Users can even sign up for fitness courses directly with GoFit by entering his/her interested gym page. All the courses that a user has signed up for will appear in the calendar on the user’s profile. Manager of a fitness center can use the app as a management system to manage the courses provided by the gym as well as the instructors. In addition, GoFit provides a platform for users to to share their fitness tips and health plans. With the assistance of the calories calculator, users can manage their health by controlling their daily calories absorptions and achieve a healthier body.
 
-Make sure you have Ruby installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
 
-```sh
-$ git clone git@github.com:heroku/ruby-getting-started.git
-$ cd ruby-getting-started
-$ bundle install
-$ bundle exec rake db:create db:migrate
-$ heroku local
-```
+##Customer
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+Members: They can sign up for classes or keep track of their daily lifestyle. If they want they can have the instructor/advisor to give them advice on their daily lifestyle.
 
-## Deploying to Heroku
 
-```sh
-$ heroku create
-$ git push heroku master
-$ heroku run rake db:migrate
-$ heroku open
-```
+Instructor/Advisor: There can be many kind of instructor/advisor. They can be anyone ranging from dietician to yoga instructor. Using GoFit they can broaden their customer base.
+ 
 
-or
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Docker
-
-The app can be run and tested using the [Heroku Docker CLI plugin](https://devcenter.heroku.com/articles/local-development-with-docker-compose).
-
-Make sure the plugin is installed:
-
-    heroku plugins:install heroku-docker
-
-Configure Docker and Docker Compose:
-
-    heroku docker:init
-
-And run the app locally:
-
-    docker-compose up web
-
-The app will now be available on the Docker daemon IP on port 8080.
-
-To work with the local database and do migrations, you can open a shell:
-
-    docker-compose run shell
-    bundle exec rake db:migrate
-
-You can also use Docker to release to Heroku:
-
-    heroku create
-    heroku docker:release
-    heroku open
-
-## Documentation
-
-For more information about using Ruby on Heroku, see these Dev Center articles:
-
-- [Ruby on Heroku](https://devcenter.heroku.com/categories/ruby)
+Manager: A manager for a fitness center/group can manage the instructors/advisors that works for him. They can manage classes or sessions so there is no schedule conflict. 
