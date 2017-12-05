@@ -87,6 +87,10 @@ class UsersController < ApplicationController
                                          :password_confirmation, :height,
                                          :weight, :description, :date_of_birth, :type)
         end
+      else
+        params.require(:user).permit(:name, :email, :password,
+                                     :password_confirmation, :height,
+                                     :weight, :description, :date_of_birth)
       end
       end
 
