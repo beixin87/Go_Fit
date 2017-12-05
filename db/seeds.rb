@@ -78,3 +78,19 @@ end
                     )
 
 end
+
+5.times do |n|
+  name  = Faker::Name.name
+  email = "student#{n+1}@example.com"
+  password = "student1"
+  Student.create!(name:  name,
+                     email: email,
+                     password:              password,
+                     password_confirmation: password,
+                     height: "100",
+                     weight: "100",
+                     date_of_birth: "2000/11/11",
+                     description: "I am a fake Student."
+                    )
+
+end
