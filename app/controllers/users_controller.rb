@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def index
       @userCnt = User.all.count
       #@users = User.order('id DESC').paginate(page: params[:page], per_page: 10)
-      @users = User.all.paginate(page: params[:page], per_page: 5)
+      @users = User.all
 
   end
 
