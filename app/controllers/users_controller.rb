@@ -74,15 +74,17 @@ class UsersController < ApplicationController
         elsif params.has_key? :instructor
           params[:user] = params.delete :instructor
         end
-        if current_user.admin
-          params.require(:user).permit(:name, :email, :password,
-                                       :password_confirmation, :height,
-                                       :weight, :description, :date_of_birth)
+        if logged_in?
+          if current_user.admin
+            params.require(:user).permit(:name, :email, :password,
+                                         :password_confirmation, :height,
+                                         :weight, :description, :date_of_birth)
+          end
 
         else
-          params.require(:user).permit(:name, :email, :password,
-                                       :password_confirmation, :height,
-                                       :weight, :description, :date_of_birth, :type)
+            params.require(:user).permit(:name, :email, :password,
+                                         :password_confirmation, :height,
+                                         :weight, :description, :date_of_birth, :type)
         end
       end
 
