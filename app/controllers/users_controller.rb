@@ -67,6 +67,7 @@ class UsersController < ApplicationController
   private
 
       def user_params
+      if logged_in?
         if params.has_key? :manager
           params[:user] = params.delete :manager
         elsif params.has_key? :student
@@ -74,18 +75,19 @@ class UsersController < ApplicationController
         elsif params.has_key? :instructor
           params[:user] = params.delete :instructor
         end
-        if logged_in?
+
           if current_user.admin
             params.require(:user).permit(:name, :email, :password,
                                          :password_confirmation, :height,
                                          :weight, :description, :date_of_birth)
-          end
+
 
         else
             params.require(:user).permit(:name, :email, :password,
                                          :password_confirmation, :height,
                                          :weight, :description, :date_of_birth, :type)
         end
+      end
       end
 
       # Confirms a logged-in user.

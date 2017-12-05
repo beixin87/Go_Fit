@@ -25,7 +25,7 @@
 </p>
 
 <p>
-  <strong>Numberofenrolled:</strong>
+  <strong>Number of Students:</strong>
   <%= @course.user_courses.count %>
 </p>
 
@@ -38,12 +38,10 @@
   <strong>Class hour:</strong>
   <%= @course.class_hour %>
 </p>
+<h2>Students in this Course</h2>
+<br></br>
 <table >
-  <th>
-    <tr>
-      <th>Students in this Course</th>
-    </tr>
-  </th>
+
   <tb>
 <div>
     <% @user_courses.each do |user_course| %>
