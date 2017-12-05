@@ -17,6 +17,8 @@ function initMap(){
       var pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
+        //lat: 49.276765,
+        //lng: -122.917957
       }; map.setCenter(pos);service.nearbySearch({
         location: map.getCenter(),
         rankBy: google.maps.places.RankBy.DISTANCE,
